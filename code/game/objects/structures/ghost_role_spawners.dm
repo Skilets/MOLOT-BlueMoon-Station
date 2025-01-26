@@ -43,6 +43,7 @@
 	Your goal is to cultivate and spread life wherever it will go while waiting for contact from your creators. \
 	Estimated time of last contact: Deployment, 5000 millennia ago."
 	assignedrole = "Lifebringer"
+	category = "offstation"
 
 /obj/effect/mob_spawn/human/seed_vault/Destroy()
 	new/obj/structure/fluff/empty_terrarium(get_turf(src))
@@ -126,6 +127,7 @@
 	assignedrole = "Ash Walker"
 	var/datum/team/ashwalkers/team
 	var/obj/structure/ash_walker_eggshell/eggshell
+	category = "offstation"
 
 /obj/effect/mob_spawn/human/ash_walker/Destroy()
 	eggshell = null
@@ -233,6 +235,7 @@
 	путешествовать по звездам с одним единственным заявлением: \ 'Да, делай что хочешь.'\ Хотя вы связаны с тем, кто вас создал, в вашем обществе принято повторять эти же слова новорожденным \
 	големам, чтобы ни один голем никогда не был вынужден служить снова."
 	important_info = "Вы не антагонист."
+	category = "offstation"
 
 /obj/effect/mob_spawn/human/golem/Initialize(mapload, datum/species/golem/species = null, mob/creator = null)
 	if(species) //spawners list uses object name to register so this goes before ..()
@@ -322,6 +325,7 @@
 	can_load_appearance = TRUE
 	loadout_enabled = TRUE
 	antagonist_type = /datum/antagonist/ghost_role/hermit
+	category = "offstation"
 
 /obj/effect/mob_spawn/human/hermit/Initialize(mapload)
 	. = ..()
@@ -376,6 +380,7 @@
 	important_info = "Вы не антагонист."
 	assignedrole = "Translocated Vet"
 	can_load_appearance = TRUE
+	category = "offstation"
 
 /obj/effect/mob_spawn/human/doctor/alive/lavaland/Destroy()
 	var/obj/structure/fluff/empty_sleeper/S = new(drop_location())
@@ -442,6 +447,7 @@
 	can_load_appearance = TRUE
 	loadout_enabled = TRUE
 	antagonist_type = /datum/antagonist/ghost_role/space_hotel
+	category = "offstation"
 
 /datum/outfit/hotelstaff
 	name = "Hotel Staff"
@@ -546,6 +552,7 @@
 	outfit = /datum/outfit/syndicate_empty
 	assignedrole = "Space Syndicate"	//I know this is really dumb, but Syndicate operative is nuke ops
 	can_load_appearance = TRUE
+	category = "syndicate"
 
 /obj/effect/mob_spawn/human/solfed
 	name = "Solar Federation Marine"
@@ -557,6 +564,7 @@
 	assignedrole = "Solar Federation Operative"
 	can_load_appearance = TRUE
 	loadout_enabled = TRUE
+	category = "sol"
 
 /obj/effect/mob_spawn/human/solfed/demoman
 	name = "Solar Federation Support"
@@ -694,6 +702,7 @@
 	job_description = "Oldstation Crew"
 	assignedrole = "Ancient Crew"
 	can_load_appearance = TRUE
+	category = "offstation"
 
 /obj/effect/mob_spawn/human/oldsec/Destroy()
 	new/obj/structure/showcase/machinery/oldpod/used(drop_location())
@@ -774,6 +783,7 @@
 	assignedrole = "Space Pirate"
 	var/rank = "Mate"
 	can_load_appearance = FALSE
+	category = "midround"
 
 /obj/effect/mob_spawn/human/pirate/on_attack_hand(mob/living/user, act_intent = user.a_intent, unarmed_attack_flags)
 	. = ..()
@@ -1034,10 +1044,12 @@
 	can_load_appearance = TRUE
 	loadout_enabled = TRUE
 	computer_area = /area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall
+	make_bank_account = TRUE
 
 	give_cooler_to_mob_if_synth = TRUE
 
 	antagonist_type = /datum/antagonist/ghost_role/tarkov
+	category = "offstation"
 
 /datum/outfit/tarkoff
 	name = "Default Port Tarkov Outfit"
@@ -1063,7 +1075,6 @@
 	target_radio.set_frequency(FREQ_TARKOFF)
 	target_radio.recalculateChannels()
 
-	handlebank(tarkoff)
 	return ..()
 
 /obj/effect/mob_spawn/human/tarkon/sci
@@ -1137,14 +1148,6 @@
 	gloves = /obj/item/clothing/gloves/combat
 	l_pocket = /obj/item/melee/classic_baton/telescopic
 	r_pocket = /obj/item/grenade/barrier
-
-/datum/outfit/proc/handlebank(mob/living/carbon/human/owner)
-	var/datum/bank_account/offstation_bank_account = new(owner.real_name)
-	owner.account_id = offstation_bank_account.account_id
-	if(owner.wear_id)
-		var/obj/item/card/id/id_card = owner.wear_id
-		id_card.registered_account = offstation_bank_account
-	return
 
 /obj/item/radio/headset/tarkoff
 	name = "Tarkov Headset"
@@ -1223,6 +1226,7 @@
 	can_load_appearance = TRUE
 	loadout_enabled = TRUE
 	antagonist_type = /datum/antagonist/ghost_role/centcom_intern
+	category = "offstation"
 
 /datum/outfit/centcom_syndicate
 	name = "Special Ops Syndicate Intern"
@@ -1278,6 +1282,7 @@
 	can_load_appearance = TRUE
 	loadout_enabled = TRUE
 	antagonist_type = /datum/antagonist/ghost_role/centcom_intern
+	category = "offstation"
 
 /datum/outfit/centcom_nanotrasen
 	name = "Special Ops Nanotrasen Intern"
@@ -1331,6 +1336,8 @@
 	use_outfit_name = TRUE
 	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
 	antagonist_type = /datum/antagonist/ghost_role/ds2
+	make_bank_account = TRUE // BLUEMOON ADD
+	category = "syndicate"
 
 /obj/effect/mob_spawn/human/ds2/prisoner
 	name = "Syndicate Prisoner"
@@ -1417,10 +1424,12 @@
 /obj/effect/mob_spawn/human/ds2/syndicate/enginetech/special(mob/living/carbon/human/new_spawn)
 	. = ..()
 	ADD_TRAIT(new_spawn.mind, TRAIT_KNOW_ENGI_WIRES, GHOSTROLE_TRAIT)
+	new_spawn.mind.add_skill_modifier(list(/datum/skill_modifier/job/level/wiring/expert, /datum/skill_modifier/job/affinity/wiring))
 
 /obj/effect/mob_spawn/human/ds2/syndicate/researcher/special(mob/living/carbon/human/new_spawn)
 	. = ..()
 	ADD_TRAIT(new_spawn.mind, TRAIT_KNOW_CYBORG_WIRES, GHOSTROLE_TRAIT)
+	new_spawn.mind.add_skill_modifier(list(/datum/skill_modifier/job/level/wiring/trained, /datum/skill_modifier/job/affinity/wiring))
 
 // BLUEMOON ADD END
 
@@ -1434,7 +1443,6 @@
 		id_card.update_label()
 		id_card.update_icon()
 
-	handlebank(syndicate)
 	return ..()
 
 //DS-2 Hostage
@@ -1502,6 +1510,8 @@
 	backpack_contents = list(
 		/obj/item/storage/box/survival = 1,
 		)
+	l_pocket = /obj/item/storage/bag/material
+	r_pocket = /obj/item/storage/bag/construction
 	glasses = /obj/item/clothing/glasses/welding
 	belt = /obj/item/storage/belt/utility/syndicate
 	gloves = /obj/item/clothing/gloves/combat
@@ -1653,6 +1663,7 @@
 	trim_state = "trim_ds2prisoner"
 	subdepartment_color = COLOR_MAROON
 	sechud_icon_state = SECHUD_DS2_PRISONER
+	access = list()
 
 /datum/id_trim/syndicom/ds2/miner
 	assignment = "DS-2 Mining Officer"
@@ -1710,6 +1721,7 @@
 	name = "Prisoner"
 	assignment = "DS-2 Hostage"
 	icon_state = "card_ds2prisoner"
+	access = list()
 
 /obj/item/card/id/syndicate/advanced/black
 	name = "Agent Card"
