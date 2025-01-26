@@ -166,9 +166,10 @@
 		pushed_mob.pass_flags &= ~PASSTABLE
 	if(pushed_mob.loc != loc) //Something prevented the tabling
 		return
-	pushed_mob.DefaultCombatKnockdown(40)
-	pushed_mob.visible_message("<span class='danger'>[user] пихает [pushed_mob] на [src]!</span>", \
-								"<span class='userdanger'>[user] пихает тебя на [src]!</span>")
+	pushed_mob.DefaultCombatKnockdown(120)
+	pushed_mob.apply_damage(15, BRUTE)
+	pushed_mob.visible_message("<span class='danger'>[user] кидает [pushed_mob] на [src]!</span>", \
+								"<span class='userdanger'>[user] кидает тебя на [src]!</span>")
 	playsound(pushed_mob, 'sound/weapons/thudswoosh.ogg', 90, TRUE)
 	log_combat(user, pushed_mob, "tabled", null, "onto [src]")
 	if(!ishuman(pushed_mob))
@@ -190,7 +191,7 @@
 	if(HAS_TRAIT(user, TRAIT_HULK) || HAS_TRAIT(user, TRAIT_MAULER))
 		extra_wound = 20
 	banged_limb.receive_damage(30, wound_bonus = extra_wound)
-	pushed_mob.apply_damage(60, STAMINA)
+	pushed_mob.apply_damage(120, STAMINA)
 	take_damage(50)
 
 	playsound(pushed_mob, 'sound/effects/bang.ogg', 90, TRUE)
@@ -1011,6 +1012,18 @@
 	flags_1 = CONDUCT_1
 	custom_materials = list(/datum/material/iron=2000)
 	var/building = FALSE
+	// MODULAR_JUICY-ADD - Делаем дефолтный путь к объекту в виде переменной, чтобы можно было передать что за тип конструкции
+	var/obj/construction_type = /obj/structure/rack
+	// MODULAR_JUICY-ADD
+
+/obj/item/shelf_parts
+	name = "shelf parts"
+	desc = "Parts of a shelf."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "rack_parts"
+	flags_1 = CONDUCT_1
+	custom_materials = list(/datum/material/iron=2000)
+	var/building = FALSE
 
 /obj/item/rack_parts/attackby(obj/item/W, mob/user, params)
 	if(W.tool_behaviour == TOOL_WRENCH)
@@ -1020,6 +1033,39 @@
 		. = ..()
 
 /obj/item/rack_parts/attack_self(mob/user)
+	// MODULAR_JUICY-ADD
+	if(locate(construction_type) in get_turf(user))
+		balloon_alert(user, "не хватает места!")
+		return
+	// MODULAR_JUICY-ADD
+	if(building)
+		return
+	building = TRUE
+	// MODULAR_JUICY-EDIT - Меняем надпись
+	// to_chat(user, "<span class='notice'>You start constructing a rack...</span>")	// ORIGINAL
+	to_chat(user, "<span class='notice'>You start assembling [src]...</span>")
+	// MODULAR_JUICY-EDIT
+	if(do_after(user, 50, target = user, progress=TRUE))
+		if(!user.temporarilyRemoveItemFromInventory(src))
+			return
+		// MODULAR_JUICY-EDIT - Вместо дефолтного пути задаем переменную. Ведь не только шкаф можно создать, но и просто полку на польную
+		// var/obj/structure/rack/R = new /obj/structure/rack(user.loc)	// ORIGINAL
+		var/obj/structure/R = new construction_type(user.loc)
+		// MODULAR_JUICY-EDIT
+		user.visible_message("<span class='notice'>[user] assembles \a [R].\
+			</span>", "<span class='notice'>You assemble \a [R].</span>")
+		R.add_fingerprint(user)
+		qdel(src)
+	building = FALSE
+
+/obj/item/shelf_parts/attackby(obj/item/W, mob/user, params)
+	if(W.tool_behaviour == TOOL_WRENCH)
+		new /obj/item/stack/sheet/metal(user.loc)
+		qdel(src)
+	else
+		. = ..()
+
+/obj/item/shelf_parts/attack_self(mob/user)
 	if(building)
 		return
 	building = TRUE
@@ -1027,7 +1073,7 @@
 	if(do_after(user, 50, target = user, progress=TRUE))
 		if(!user.temporarilyRemoveItemFromInventory(src))
 			return
-		var/obj/structure/rack/R = new /obj/structure/rack(user.loc)
+		var/obj/structure/rack/shelf/R = new /obj/structure/rack/shelf(user.loc)
 		user.visible_message("<span class='notice'>[user] assembles \a [R].\
 			</span>", "<span class='notice'>You assemble \a [R].</span>")
 		R.add_fingerprint(user)

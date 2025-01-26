@@ -143,3 +143,47 @@
 	icon_state = "SATTvdv"
 	item_state = "SATTvdv"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/aki_camo
+	name = "Old Guard NRI uniform"
+	desc = "A sample of the old uniform of the border special forces-troops of the NRI Guard. This one is adapted for anthropomorphs."
+	icon_state = "adlercamo"
+	item_state = "adlercamo"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/aki_adler_camo
+	name = "Adler Peacekeeper uniform"
+	desc = "Peacekeeper uniforms are custom-made for corporations in the Taywar sector. Simulates all the features of Merenid biology to perfectly match any personality, as well as some types of low-quality races."
+	icon_state = "adlerpk"
+	item_state = "adlerpk"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/aki_seu
+	name = "Corporate S.E.U."
+	desc = "Corporate Standardized Engineering Uniforms. The uniform of engineering workers used by several large corporations on Tayvar. It is equipped with additional gaskets to reduce the risk of injury and special signs to indicate the engineering level of access."
+	icon_state = "seu"
+	item_state = "seu"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/laskaskirt
+	name = "HoS cosplay skirt"
+	desc = "Skirt that looks like HoS one, but without any armor."
+	icon_state = "laskaskirt"
+	item_state = "laskaskirt"
+	can_adjust = TRUE
+
+/obj/item/clothing/underwear/briefs/kladmen_panties
+	name = "Panties"
+	icon_state = "kladmen_panties"
+	item_state = "kladmen_panties"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/underwear.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/underwear.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/underwear.dmi'
+
+/obj/item/clothing/underwear/shirt/bra/kladmen_bra
+	name = "Bra - A bra"
+	icon_state = "kladmen_bra"
+	item_state = "kladmen_bra"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/underwear.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/underwear.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/underwear.dmi'

@@ -65,6 +65,12 @@
 /area/awaymission/complex/mainfacility
 	name = "Primary Complex"
 	icon_state = "awaycontent12"
+	sub_areas = list(/area/awaymission/complex/shower)
+
+/area/awaymission/complex/shower
+	icon = 'icons/turf/areas.dmi'
+	icon_state = "shower"
+	name = "Shower"
 
 /area/awaymission/complex/logistics
 	name = "Logistics Department"
@@ -337,7 +343,7 @@
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	aggro_vision_range = 9
 	turns_per_move = 5
-	gold_core_spawnable = HOSTILE_SPAWN
+//	gold_core_spawnable = HOSTILE_SPAWN // BLUEMOON REMOVAL
 	faction = null
 	footstep_type = FOOTSTEP_MOB_SHOE
 	weather_immunities = list("ash")
@@ -1391,6 +1397,7 @@
 	roundstart = FALSE
 	death = FALSE
 	random = TRUE
+	loadout_enabled = TRUE
 	mob_species = /datum/species/human
 	short_desc = "Вы были сотрудником горнодобывающего предприятия Nanotrasen, но оказались обращены Культом Ратвара."
 	flavour_text = "Прошло несколько месяцев с тех пор, как осела пыль. \
@@ -1425,6 +1432,7 @@
 	roundstart = FALSE
 	death = FALSE
 	random = TRUE
+	loadout_enabled = TRUE
 	mob_species = /datum/species/human
 	short_desc = "Вы были сотрудником горнодобывающего предприятия Nanotrasen, но оказались обращены Культом Нар'Си."
 	flavour_text = "Прошло несколько месяцев с тех пор, как осела пыль. \

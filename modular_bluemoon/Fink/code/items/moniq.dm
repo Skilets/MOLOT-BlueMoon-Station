@@ -70,9 +70,14 @@
 	// 	data["songs"] += list(track_data)
 	// BLUEMOON DEL END
 	data["queued_tracks"] = list()
-	for(var/datum/track/S in queuedplaylist)
-		var/list/track_data = list(name = S.song_name)
-		data["queued_tracks"] += list(track_data)
+	for (var/i = 1, i <= queuedplaylist.len, i++)
+		var/datum/track/S = queuedplaylist[i]
+		data["queued_tracks"] += list(
+			list(
+				index = i,
+				name = S.song_name
+			)
+		)
 	data["track_selected"] = null
 	data["track_length"] = null
 	if(playing)
@@ -83,6 +88,11 @@
 	data["cost_for_play"] = queuecost
 	data["has_access"] = allowed(user)
 	data["repeat"] = repeat		//BLUEMOON ADD
+	var/list/all_song_names = list()
+	for (var/datum/track/T in SSjukeboxes.songs)
+		all_song_names += T.song_name
+	data["songs"] = all_song_names
+	data["favorite_tracks"] = user?.client?.prefs?.favorite_tracks
 	return data
 
 /obj/item/sign/moniq/ui_act(action, list/params)
@@ -161,6 +171,10 @@
 
 /obj/item/sign/moniq/proc/activate_music()
 	if(playing || !queuedplaylist.len)
+		return FALSE
+	// Making sure not to play track if all jukebox channels are busy. That shouldn't happen.
+	if(!SSjukeboxes.freejukeboxchannels.len)
+		say("Cannot play song: limit of currently playing tracks has been exceeded.")
 		return FALSE
 	playing = queuedplaylist[1]
 	var/jukeboxslottotake = SSjukeboxes.addjukebox(src, playing, volume/35, one_area_play) //BLUEMOON EDIT
@@ -276,9 +290,14 @@
 	// 	data["songs"] += list(track_data)
 	// BLUEMOON DEL END
 	data["queued_tracks"] = list()
-	for(var/datum/track/S in queuedplaylist)
-		var/list/track_data = list(name = S.song_name)
-		data["queued_tracks"] += list(track_data)
+	for (var/i = 1, i <= queuedplaylist.len, i++)
+		var/datum/track/S = queuedplaylist[i]
+		data["queued_tracks"] += list(
+			list(
+				index = i,
+				name = S.song_name
+			)
+		)
 	data["track_selected"] = null
 	data["track_length"] = null
 	if(playing)
@@ -289,6 +308,11 @@
 	data["cost_for_play"] = queuecost
 	data["has_access"] = allowed(user)
 	data["repeat"] = repeat		//BLUEMOON ADD
+	var/list/all_song_names = list()
+	for (var/datum/track/T in SSjukeboxes.songs)
+		all_song_names += T.song_name
+	data["songs"] = all_song_names
+	data["favorite_tracks"] = user?.client?.prefs?.favorite_tracks
 	return data
 
 /obj/structure/sign/moniq/ui_act(action, list/params)
@@ -368,6 +392,10 @@
 
 /obj/structure/sign/moniq/proc/activate_music()
 	if(playing || !queuedplaylist.len)
+		return FALSE
+	// Making sure not to play track if all jukebox channels are busy. That shouldn't happen.
+	if(!SSjukeboxes.freejukeboxchannels.len)
+		say("Cannot play song: limit of currently playing tracks has been exceeded.")
 		return FALSE
 	playing = queuedplaylist[1]
 	var/jukeboxslottotake = SSjukeboxes.addjukebox(src, playing, volume/35, one_area_play) //BLUEMOON EDIT

@@ -54,8 +54,7 @@
 
 		if(kickback)
 			chassis.newtonian_move(newtonian_target)
-	chassis.log_message("Fired from [src.name], targeting [target].", LOG_MECHA)
-	return ..()
+	chassis.log_message("Fired from [src], targeting [target].", LOG_MECHA)
 
 //Base energy weapon type
 /obj/item/mecha_parts/mecha_equipment/weapon/energy
@@ -209,7 +208,8 @@
 	var/ammo_type
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/action_checks(target)
-	if(!..())
+	. = ..()
+	if(!.)
 		return FALSE
 	if(projectiles <= 0)
 		return FALSE
@@ -256,11 +256,11 @@
 	return
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/action(mob/source, atom/target, params)
-	if(..())
-		projectiles -= projectiles_per_shot
-		send_byjax(chassis.occupants,"exosuit.browser","[REF(src)]",src.get_equip_info())
-		return ..()
-
+	. = ..()
+	if(!.)
+		return
+	projectiles -= projectiles_per_shot
+	send_byjax(chassis.occupants,"exosuit.browser","[REF(src)]",src.get_equip_info())
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/carbine
 	name = "\improper FNX-99 \"Hades\" Carbine"
@@ -370,6 +370,7 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/action(mob/source, atom/target, params)
 	if(!action_checks(target))
 		return
+	TIMER_COOLDOWN_START(chassis, COOLDOWN_MECHA_EQUIPMENT, equip_cooldown)
 	var/obj/O = new projectile(chassis.loc)
 	playsound(chassis, fire_sound, 50, TRUE)
 	log_message("Launched a [O.name] from [name], targeting [target].", LOG_MECHA)

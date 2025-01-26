@@ -3832,8 +3832,8 @@
 /area/maintenance/bar)
 "aUC" = (
 /obj/structure/closet/secure_closet/personal,
-/obj/item/toy/poolnoodle/yellow,
-/obj/item/toy/poolnoodle/red,
+/obj/item/pool/pool_noodle/yellow,
+/obj/item/pool/pool_noodle/red,
 /turf/open/floor/plasteel,
 /area/commons/fitness/pool)
 "aUG" = (
@@ -42626,8 +42626,8 @@
 	icon_state = "0-2"
 	},
 /obj/structure/closet/secure_closet/personal,
-/obj/item/toy/poolnoodle/yellow,
-/obj/item/toy/poolnoodle/blue,
+/obj/item/pool/pool_noodle/yellow,
+/obj/item/pool/pool_noodle/blue,
 /turf/open/floor/plasteel,
 /area/commons/fitness/pool)
 "qTO" = (
@@ -43157,7 +43157,7 @@
 /obj/machinery/door/firedoor/border_only{
 	name = "south facing firelock"
 	},
-/obj/machinery/door/airlock/glass_large,
+/obj/machinery/door/airlock/multi_tile/glass,
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -52908,7 +52908,7 @@
 	name = "north facing firelock"
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/glass_large,
+/obj/machinery/door/airlock/multi_tile/glass,
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/plasteel,
 /area/service/bar)
@@ -55296,7 +55296,7 @@
 /obj/machinery/door/firedoor/border_only{
 	name = "south facing firelock"
 	},
-/obj/machinery/door/airlock/glass_large,
+/obj/machinery/door/airlock/multi_tile/glass,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
@@ -55663,7 +55663,7 @@
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "wyk" = (
-/obj/machinery/door/airlock/glass_large,
+/obj/machinery/door/airlock/multi_tile/glass,
 /turf/open/floor/plasteel,
 /area/commons/fitness)
 "wyZ" = (

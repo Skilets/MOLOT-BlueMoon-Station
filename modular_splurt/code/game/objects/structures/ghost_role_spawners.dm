@@ -49,6 +49,7 @@
 	random = TRUE
 	can_load_appearance = TRUE
 	loadout_enabled = FALSE
+	category = "offstation"
 
 /obj/effect/mob_spawn/human/ash_walkers_slave/special_post_appearance(mob/living/new_spawn)
 	. = ..()
@@ -81,6 +82,7 @@
 	Only you know how you got to this planetoid, whether this place in which you woke up was one of your shelters, or you just stumbled upon it."
 	can_load_appearance = TRUE
 	antagonist_type = /datum/antagonist/ghost_role/hermit
+	category = "offstation"
 
 /obj/effect/mob_spawn/human/wandering_hermit/Destroy()
 	var/obj/structure/fluff/empty_sleeper/S = new(drop_location())
@@ -124,6 +126,7 @@
 	ears = /obj/item/radio/headset/headset_srv/hotel
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 						/obj/item/storage/ifak=1)
+	make_bank_account = TRUE
 
 /obj/effect/mob_spawn/human/hotel_staff/splurt/security
 	name = "Hotel Security Sleeper"
@@ -174,7 +177,8 @@
 	head = /obj/item/clothing/head/beret/black
 	r_pocket = /obj/item/pda
 	back = /obj/item/storage/backpack
-	r_hand = /obj/item/storage/secure/briefcase/syndie
+	make_bank_account = TRUE // BLUEMOON ADD
+	starting_money = 10000 // BLUEMOON ADD
 
 //Forgotten syndicate ship
 
@@ -183,15 +187,18 @@
 	roundstart = FALSE
 	death = FALSE
 	show_flavour = FALSE
+	loadout_enabled = TRUE
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	short_desc = "Вы - Оперативник Авангарда ИнтеКью на старом корабле, застрявшем во враждебном космосе."
 	flavour_text = "Ваш корабль причалил после долгого перерыва где-то во враждебном пространстве, сообщив о неисправности. Вы застряли здесь, зная, что рядом находится станция Nanotrasen. Почините корабль, найдите способ обеспечить его энергией и выполняйте приказы Капитана."
-	important_info = "Выполняйте приказы своего капитана. Не позвольте кораблю попасть в руки врага! | Экста - грубоватые наёмники, не знающие положения дел в Туманности Синие Луны. Динамика - полноценные оперативники ИнтеКью с поставленной задачей на защиту своего корабля и сектора."
+	important_info = "Установите полную власть над локальным сектором, защитите корабль и секретные документы в рюкзаке ценой своей жизни."
 	can_load_appearance = TRUE
 	outfit = /datum/outfit/inteqspace/inteq_crew
 	assignedrole = ROLE_GHOSTROLE_INTEQ
 	antagonist_type = /datum/antagonist/ghost_role/inteq
+	loadout_enabled = TRUE
+	category = "inteq"
 
 /datum/outfit/inteqspace/inteq_crew/post_equip(mob/living/carbon/human/H)
 	H.faction |= ROLE_INTEQ
@@ -216,11 +223,17 @@
 	can_load_appearance = TRUE
 	outfit = /datum/outfit/inteqspace/inteq_hostage
 
+/obj/effect/mob_spawn/human/inteqspace/hostage/New()
+	. = ..()
+	if(GLOB.master_mode == "Extended")
+		important_info = "Запрещено пытаться сбежать и сопротивляться без веских причин как серьёзная угроза жизни от сотрудников Космической Полиции и Солнечной. Побег только с разрешения администрации."
+		category = "sol"
+		
 /obj/effect/mob_spawn/human/inteqspace/captain
 	name = "InteQ Ship Captain"
 	short_desc = "Вы - Лидер Авангарда ИнтеКью на старом корабле, застрявшем во враждебном космосе."
 	flavour_text = "Ваш корабль причалил после долгого перерыва где-то во враждебном пространстве, сообщив о неисправности. Вы застряли здесь, зная, что рядом находится станция Nanotrasen. Командуйте своим экипажем и исследуйте свой территорию, чтобы закрепить свое местоположение."
-	important_info = "Защитите корабль и секретные документы в рюкзаке ценой своей жизни. | Экста - грубоватые наёмники, не знающие положения дел в Туманности Синие Луны. Динамика - полноценные оперативники ИнтеКью с поставленной задачей на защиту своего корабля и сектора."
+	important_info = "Установите полную власть над локальным сектором, защитите корабль и секретные документы в рюкзаке ценой своей жизни."
 	can_load_appearance = TRUE
 	outfit = /datum/outfit/inteqspace/inteq_captain
 
