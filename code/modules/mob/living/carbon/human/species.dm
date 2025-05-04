@@ -90,8 +90,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/dangerous_existence //A flag for transformation spells that tells them "hey if you turn a person into one of these without preperation, they'll probably die!"
 	///Affects the speech message, for example: Motharula flutters, "My speech message is flutters!"
 	var/say_mod = "says"
-	///What languages this species can understand and say. Use a [language holder datum][/datum/language_holder] in this var.
-	var/species_language_holder = /datum/language_holder
+	/// What languages this species can understand and say.
+	/// Use a [language holder datum][/datum/language_holder] typepath in this var.
+	/// Should never be null.
+	var/datum/language_holder/species_language_holder = /datum/language_holder/human_basic
 	/**
 	  * Visible CURRENT bodyparts that are unique to a species.
 	  * DO NOT USE THIS AS A LIST OF ALL POSSIBLE BODYPARTS AS IT WILL FUCK
@@ -562,6 +564,16 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(ROBOTIC_LIMBS in species_traits)
 		for(var/obj/item/bodypart/B in C.bodyparts)
 			B.change_bodypart_status(BODYPART_HYBRID, FALSE, TRUE) // Makes all Bodyparts 'robotic'.
+
+	// All languages associated with this language holder are added with source [LANGUAGE_SPECIES]
+	// rather than source [LANGUAGE_ATOM], so we can track what to remove if our species changes again
+	var/datum/language_holder/gaining_holder = GLOB.prototype_language_holders[species_language_holder]
+	for(var/language in gaining_holder.understood_languages)
+		C.grant_language(language, UNDERSTOOD_LANGUAGE, LANGUAGE_SPECIES)
+	for(var/language in gaining_holder.spoken_languages)
+		C.grant_language(language, SPOKEN_LANGUAGE, LANGUAGE_SPECIES)
+	for(var/language in gaining_holder.blocked_languages)
+		C.add_blocked_language(language, LANGUAGE_SPECIES)
 
 	SEND_SIGNAL(C, COMSIG_SPECIES_GAIN, src, old_species)
 
@@ -1663,15 +1675,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				H.Jitter(5)
 			hunger_rate = 3 * HUNGER_FACTOR
 		hunger_rate *= H.physiology.hunger_mod
-
-		// SANDSTORM EDIT
-		if (H.client)
-			H.adjust_nutrition(-hunger_rate)
-		else
-			// Do not allow SSD players to get too hungry.
-			if (H.nutrition >= NUTRITION_LEVEL_FED)
-				H.adjust_nutrition(-hunger_rate)
-		// End of sandstorm edit
+		H.adjust_nutrition(-hunger_rate)
 
 
 	if (H.nutrition > NUTRITION_LEVEL_FULL)
@@ -2297,10 +2301,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			return
 		// BLUEMOON ADD START
 		var/shove_up_stamina_cost = MAX_STAMINA_HEALTH * CONFIG_GET(number/percent_stamina_cost_shove_up)
-		if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлые персонажи поднимаются в два раза тяжелее
-			shove_up_stamina_cost *= 2
-		else if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY)) // тяжёлые персонажи поднимаются в 1.5 раза тяжелее
-			shove_up_stamina_cost *= 1.5
+		shove_up_stamina_cost *= max(0.25, 1 + ((user.mob_weight - MOB_WEIGHT_NORMAL) * 0.5))
 		// BLUEMOON ADD END
 		if(!user.UseStaminaBuffer(shove_up_stamina_cost, TRUE)) // BLUEMOON CHANGES
 			return
@@ -2320,8 +2321,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(attacker_style && attacker_style.disarm_act(user,target))
 		return TRUE
 	// BLUEMOON ADDITION AHEAD
-	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER)) // Большие персонажей могут сбивать с ног только другие большие персонажи (и халк)
-		if(!HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER))
+	if(target.mob_weight > MOB_WEIGHT_HEAVY) // Большие персонажей могут сбивать с ног только другие большие персонажи (и халк)
+		if(user.mob_weight < MOB_WEIGHT_HEAVY_SUPER)
 			if(!user.dna.check_mutation(HULK))
 				to_chat(user, span_warning("Слишком много весит!"))
 				return

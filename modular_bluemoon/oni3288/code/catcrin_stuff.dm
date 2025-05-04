@@ -9,9 +9,7 @@
 	item_state = "mark45_helmet"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_helmet"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/sec/mark45_desert
 	name = "Mk. 45 Desert Hunter helmet"
@@ -22,9 +20,7 @@
 	item_state = "mark45_helmet_desert"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_helmet_desert"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/sec/mark45_anomalist
 	name = "Mk. 45 Anomalist helmet"
@@ -35,9 +31,7 @@
 	item_state = "mark45_helmet_anomalist"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_helmet_anomalist"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/sec/mark45_combatengineer
 	name = "Mk. 45 Combat engineer helmet"
@@ -48,9 +42,7 @@
 	item_state = "mark45_helmet_combatengineer"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_helmet_combatengineer"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/sec/mark45_support
 	name = "Mk. 45 Support helmet"
@@ -61,9 +53,7 @@
 	item_state = "mark45_helmet_support"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_helmet_support"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/sec/mark45_snow
 	name = "Mk. 45 Snow Cover helmet"
@@ -74,9 +64,7 @@
 	item_state = "mark45_helmet_snow"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_helmet_snow"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/head/HoS/mark45_officer
 	name = "Mk. 45 officer helmet"
@@ -99,9 +87,7 @@
 	item_state = "mark45_helmet_ce"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_helmet_ce"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/head/helmet/brigdoc/mark45_medic_l
 	name = "Mk. 45 light medic helmet"
@@ -130,9 +116,7 @@
 	item_state = "mark45_armor"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_armor"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/mark45_armor/mark45_armor_desert
 	name = "Mk. 45 Desert Hunter Armor"
@@ -143,9 +127,7 @@
 	item_state = "mark45_armor_desert"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_armor_desert"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/mark45_armor/mark45_armor_snow
 	name = "Mk. 45 Snow Cover Аrmor"
@@ -156,9 +138,7 @@
 	item_state = "mark45_armor_snow"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_armor_snow"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/mark45_armor/mark45_armor_anomalist
 	name = "Mk. 45 Anomalist Аrmor"
@@ -169,9 +149,7 @@
 	item_state = "mark45_armor_anomalist"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_armor_anomalist"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/mark45_armor/mark45_armor_combatengineer
 	name = "Mk. 45 Combat engineer Аrmor"
@@ -182,9 +160,7 @@
 	item_state = "mark45_armor_combatengineer"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_armor_combatengineer"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/mark45_armor/mark45_armor_support
 	name = "Mk. 45 Support Аrmor"
@@ -195,9 +171,7 @@
 	item_state = "mark45_armor_support"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_armor_support"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/mark45_armor_ce //Личный респрайт.
 	name = "Mk. 45 Master Engineer Specialist Armor"
@@ -208,9 +182,7 @@
 	item_state = "mark45_armor_ce"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "mark45_armor_ce"),
-	)
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/hos/mark45_armor_officer
 	name = "Mk. 45 Officer Аrmor"
@@ -221,6 +193,7 @@
 	item_state = "mark45_armor_officer"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/brigdoc/mark45_armor/medic_l
 	name = "Mk. 45 medic's combat coat"
@@ -229,6 +202,7 @@
 	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45medic.dmi'
 	icon_state = "mark45_armor_medic_l"
 	item_state = "mark45_armor_medic_l"
+	unique_reskin = null
 
 /obj/item/clothing/suit/armor/brigdoc/mark45_armor/medic_h
 	name = "Mk. 45 heavy combat medic Аrmor"
@@ -237,6 +211,7 @@
 	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45medic.dmi'
 	icon_state = "mark45_armor_medic_h"
 	item_state = "mark45_armor_medic_h"
+	unique_reskin = null
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////Слот одежды.
 
@@ -257,6 +232,63 @@
 	icon_state = "medic_green"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	can_adjust = FALSE
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////РИГ(И?)
+
+/obj/item/clothing/head/helmet/space/hardsuit/security/mark46_sec
+	name = "Mk.46-SH"
+	desc = "Mark 46 based on the previous version. This space suit is designed specifically for combat in space, capable of providing protection from both weapons and vacuum."
+	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
+	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45.dmi'
+	icon_state = "hardsuit0-sec_mark46"
+	item_state = "hardsuit0-sec_mark46"
+	hardsuit_type = "sec_mark46"
+	unique_reskin = null
+
+/obj/item/clothing/suit/space/hardsuit/security/mark46_sec
+	name = "Mk.46-SS"
+	desc = "Mark 46 based on the previous version. This space suit is designed specifically for combat in space, capable of providing protection from both weapons and vacuum."
+	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
+	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45.dmi'
+	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	icon_state = "hardsuit-sec_mark46"
+	item_state = "hardsuit-sec_mark46"
+	tail_suit_worn_overlay = 'modular_bluemoon/icons/mob/clothing/tails_digi.dmi'
+	tail_state = "sec_mark46_catcrin"
+	hardsuit_type = "sec_mark46"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/mark46_sec
+	unique_reskin = null
+
+/obj/item/clothing/suit/space/hardsuit/security/mark46_sec/worn_overlays(isinhands = FALSE, icon_file, used_state, style_flags = NONE)
+    var/mob/living/carbon/human/M = loc
+    if(ishuman(loc) && !isinhands)
+        var/datum/dna/D = M.dna
+        if(D.features["mam_tail"] == "Leopard Tail")
+            tail_state = "sec_mark46_catcrin"
+        else
+            tail_state = "sec_mark46_vulp"
+    . = ..()
+
+/obj/item/modkit/mark46_kit
+	name = "Catcrin space suit"
+	desc = "A modkit for making a security hardsuit into a Mark 46 Catcrin armor."
+	product = /obj/item/clothing/suit/space/hardsuit/security/mark46_sec
+	fromitem = list(/obj/item/clothing/suit/space/hardsuit/security)
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////// Слот шеи.
+
+/obj/item/clothing/neck/tie/maskchalat
+	name = "Catcrin maskhalat"
+	desc = "A disguise used in the regular Catcrin army. It is painted in different colors to disguise itself in different areas and locations, as well as to hide things worn underneath."
+	icon = 'modular_bluemoon/oni3288/icons/mob/icons/neck.dmi'
+	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/neck.dmi'
+	icon_state = "maskchalat"
+	item_state = "maskchalat"
+	flags_inv = HIDEHAIR
+	alternate_worn_layer = ABOVE_HEAD_LAYER
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////Длинноствол.
 
@@ -308,6 +340,7 @@
 	icon_state = "csfrontline"
 	item_state = "csfrontline"
 	fire_sound = 'modular_bluemoon/oni3288/sounds/weapons/frontlineshot.ogg'
+	unique_reskin = null
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/frontline/update_overlays()
 	. = ..()
@@ -325,9 +358,7 @@
 	fire_sound = "modular_bluemoon/oni3288/sounds/weapons/frontlineshot.ogg"
 	stock = FALSE
 	extend_sound = 'sound/weapons/batonextend.ogg'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "csfrontline"),
-	)
+	unique_reskin = null
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/frontline/update_icon_state()
 	icon_state = "csfrontline[stock ? "" : "c"]-[get_ammo(FALSE)]"
@@ -355,9 +386,7 @@
 	icon_state = "yernela"
 	item_state = "yernela"
 	fire_sound = 'modular_bluemoon/oni3288/sounds/weapons/yernelashot.ogg'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "yernela"),
-	)
+	unique_reskin = null
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -533,9 +562,7 @@
 	icon = 'modular_bluemoon/oni3288/icons/weapons/icons/bwal.dmi'
 	icon_state = "bwal"
 	fire_sound = 'modular_bluemoon/oni3288/sounds/weapons/bwalshot.ogg'
-	unique_reskin = list(
-		"Default" = list("icon_state" = "bwal"),
-	)
+	unique_reskin = null
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -600,6 +627,8 @@
 /obj/item/clothing/mask/gas/syndicate/cool_version
 	name = "Tactical Catcrin Gasmask"
 	desc = "A mask with a red visor and special filters. It seems to have a kind of cat whiskers on it."
+	icon = 'modular_bluemoon/icons/obj/clothing/masks.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/masks.dmi'
 	icon_state = "syndicate_cool"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	actions_types = list(/datum/action/item_action/maskhalt)
@@ -620,7 +649,7 @@
 	frase = input("Какую фразу вы хотите сказать через преобразователь в маске?","") as text
 
 	if(frase)
-		usr.audible_message("[usr] exclaims, <font color='red' size='4'><b>[frase]</b></font>")
+		usr.audible_message("<b>[usr]</b> exclaims, \"<font color='red' size='4'><b>[frase]</b></font>\"")
 		switch(rand(0,3))
 			if(0)
 				playsound(src.loc, 'modular_bluemoon/oni3288/sounds/misc/catcrin_halt0.ogg', 100, 1)
@@ -638,18 +667,24 @@
 /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_one
 	name = "Tactical combat Catcrin gasmask"
 	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
+	icon = 'modular_bluemoon/icons/obj/clothing/masks.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/masks.dmi'
 	icon_state = "catcrin_one"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_two
 	name = "Tactical combat Catcrin gasmask"
 	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
+	icon = 'modular_bluemoon/icons/obj/clothing/masks.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/masks.dmi'
 	icon_state = "catcrin_two"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_three
 	name = "Tactical combat Catcrin gasmask"
 	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
+	icon = 'modular_bluemoon/icons/obj/clothing/masks.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/masks.dmi'
 	icon_state = "catcrin_three"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
@@ -657,22 +692,24 @@
 
 /obj/item/storage/box/catcrin_kit
 	name = "Catcrin kit"
-	desc = "Contains a full kit of Catcrin equipment."
-	icon_state = "box"
+	desc = "Military box that contains a full kit of Catcrin equipment."
+	icon_state = "ammobox"
 
 /obj/item/storage/box/catcrin_kit/PopulateContents()
-	new /obj/item/modkit/gewehr550(src)
+	new /obj/item/clothing/accessory/ac_patch(src)
 	new /obj/item/modkit/hwal2572(src)
-	new /obj/item/modkit/karabiner_kit(src)
+	new /obj/item/modkit/bwal2572_kit(src)
 	new /obj/item/modkit/stunspear_kit(src)
+	new /obj/item/modkit/catcrinbaton_kit(src)
+	new /obj/item/modkit/gewehr550(src)
+	new /obj/item/modkit/karabiner_kit(src)
 	new /obj/item/modkit/frontline(src)
 	new /obj/item/modkit/yernela(src)
-	new /obj/item/clothing/accessory/ac_patch(src)
-	new /obj/item/modkit/ffshield(src)
 	new /obj/item/modkit/magplar_kit(src)
 	new /obj/item/modkit/magrrinei_kit(src)
-	new /obj/item/modkit/bwal2572_kit(src)
+	new /obj/item/modkit/ffshield(src)
 	new /obj/item/modkit/hopesh_kit(src)
+	new /obj/item/modkit/mark46_kit(src)
 
 // Закину коробку с постерами для спратера сюда, чтоб особо не срать.
 
@@ -686,53 +723,42 @@
 	new /obj/item/poster/erthelp(src)
 	new /obj/item/poster/dymai(src)
 
-// И скрутки определённых постеров тож сюда закину, чтоб не срать х2
-
-/obj/item/poster/erthelp
-	name = "No one will help you poster"
-	poster_type = /obj/structure/sign/poster/contraband/erthelp
-	icon_state = "rolled_contraband"
-
-/obj/item/poster/dymai
-	name = "Dymai poster"
-	poster_type = /obj/structure/sign/poster/official/dymai
-	icon_state = "rolled_legit"
-
-/obj/item/poster/vlm
-	name = "Voxes Lives Matter poster"
-	poster_type = /obj/structure/sign/poster/official/vlm
-	icon_state = "rolled_legit"
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////ДАТУМы.
 
 /datum/gear/donator/bm/catcrin_combatmask_one
 	name = "First Catcrin's tactical gasmask"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_one
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx", "korinfellori", "troubleneko17th", "dimofon", "lichfail", "gisya", "dimakr", "cupteazee", "nopeingeneer")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/catcrin_combatmask_two
 	name = "Second Catcrin's tactical gasmask"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_two
-	ckeywhitelist = list("oni3288", "ghos7ik", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx")
+	ckeywhitelist = list("oni3288", "ghos7ik", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx", "korinfellori", "troubleneko17th", "dimofon", "lichfail", "gisya", "dimakr", "cupteazee", "nopeingeneer")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/catcrin_combatmask_tree
 	name = "Thrid Catcrin's tactical gasmask"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_three
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx", "korinfellori", "troubleneko17th", "dimofon", "lichfail", "gisya", "dimakr", "cupteazee", "nopeingeneer")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/catcrin_kit
 	name = "Catcrin kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/storage/box/catcrin_kit
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx", "korinfellori", "troubleneko17th", "dimofon", "lichfail", "gisya", "dimakr", "cupteazee", "nopeingeneer")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/maskchalat
+	name = "Catcrin Maskhalat"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/neck/tie/maskchalat
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx", "korinfellori", "troubleneko17th", "dimofon", "lichfail", "gisya", "dimakr", "cupteazee", "nopeingeneer")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 //////////////////// ДАТУМы для личных кастомных Кеткринских вещей.
 

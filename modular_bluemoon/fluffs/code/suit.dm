@@ -175,7 +175,7 @@
 /obj/item/clothing/head/helmet/sec/rhsa12
 	name = "R-HSA-12"
 	desc = "A helmet from a saboteur light armor. Has a semi-transparent visor to conceal the identity of the saboteur with almost no loss in protective properties. It has a flashlight mount on the side."
-	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/acrador_helmet_32x48.dmi'
 	icon_state = "rhsa12"
 	item_state = "rhsa12"
@@ -234,8 +234,8 @@
 /obj/item/clothing/head/helmet/sec/renegat
 	name = "Peacekeeper Officer's Helmet Renegat"
 	desc = "The helmet of the Adler peacekeepers. There are several patches indicating rank, it looks like it's a uniform for commanders. It is produced by the Adler Military-Industrial complex of the same name. It seems that it can only be worn by high-ranking officials, it looks like it has a special friend-foe identification interface built into it."
-	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
 	icon_state = "renegat"
 	item_state = "renegat"
 
@@ -253,16 +253,16 @@
 /obj/item/clothing/head/helmet/sec/helmet_shield
 	name = "Heavy Peacekeeper Helmet Shield"
 	desc = "The heavy, armored helmet of Adler's Peacekeepers. It seems to be adapted for long and complex operations, inside there is a soft lining under the armor, outside there are durable plates and a friend-foe identification system. Additional plates are located on the front to protect the head."
-	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
 	icon_state = "shield"
 	item_state = "shield"
 
 /obj/item/clothing/head/helmet/sec/adler_skull
 	name = "Tactical Skull Helmet"
 	desc = "The tactical helmet of desert hunters from the Russian Empire planet Tyrana-1, a lightweight helmet for action in hot conditions, relatively protects against sandstorms, bullets and monster strikes, but slightly narrows the view. It seems that this option is more like an anthropomorphic, but it is also suitable for an ordinary person. Usually the hunters themselves scratch their initials on them, but this one is not marked in any way."
-	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/head.dmi'
 	icon_state = "adler_skull"
 	item_state = "adler_skull"
 
@@ -324,3 +324,61 @@
 	desc = "A modkit for making an chaplain armor into The Armor of the Dark Apostle"
 	product = /obj/item/clothing/suit/armor/riot/chaplain/wh_armor
 	fromitem = list(/obj/item/clothing/suit/armor/riot/chaplain, /obj/item/clothing/suit/armor/riot/chaplain/teutonic, /obj/item/clothing/suit/armor/riot/chaplain/teutonic/alt, /obj/item/clothing/suit/armor/riot/chaplain/hospitaller)
+
+////////////////////////
+
+/obj/item/clothing/suit/hazardvest/hahun_vest
+	name = "field technician suit"
+	desc = "A modified Irellian engineering suit with extra layers to protect wearer from electrical shock and cold weather, have a built-in third arm and a welding hood"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+	icon_state = "hahun_vest"
+	item_state = "hahun_vest"
+
+/obj/item/clothing/suit/hooded/wintercoat/medical/hahun_exosuit
+	name = "praxil Mk.6"
+	desc = "A lightweight exosuit designed for high agility and rapid response. The Praxil Mk.6 is coated in a matte green bio-reactive material that adjusts its \
+			texture for optimal movement and environmental adaptation. The suit is streamlined, with minimal external seams, creating a seamless look that enhances \
+			the wearer’s speed and flexibility. Integrated neural interfaces allow for direct mind-to-suit control, making every action instinctual."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/large-worn-icons/32x48/suit.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+	tail_suit_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/tails_digi.dmi'
+	tail_state = "hahun_exosuit"
+	icon_state = "hahun_exosuit"
+	item_state = "hahun_exosuit"
+	flags_inv = HIDESHOES|HIDEJUMPSUIT|HIDETAUR
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/hahun_exohood
+
+/obj/item/clothing/head/hooded/winterhood/hahun_exohood
+	name = "Praxil exosuit hood"
+	desc = "An Praxil exosuit hood, coloured green."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/head.dmi'
+	mob_overlay_icon = null
+	icon_state = "hahun_exosuit_hood"
+	alternate_worn_layer = ABOVE_HEAD_LAYER
+
+////////////////////////
+
+/obj/item/clothing/suit/armor/hos/trenchcoat/white
+	name = "white armored trenchcoat"
+	desc = "White armored coat. Armored coat in white colors for good boys and girls of NanoTrasen."
+	icon_state = "hos_trench_white"
+	item_state = "hos_trench_white"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	unique_reskin = list()
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/suit/donator/bm/echoes_jacket
+    name = "Technical Jacket"
+    desc = "Exoskeleton with Triglav's Syndicate officer jacket."
+    icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+    mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+    icon_state = "echoes_jacket"
+    item_state = "echoes_jacket"
+    body_parts_covered = CHEST
+    mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

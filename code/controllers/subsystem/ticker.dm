@@ -126,6 +126,8 @@ SUBSYSTEM_DEF(ticker)
 				else if(findtext(S, "{") && findtext(S, "}")) // Include songs with curly braces if they are part of a specific category
 					music += S
 			if(1) //sound.ogg -- common sound
+				if(L[1] == "exclude")
+					continue
 				if(!findtext(S, "{") && !findtext(S, "}")) // Exclude songs surrounded by curly braces
 					music += S
 
@@ -495,7 +497,7 @@ SUBSYSTEM_DEF(ticker)
 				if (living.client.prefs && living.client.prefs.auto_ooc)
 					if (living.client.prefs.chat_toggles & CHAT_OOC)
 						living.client.prefs.chat_toggles ^= CHAT_OOC
-				var/atom/movable/screen/splash/S = new(living.client, TRUE)
+				var/atom/movable/screen/splash/S = new(null, living.client, TRUE)
 				S.Fade(TRUE)
 				living.client.init_verbs()
 			livings += living

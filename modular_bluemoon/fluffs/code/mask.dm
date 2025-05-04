@@ -33,3 +33,16 @@
 /obj/item/clothing/mask/paper/underhair
 	name = "The paper mask"
 	alternate_worn_layer = BACK_LAYER
+
+/obj/item/clothing/mask/gas/syndicate/cool_version/mihana_mask
+	name = "Andromeda Mask"
+	desc = "A close-fitting tactical mask that can be connected to an air supply."
+	icon_state = "mihana_mask"
+
+/obj/item/clothing/mask/gas/srt_mask
+	name = "SRT Balaclava with Eye patch"
+	desc = "Ordinary Balaclava with non-ordinary Eyepatch. It's is an optoelectronic device invented by Unknown Syndicate company. The Device appeared similar to a plastic eye patch, with text of the device name and serial number printed on the front, with a small camera lens positioned below. It can detect in body temperature, heart rate and sweat secretion to calculate a subject's physical and emotional state. "
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/mask.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/mask.dmi'
+	icon_state = "srt_mask"
+	item_state = "srt_mask"

@@ -512,11 +512,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<HR>"
 
 			dat += "<center>"
-			var/savefile/client_file = new(user.client.Import())
+			var/file = user.client.Import()
+			var/savefile/client_file
 			var/savefile_name
-			if(istype(client_file, /savefile))
-				if(!client_file["deleted"] || savefile_needs_update(client_file) != -2)
-					client_file["real_name"] >> savefile_name
+			if(file)
+				client_file = new(file)
+				if(istype(client_file, /savefile))
+					if(!client_file["deleted"] || savefile_needs_update(client_file) != -2)
+						client_file["real_name"] >> savefile_name
 			dat += "Local storage: [savefile_name ? savefile_name : "Empty"]"
 			dat += "<br />"
 			dat += "<a href='?_src_=prefs;preference=export_slot'>Export current slot</a>"
@@ -836,6 +839,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 						dat += "<b>Sprite Size:</b> <a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]*100]%</a><br>"
 						dat += "<b>Scaled Appearance:</b> <a href='?_src_=prefs;preference=toggle_fuzzy;task=input'>[fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
+						dat += "<b>Weight:</b> <a href='?_src_=prefs;preference=body_weight;task=input'>[all_quirks.Find("Пожиратель") ? NAME_WEIGHT_NORMAL : body_weight]</a><br>" //BLUEMOON ADD вес персонажей
 
 					if(!(NOEYES in pref_species.species_traits))
 						dat += "<h3>Eye Type</h3>"
@@ -1570,11 +1574,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(user.client)
 						if(unlock_content)
 							dat += "<b>BYOND Membership Publicity:</b> <a href='?_src_=prefs;preference=publicity'>[(toggles & MEMBER_PUBLIC) ? "Public" : "Hidden"]</a><br>"
-						if(unlock_content || check_rights_for(user.client, R_ADMIN))
+						if(unlock_content || is_admin(user.client))
 							dat += "<b>OOC Color:</b> <span style='border: 1px solid #161616; background-color: [ooccolor ? ooccolor : GLOB.normal_ooc_colour];'><font color='[color_hex2num(ooccolor ? ooccolor : GLOB.normal_ooc_colour) < 200 ? "FFFFFF" : "000000"]'>[ooccolor ? ooccolor : GLOB.normal_ooc_colour]</font></span> <a href='?_src_=prefs;preference=ooccolor;task=input'>Change</a><br>"
 							dat += "<b>Antag OOC Color:</b> <span style='border: 1px solid #161616; background-color: [aooccolor ? aooccolor : GLOB.normal_aooc_colour];'><font color='[color_hex2num(aooccolor ? aooccolor : GLOB.normal_aooc_colour) < 200 ? "FFFFFF" : "000000"]'>[aooccolor ? aooccolor : GLOB.normal_aooc_colour]</font></span> <a href='?_src_=prefs;preference=aooccolor;task=input'>Change</a><br>"
 
-					if(user.client.holder)
+					if(is_admin(user.client))
 						dat += "<h2>Admin Settings</h2>"
 						dat += "<b>Adminhelp Sounds:</b> <a href='?_src_=prefs;preference=hear_adminhelps'>[(toggles & SOUND_ADMINHELP)?"Enabled":"Disabled"]</a><br>"
 						dat += "<b>Announce Login:</b> <a href='?_src_=prefs;preference=announce_login'>[(toggles & ANNOUNCE_LOGIN)?"Enabled":"Disabled"]</a><br>"
@@ -2168,8 +2172,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	for(var/modification in modified_limbs)
 		if(modified_limbs[modification][1] == LOADOUT_LIMB_PROSTHETIC)
 			bal += 1 //max 1 point regardless of how many prosthetics
+	bal -= mob_size_name_to_quirk_cost(body_weight) //BLUEMOON ADD вес влияет на доступные квирки
 	if(bal < 0)
+		to_chat(user, "<span class='danger'>Something goes wrong and quirk balance goes to [bal], quirks and character weight reseted.</span>") //BLUEMOON ADD
 		all_quirks = list()
+		body_weight = NAME_WEIGHT_NORMAL //BLUEMOON ADD сброс всего сбрасывает и вес
 		return FALSE
 	return bal
 
@@ -2457,7 +2464,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["silicon_flavor_text"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE) //Skyrat edit, uses strip_html_simple()
 
 				if("custom_species_lore")
-					var/msg = input(usr, "Задайте особую предысторию расы своего персонажа!", "Предыстория Расы Bашего Персонажа", features["silicon_flavor_text"]) as message|null //Skyrat edit, removed stripped_multiline_input()
+					var/msg = input(usr, "Задайте особую предысторию расы своего персонажа!", "Предыстория Расы Bашего Персонажа", features["custom_species_lore"]) as message|null //Skyrat edit, removed stripped_multiline_input()
 					if(!isnull(msg))
 						features["custom_species_lore"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
 				// BLUEMOON ADD START - пользовательский эмоут смерти
@@ -3711,6 +3718,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("toggle_fuzzy")
 					fuzzy = !fuzzy
 
+				//BLUEMOON ADD выбор веса персонажа, замена квирков на вес
+				if("body_weight")
+					if(all_quirks.Find("Пожиратель"))
+						tgui_alert(user, "Квирк Пожиратель несовместим с любым весом кроме стандартного", "Ugh, you cant", list("Ok", "Understood"))
+					else
+						var/new_body_weight = tgui_input_list(user, "Выберите вес персонажа!", "Character Preference", GLOB.mob_sizes)
+						if(new_body_weight)
+							if(tgui_alert(user, "[GLOB.mob_sizes[new_body_weight]]", "Confirm your choice", list("Good", "Nevermind")) == "Good")
+								var/quirk_balance_check = GetQuirkBalance() - mob_size_name_to_quirk_cost(new_body_weight) + mob_size_name_to_quirk_cost(body_weight)
+								if(quirk_balance_check >= 0)
+									body_weight = new_body_weight
+								else
+									tgui_alert(user, "для взятия данного веса нужно ещё [abs(quirk_balance_check)] очков квирков", "Ugh, you cant", list("Ok", "Understood"))
+				//BLUEMOON ADD END
+
 				if("tongue")
 					var/selected_custom_tongue = tgui_input_list(user, "Choose your desired tongue (none means your species tongue)", "Character Preference", GLOB.roundstart_tongues)
 					if(selected_custom_tongue)
@@ -4726,6 +4748,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			else if(firstspace == name_length)
 				real_name += "[pick(GLOB.last_names)]"
 
+	character.mob_weight = mob_size_name_to_num(body_weight) //BLUEMOON ADD записываем вес персонажа как цифру
+
 	//reset size if applicable
 	if(character.dna.features["body_size"])
 		var/initial_old_size = character.dna.features["body_size"]
@@ -4741,6 +4765,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	character.fuzzy = fuzzy
 
+	character.update_weight(character.mob_weight)
 	character.left_eye_color = left_eye_color
 	character.right_eye_color = right_eye_color
 	var/obj/item/organ/eyes/organ_eyes = character.getorgan(/obj/item/organ/eyes)

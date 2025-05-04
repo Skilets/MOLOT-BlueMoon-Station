@@ -32,6 +32,15 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("double pod bed", /obj/structure/bed/double/pod, 4, one_per_turf = TRUE, on_floor = TRUE), \
 	)), \
 		//SPLURT CHANGE END
+	//BLUEMOON ADD гигансткие кровати для гигантских персон
+	new/datum/stack_recipe_list("giant beds", list( \
+		new/datum/stack_recipe("giant bed (corner)", /obj/structure/bed/giant, 4, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("giant bed (side)", /obj/structure/bed/giant/side, 4, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("giant bed (pillow corner)", /obj/structure/bed/giant/pillow, 4, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("giant bed (pillow side)", /obj/structure/bed/giant/pillow/side, 4, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("giant bed (middle)", /obj/structure/bed/giant/middle, 4, one_per_turf = TRUE, on_floor = TRUE), \
+	)), \
+	//BLUEMOON END
 	//CIT CHANGE - adds sofas to metal recipe list
 	new/datum/stack_recipe_list("sofas", list( \
 		new /datum/stack_recipe("sofa (middle)", /obj/structure/chair/sofa, one_per_turf = TRUE, on_floor = TRUE), \
@@ -62,6 +71,9 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		)), \
 	null, \
 	new/datum/stack_recipe("rack parts", /obj/item/rack_parts, 3), \
+	// BLUEMOON ADD - Добавляет в меню крафта создание полки для ящиков
+	new/datum/stack_recipe("crate shelf parts", /obj/item/rack_parts/shelf, 10), \
+	// BLUEMOON ADD END (ну не хочет оно не такими кривыми комментами работать, увы)
 	new/datum/stack_recipe("shelf parts", /obj/item/shelf_parts, 5), \
 	new/datum/stack_recipe("closet", /obj/structure/closet, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \

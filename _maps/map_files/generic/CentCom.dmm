@@ -7146,9 +7146,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/slavers)
-"aOj" = (
-/turf/open/floor/plasteel/white,
-/area/centcom/control)
 "aOl" = (
 /obj/effect/turf_decal/loading_area,
 /obj/effect/turf_decal/tile/red/opposingcorners,
@@ -10098,6 +10095,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
+"bBS" = (
+/obj/structure/bed/dogbed/shadow{
+	name = "Jruttie's bed"
+	},
+/mob/living/simple_animal/pet/cat/jruttie,
+/turf/open/floor/engine/cult,
+/area/wizard_station)
 "bCc" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Centcom Checkpoint";
@@ -18746,9 +18750,6 @@
 /obj/structure/rack/shelf,
 /turf/open/floor/plasteel/dark,
 /area/syndicate_mothership/control)
-"jrV" = (
-/turf/open/floor/plasteel/showroomfloor,
-/area/centcom/holding)
 "jso" = (
 /turf/open/floor/wood,
 /area/centcom/ferry)
@@ -23410,6 +23411,7 @@
 /area/syndicate_mothership/control)
 "nAR" = (
 /obj/structure/table/wood,
+/obj/item/toy/plush/bm/belinsky,
 /turf/open/floor/grass/grass1,
 /area/syndicate_mothership/control)
 "nBf" = (
@@ -33628,6 +33630,7 @@
 	pixel_x = 4
 	},
 /obj/structure/table/wood,
+/obj/item/toy/plush/bm/belinsky,
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
 "wUA" = (
@@ -41813,7 +41816,7 @@ aqZ
 awN
 axw
 aqE
-aqZ
+bBS
 aqZ
 aqZ
 aqZ
@@ -50362,8 +50365,8 @@ iUm
 iUm
 ncJ
 aFe
-jrV
-jrV
+pXv
+pXv
 biJ
 biJ
 aFe
@@ -50620,9 +50623,9 @@ iUm
 ncJ
 aFe
 vwT
-jrV
-jrV
-jrV
+pXv
+pXv
+pXv
 crA
 gYc
 gYc
@@ -50876,9 +50879,9 @@ iUm
 iUm
 ncJ
 aFe
-jrV
-jrV
-jrV
+pXv
+pXv
+pXv
 aVt
 aFe
 eRh
@@ -51134,8 +51137,8 @@ ncJ
 ncJ
 aFe
 wyi
-jrV
-jrV
+pXv
+pXv
 aVt
 aFe
 hSj
@@ -65595,7 +65598,7 @@ kEG
 wAT
 qya
 qjq
-jrV
+pXv
 eRr
 qjq
 ncJ
@@ -65852,7 +65855,7 @@ jRt
 jRt
 jRt
 cmA
-jrV
+pXv
 jPn
 qjq
 ncJ
@@ -66110,7 +66113,7 @@ jRt
 nNw
 qjq
 oxi
-jrV
+pXv
 qjq
 ncJ
 aaa
@@ -66624,7 +66627,7 @@ jRt
 prV
 qjq
 crd
-jrV
+pXv
 qjq
 ncJ
 aaa
@@ -76498,8 +76501,8 @@ mlM
 mlM
 mlM
 pEp
-aOj
-aOj
+esm
+esm
 mlM
 mlM
 mlM
@@ -77010,12 +77013,12 @@ mXV
 mlM
 mlM
 fZQ
-aOj
+esm
 bnf
-aOj
-aOj
+esm
+esm
 mlM
-aOj
+esm
 fZQ
 mlM
 mlM
@@ -77264,18 +77267,18 @@ aio
 jAG
 aio
 rEZ
-aOj
+esm
 mlM
-aOj
-aOj
-aOj
+esm
+esm
+esm
 mlM
 mlM
-aOj
-aOj
-aOj
+esm
+esm
+esm
 mlM
-aOj
+esm
 aio
 alI
 aaa
@@ -77522,16 +77525,16 @@ aAV
 bIX
 asL
 mlM
-aOj
+esm
 mlM
-aOj
+esm
 asw
 mlM
 mlM
 asw
-aOj
+esm
 mlM
-aOj
+esm
 mlM
 aio
 alI
@@ -77780,14 +77783,14 @@ iWn
 asL
 ano
 mlM
-aOj
-aOj
-aOj
-aOj
-aOj
-aOj
-aOj
-aOj
+esm
+esm
+esm
+esm
+esm
+esm
+esm
+esm
 mlM
 aDx
 aio
@@ -78038,12 +78041,12 @@ asL
 mlM
 mlM
 mlM
-aOj
+esm
 mlM
 mlM
 mlM
 mlM
-aOj
+esm
 mlM
 mlM
 mlM
@@ -78292,18 +78295,18 @@ aAV
 aAV
 kZW
 asL
-aOj
+esm
 mlM
-aOj
-aOj
-aOj
-aOj
-aOj
-aOj
-aOj
-aOj
+esm
+esm
+esm
+esm
+esm
+esm
+esm
+esm
 mlM
-aOj
+esm
 aio
 alI
 aaa
@@ -78550,7 +78553,7 @@ aAV
 kZW
 asL
 mlM
-aOj
+esm
 mlM
 uFl
 oYE
@@ -78559,7 +78562,7 @@ mlM
 jDX
 enC
 tZL
-aOj
+esm
 mlM
 aio
 alI
@@ -78808,14 +78811,14 @@ kZW
 asL
 mlM
 mlM
-aOj
+esm
 lac
 tiP
-aOj
-aOj
+esm
+esm
 lac
 tiP
-aOj
+esm
 mlM
 mlM
 aio
@@ -79320,18 +79323,18 @@ aAV
 aAV
 iWn
 asL
-aOj
+esm
 mlM
-aOj
+esm
 tSL
 oqm
 fTb
-aOj
+esm
 tSL
 oqm
 fTb
 mlM
-aOj
+esm
 aio
 alI
 aaa
@@ -79578,7 +79581,7 @@ aAV
 kZW
 asL
 mlM
-aOj
+esm
 ufI
 wrV
 liP
@@ -79587,7 +79590,7 @@ mlM
 eCY
 izH
 kfG
-aOj
+esm
 mlM
 aio
 alI
@@ -79836,11 +79839,11 @@ kZW
 asL
 mlM
 mlM
-aOj
+esm
 iBU
 sKn
 dMx
-aOj
+esm
 iBU
 sKn
 dMx
@@ -80350,11 +80353,11 @@ kfj
 asL
 xki
 mlM
-aOj
+esm
 mzm
 ueq
 bHX
-aOj
+esm
 mzm
 ueq
 bHX
@@ -80606,7 +80609,7 @@ aAV
 kZW
 asL
 mlM
-aOj
+esm
 mlM
 mYB
 frT
@@ -80615,7 +80618,7 @@ mlM
 uin
 esM
 hwc
-aOj
+esm
 mlM
 aio
 alI
@@ -80864,11 +80867,11 @@ kZW
 asL
 mlM
 mlM
-aOj
+esm
 ihR
 wEJ
 imj
-aOj
+esm
 ihR
 wEJ
 imj
@@ -81637,10 +81640,10 @@ aio
 aio
 fLu
 fLu
-aOj
-aOj
-aOj
-aOj
+esm
+esm
+esm
+esm
 fLu
 fLu
 aio

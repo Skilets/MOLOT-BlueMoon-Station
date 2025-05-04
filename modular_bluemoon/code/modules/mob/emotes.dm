@@ -329,6 +329,20 @@
 	sound = 'modular_bluemoon/sound/emotes/mrrps3.ogg'
 	emote_cooldown = 0.5 SECONDS
 
+/datum/emote/sound/human/girlymoan
+	key = "girlymoan"
+	key_third_person = "girlymoan"
+	message = "softly moans."
+	message_mime = "silently moans."
+	sound = 'modular_bluemoon/sound/emotes/softmoan6.ogg'
+	emote_type = EMOTE_AUDIBLE
+	emote_cooldown = 0.8 SECONDS
+	emote_pitch_variance = FALSE
+
+/datum/emote/sound/human/girlymoan/run_emote(mob/user, params)
+	sound = pick('modular_bluemoon/sound/emotes/softmoan1.ogg', 'modular_bluemoon/sound/emotes/softmoan2.ogg', 'modular_bluemoon/sound/emotes/softmoan3.ogg', 'modular_bluemoon/sound/emotes/softmoan4.ogg', 'modular_bluemoon/sound/emotes/softmoan5.ogg', 'modular_bluemoon/sound/emotes/softmoan6.ogg')
+	. = ..()
+
 /datum/emote/sound/human/squeal
 	key = "squeal"
 	key_third_person = "squeal"
@@ -489,3 +503,28 @@
 	message_mime = "молча приветствует вас."
 	sound = 'modular_bluemoon/sound/emotes/hi.ogg'
 	emote_cooldown = 11.6 SECONDS
+
+/datum/emote/sound/human/hecu
+	key = "heavyass"
+	key_third_person = "heavyasses"
+	message = "LITERALLY SAYS <b>\"MY ASS IS HEAVY\"</b>"
+	emote_type = EMOTE_BOTH
+	sound = 'modular_bluemoon/sound/emotes/myassisheavy.ogg'
+	emote_cooldown = 3.2 SECONDS
+
+/datum/emote/sound/human/blackops
+	key = "blackopsalert"
+	key_third_person = "blackopsalerted"
+	message = "Says <b>\"i have a target\"</b>"
+	emote_type = EMOTE_BOTH
+	sound = 'modular_bluemoon/sound/emotes/boalert.ogg'
+	emote_cooldown = 5 SECONDS
+
+
+/datum/emote/sound/human/higordon
+	key = "higordon"
+	key_third_person = "higordons"
+	message = "Says <b>\"Hello Gordon\"</b>"
+	emote_type = EMOTE_BOTH
+	sound = 'modular_bluemoon/sound/emotes/hellogordon.ogg'
+	emote_cooldown = 5 SECONDS

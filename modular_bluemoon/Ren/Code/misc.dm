@@ -17,8 +17,8 @@
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
 	desc = "Элегантный ящик с инструментами. Ярко оранжевая полоса проходит вдоль стыка крышки, а в центре виднеется голографическая наклейка в виде жёлтого щита."
-	force = 18
-	throwforce = 20
+	force = 15
+	throwforce = 18
 ///Чехол гитары
 /obj/item/storage/backpack/guitarbag
 	name = "Guitar bag"
@@ -45,13 +45,18 @@
 
 /obj/item/crowbar/brown
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+	desc = "A small brown crowbar that seems to have extra sharped edges."
 	icon_state = "crowbar_brown"
 	force = 8
+	toolspeed = 0.9
 
 /obj/item/wirecutters/brown
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+	desc = "Pair of brown wirecutters with fairly sharp blades."
 	icon_state = "cutters"
 	random_color = FALSE
+	force = 9
+	toolspeed = 0.9
 
 ///шуруповёрт
 /obj/item/screwdriver/power/inteq
@@ -62,7 +67,7 @@
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
-	force = 20
+	force = 11
 	toolspeed = 0.30
 
 /obj/item/wrench/power/inteq/attack_self(mob/user)
@@ -301,19 +306,6 @@
 		playsound(user, 'sound/weapons/saberoff.ogg', 35, TRUE)
 		to_chat(user, "<span class='notice'>[src] can now be concealed.</span>")
 	add_fingerprint(user)
-
-//--------------------------------------------------------------------------------[Ящики карго]------------------------------------------------------------------
-/datum/supply_pack/goody/guitarbag
-	name = "Guitar bag"
-	desc = "Гитара вместе с чехлом. Очень быстро окупит вложенные в неё кредиты."
-	cost = 500
-	contains = list(/obj/item/storage/backpack/guitarbag/loaded)
-
-/datum/supply_pack/goody/cloak
-	name = "Cloak of true miner"
-	desc = "Красный плащ с чёрным силуэтом черепа в очках. Ходят слухи, что он принадлежал величайшему шахтёру, чей бур мог пронзить небеса. А теперь это ещё один символ победившего капитализма."
-	cost = 3000
-	contains = list(/obj/item/clothing/neck/cloak/miner)
 
 //---------------------------------------------------------------------------------------------------------------------------------
 /obj/item/robot_module/inteq_builder

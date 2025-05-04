@@ -41,6 +41,7 @@ GLOBAL_LIST_INIT(autodrobe_costumes_items, list(
 	/obj/item/clothing/suit/hooded/pyramidhead = 1,
 	/obj/item/clothing/under/dress/wedding = 1,
 	/obj/item/clothing/under/suit/error = 1,
+	/obj/item/clothing/head/cracked_pot = 1,
 ))
 
 GLOBAL_LIST_INIT(autodrobe_supernatural_items, list(
@@ -63,7 +64,7 @@ GLOBAL_LIST_INIT(autodrobe_supernatural_items, list(
 	/obj/item/clothing/suit/wizrobe/fake = 3,
 	/obj/item/clothing/head/wizard/fake = 3,
 	/obj/item/clothing/neck/cloak/chronos = 5,
-	/obj/item/clothing/under/chronos = 5,
+	/obj/item/clothing/under/bm/chronos = 5,
 	/obj/item/clothing/head/beret/chronos = 5,
 	/obj/item/clothing/suit/imperium_monk = 1,
 	/obj/item/clothing/suit/chaplain/holidaypriest = 1,

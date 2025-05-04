@@ -96,6 +96,26 @@
 
 ////////////////////////
 
+/obj/item/clothing/neck/tie/pendantcape
+	name = "Corvus Pendant"
+	desc = "Ravens in black with eyes so keen, steal pendants bright with silver sheen."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/neck.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/neck.dmi'
+	icon_state = "cp" //Сделано специально, человек попросил защиту от хамелионки.
+	item_state = "cp"
+	unique_reskin = list(
+		"Corvus Pendant" = list(
+			RESKIN_ICON_STATE = "pendant",
+			RESKIN_ITEM_STATE = "pendant"
+		),
+		"Corvus Cape" = list(
+			RESKIN_ICON_STATE = "cape",
+			RESKIN_ITEM_STATE = "cape"
+		)
+	)
+
+////////////////////////
+
 /obj/item/clothing/neck/tie/f_haori
 	name = "Flaming Haori"
 	desc = "A white haori with a flaming pattern on the end. It seems to radiate heat and energy."
@@ -125,6 +145,7 @@
 	item_state = "dread_neck"
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
+	alternate_worn_layer = ABOVE_HEAD_LAYER
 
 ////////////////////////
 
@@ -176,7 +197,7 @@
 	name = "Scabbard for a officer's cleaver"
 	desc = "The special scabbard is well suited for the officer's cleaver issued to high-ranking Adler officers and their officials. You could call it superfluous, it is made of the skin of some rare creature and perhaps even intelligent, the scabbard itself is attached to the belt in the belt area at the back for the convenience of sharply removing the blade and striking, which is taught to officers when they learn how to use this specialized cleaver. For ordinary people, they are inconvenient and difficult to use."
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/belts.dmi'
-	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/belts.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/belt.dmi'
 	icon_state = "scabbard"
 	item_state = "scabbard"
 	w_class = WEIGHT_CLASS_BULKY
@@ -216,3 +237,37 @@
 	icon_state = "pier"
 	slot_flags = ITEM_SLOT_SOCKS
 	body_parts_covered = 0
+
+////////////////////////
+
+/obj/item/clothing/neck/tie/hahun_cape
+	name = "Praxil Mk.6"
+	desc = "A cape that awarded to trusted agents of Syndicate, pleasant to the touch and look very stylish, doesn't even restrict movement"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/accessories_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/accessories_right.dmi'
+	icon_state = "hahun_cape"
+	item_state = "hahun_cape"
+
+/obj/item/clothing/gloves/color/latex/nitrile/hahun_eidolon
+	name = "Eidolon's gloves"
+	desc = "Medical gloves with Eidolon Corporation markings, have a built-in computer with information, that tied with medical scan and huds. Have distinctive red-green coloring."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/gloves.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+	icon_state = "hahun_gloves"
+	item_state = "hahun_gloves"
+
+////////////////////////
+
+/obj/item/storage/belt/military/srt_chesrig
+	name = "SRT Bluerock chest-rig"
+	desc = "A custom-made chest rig for wearing on top of body armor in CQC operations. Sturdy and versatile, it features both MOLLE and ALICE attachment systems. Seems like it already has old-fashioned holster attached to it."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
+	icon_state = "srt_chestrig"
+	item_state = "srt_chestrig"
+
+////////////////////////
