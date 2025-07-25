@@ -183,7 +183,7 @@
 		knew_encoded = FALSE
 	if (!knew_encoded)
 		to_chat(M, "<span class='nicegreen'>Вы, наконец, знаете закодированный язык. Как вы раньше без него могли называть себя роботом?</span>")
-		M.grant_language(/datum/language/machine, TRUE, TRUE, LANGUAGE_MIND)
+		M.grant_language(/datum/language/machine, source = LANGUAGE_MIND)
 
 /datum/reagent/consumable/synthdrink/synthanol/trinary/synthetic_on_life(mob/living/carbon/human/M)
 	. = ..()
@@ -358,6 +358,7 @@
 
 // Вариация рестарта для нон-конеров, после него синт не проснётся, пока реагент не закончится
 /datum/reagent/consumable/synthdrink/synthanol/restart/hard
+	name = "Hard Restart"
 	description = "Sometimes you just need to start anew... Welp, this one comes with BIOS update, oh shit."
 	color = "#0095ff"
 	synthetic_taste = "перезагрузки с установкой дополнительного ПО? Оу, это будет долго..."

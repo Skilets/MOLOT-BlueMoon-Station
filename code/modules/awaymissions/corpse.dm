@@ -53,9 +53,9 @@
 		return
 	if(QDELETED(src) || QDELETED(user))
 		return
-	if(isobserver(user))
+	if(isobserver(user) && !skip_reentry_check)
 		var/mob/dead/observer/O = user
-		if(!O.can_reenter_round() && !skip_reentry_check)
+		if(!O.can_reenter_round())
 			return FALSE
 	var/ghost_role = alert(latejoinercalling ? "Latejoin as [mob_name]? (This is a ghost role, and as such, it's very likely to be off-station.)" : "Become [mob_name]? (Warning, You can no longer be cloned!)",,"Да","Нет")
 	if(ghost_role == "Нет" || !loc)
@@ -135,7 +135,6 @@
 		if(ishuman(M) && load_character)
 			var/mob/living/carbon/human/H = M
 			if (H.client)
-				SSlanguage.AssignLanguage(H, H.client)
 				if (loadout_enabled == TRUE)
 					SSjob.equip_loadout(null, H)
 					SSjob.post_equip_loadout(null, H)
@@ -178,6 +177,8 @@
 		if(make_bank_account)
 			handlebank(M, starting_money)
 		special_post_appearance(M, name) // BLUEMOON ADD
+		if(M.client && ishuman(M) && load_character)
+			SSlanguage.AssignLanguage(M, M.client)
 	if(uses > 0)
 		uses--
 	if(!permanent && !uses)

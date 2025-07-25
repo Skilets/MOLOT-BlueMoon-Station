@@ -35,7 +35,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "ah" = (
 /obj/machinery/door/airlock/grunge{
@@ -59,10 +59,7 @@
 	icon_state = "shower"
 	})
 "al" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/green,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "ao" = (
 /turf/open/floor/carpet/black,
@@ -84,7 +81,12 @@
 	pixel_x = 5;
 	pixel_y = -32
 	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
+"aB" = (
+/obj/structure/table/plasmaglass,
+/obj/effect/decal/cleanable/glitter/pink,
+/turf/open/floor/glass/reinforced,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "aE" = (
 /obj/machinery/disposal/bin,
@@ -94,7 +96,13 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "aF" = (
 /obj/machinery/vending/kink{
@@ -172,7 +180,10 @@
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /obj/item/reagent_containers/food/condiment/flour,
 /obj/item/reagent_containers/food/condiment/flour,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark/end{
+	dir = 4
+	},
+/turf/open/floor/plasteel/terracotta,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "bk" = (
 /obj/machinery/light/small{
@@ -193,6 +204,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/plasteel/vaporwave,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
+"bv" = (
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/bluemoon/hotel)
 "bx" = (
 /obj/machinery/button/door{
 	id = "Staff3";
@@ -211,9 +228,10 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "by" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/carpet/black,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "bz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -260,7 +278,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "bR" = (
 /obj/structure/bed/double{
@@ -272,12 +290,23 @@
 "bS" = (
 /obj/structure/table,
 /obj/item/storage/bag/tray,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark{
+	dir = 6
+	},
+/turf/open/floor/plasteel/terracotta,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "bV" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/carpet/black,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	layer = 2.9
+	},
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "bW" = (
 /obj/machinery/vending/boozeomat{
@@ -325,6 +354,13 @@
 /obj/structure/chair/pew,
 /turf/open/pool,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
+"cl" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
+	},
+/obj/machinery/light,
+/turf/open/floor/carpet/royalblack,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "cp" = (
 /obj/structure/disposalpipe/junction{
 	dir = 4
@@ -340,21 +376,26 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "cu" = (
-/obj/structure/chair/sofa/corp/left{
-	dir = 1
+/obj/effect/turf_decal/tile/green,
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
 	},
-/turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/turf/open/floor/plasteel/dark/textured/large,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "cv" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/effect/turf_decal/siding/dark/corner,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "cw" = (
-/obj/structure/table/glass,
-/obj/structure/transmitter,
-/turf/open/floor/glass/reinforced,
-/area/ruin/space/has_grav/bluemoon/hotel/bar)
+/obj/item/kirbyplants/hedge{
+	pixel_y = 0;
+	layer = 3;
+	anchored = 1;
+	pixel_x = 28
+	},
+/turf/open/floor/wood/wood_large,
+/area/ruin/space/has_grav/bluemoon/hotel/dock)
 "cx" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/structure/window/reinforced{
@@ -368,7 +409,7 @@
 	pixel_y = 5;
 	pixel_x = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "cy" = (
 /obj/structure/mirror{
@@ -428,6 +469,10 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/item/kirbyplants{
+	icon_state = "plant-22";
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "cH" = (
@@ -442,13 +487,18 @@
 	name = "Staff Only";
 	req_access_txt = "200"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "cL" = (
-/obj/machinery/light{
+/obj/structure/chair/comfy/black{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/obj/item/kirbyplants/hedge{
+	pixel_y = 28;
+	layer = 3;
+	anchored = 1
+	},
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "cQ" = (
 /obj/structure/chair/pew/left,
@@ -478,6 +528,12 @@
 	},
 /turf/open/pool,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
+"cW" = (
+/obj/machinery/pool/filter{
+	pixel_y = -17
+	},
+/turf/closed/wall,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "cZ" = (
 /obj/structure/dresser,
 /turf/open/floor/carpet/green,
@@ -495,12 +551,24 @@
 "de" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "df" = (
-/obj/structure/dresser,
-/turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/obj/structure/table/wood,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/obj/item/soap,
+/turf/open/floor/plasteel/showroomfloor,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "dh" = (
 /obj/structure/chair/sofa/corp/corner{
 	dir = 1
@@ -605,16 +673,27 @@
 	pixel_y = -30
 	},
 /obj/machinery/teleport/station,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "dN" = (
-/obj/machinery/hydroponics/constructable,
-/obj/effect/turf_decal/tile/blue{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/green,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/bluemoon/hotel/bar)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/apc/away{
+	name = "Staff Areas APC";
+	pixel_y = -23
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "dP" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Manager's Office";
@@ -638,7 +717,7 @@
 /obj/machinery/vending/cigarette{
 	onstation = 0
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "dS" = (
 /obj/structure/disposalpipe/segment{
@@ -662,14 +741,20 @@
 /obj/effect/turf_decal/tile/green{
 	dir = 1
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "dY" = (
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 4
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "ec" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
@@ -747,13 +832,17 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "eq" = (
-/obj/structure/table/plasmaglass,
-/obj/effect/decal/cleanable/glitter/pink,
-/turf/open/floor/glass,
-/area/ruin/space/has_grav/bluemoon/hotel/bar)
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-22"
+	},
+/turf/open/floor/carpet/green,
+/area/ruin/space/has_grav/bluemoon/hotel/dock)
 "es" = (
 /obj/structure/table/plasmaglass,
 /turf/open/floor/wood/wood_tiled,
@@ -762,7 +851,7 @@
 /obj/machinery/vending/games{
 	onstation = 0
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "ev" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -779,14 +868,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
-"eA" = (
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/green,
-/obj/machinery/hydroponics/constructable,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "eB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
@@ -843,11 +924,20 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
+"eP" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "eX" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/diagonal,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "fa" = (
 /obj/structure/sink{
@@ -872,7 +962,7 @@
 /obj/structure/chair/sofa/corp/right{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "fl" = (
 /obj/structure/bed/double{
@@ -891,7 +981,15 @@
 /obj/effect/turf_decal/tile/green,
 /obj/item/toy/plush/carrot,
 /obj/structure/table,
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/siding/dark/corner,
+/obj/machinery/smartfridge/disks{
+	pixel_y = 2
+	},
+/obj/item/storage/box/disks_plantgene{
+	pixel_x = -9;
+	pixel_y = 0
+	},
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "fr" = (
 /obj/machinery/door/airlock/grunge{
@@ -958,7 +1056,10 @@
 	pixel_x = -3;
 	pixel_y = 9
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark{
+	dir = 10
+	},
+/turf/open/floor/plasteel/terracotta,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "fH" = (
 /obj/structure/dresser,
@@ -975,16 +1076,21 @@
 /obj/structure/disposalpipe/junction{
 	dir = 4
 	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "fM" = (
 /obj/structure/dresser,
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "fO" = (
-/obj/machinery/airalarm/directional/east,
-/turf/open/floor/carpet/black,
-/area/ruin/space/has_grav/bluemoon/hotel/bar)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 2
+	},
+/turf/open/floor/wood/wood_large,
+/area/ruin/space/has_grav/bluemoon/hotel/dock)
 "fP" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
@@ -1011,11 +1117,13 @@
 	})
 "fT" = (
 /obj/structure/table/wood/fancy/royalblack,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "fU" = (
-/obj/machinery/light,
-/turf/open/floor/plasteel/dark,
+/obj/structure/window/reinforced,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "fW" = (
 /obj/structure/cable{
@@ -1037,7 +1145,7 @@
 /obj/structure/chair/sofa/corp/corner{
 	dir = 1
 	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "gj" = (
 /obj/structure/chair/stool/bar{
@@ -1050,6 +1158,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/siding/white,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom{
 	valid_to_shower = 1;
@@ -1064,10 +1173,7 @@
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "gy" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "Staff Only";
-	req_access_txt = "200,201"
-	},
+/obj/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel)
 "gA" = (
@@ -1081,7 +1187,10 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "gO" = (
-/obj/machinery/light,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/obj/structure/closet/secure_closet/personal/cabinet,
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "gV" = (
@@ -1116,10 +1225,8 @@
 	icon_state = "shower"
 	})
 "hd" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/wood,
+/obj/machinery/quantumpad,
+/turf/open/floor/carpet/purple,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "hm" = (
 /mob/living/simple_animal/bot/cleanbot,
@@ -1137,7 +1244,7 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/hotel)
 "ho" = (
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "hw" = (
 /obj/machinery/light{
@@ -1198,7 +1305,7 @@
 	dir = 1;
 	name = "Air Outlet Pump"
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/catwalk_floor/iron,
 /area/ruin/space/has_grav/bluemoon/hotel/power)
 "hF" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -1229,7 +1336,7 @@
 /obj/machinery/vending/kink{
 	onstation = 0
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "hQ" = (
 /obj/structure/table,
@@ -1308,7 +1415,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "id" = (
 /obj/structure/reagent_dispensers/keg/milk,
@@ -1333,13 +1440,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
-"if" = (
-/obj/structure/chair/sofa/corp/left{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "ig" = (
 /obj/structure/table,
 /obj/item/storage/fancy/donut_box{
@@ -1541,7 +1641,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "jv" = (
 /obj/structure/cable{
@@ -1578,12 +1678,19 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
+"jD" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/chem_master,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
+/area/ruin/space/has_grav/bluemoon/hotel/pool)
 "jF" = (
-/obj/structure/chair/stool/bar,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/structure/chair/comfy/black,
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "jG" = (
@@ -1608,7 +1715,7 @@
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "jQ" = (
 /obj/effect/turf_decal/vg_decals/atmos/air,
@@ -1634,10 +1741,14 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "jX" = (
-/turf/open/floor/glass/reinforced,
+/obj/machinery/light/floor,
+/obj/machinery/jukebox{
+	queuecost = 0
+	},
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "ka" = (
 /obj/machinery/door/airlock/public/glass,
@@ -1663,10 +1774,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "ke" = (
-/obj/structure/chair/comfy/brown{
-	dir = 4
-	},
-/turf/open/floor/wood,
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "kp" = (
 /obj/machinery/vending/hydronutrients{
@@ -1682,7 +1790,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "kr" = (
 /turf/open/floor/carpet/green,
@@ -1715,12 +1823,21 @@
 /area/ruin/space/has_grav/bluemoon/hotel/custodial)
 "kB" = (
 /obj/machinery/deepfryer,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/terracotta,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "kH" = (
-/obj/machinery/airalarm/directional/west,
-/turf/open/floor/carpet/black,
-/area/ruin/space/has_grav/bluemoon/hotel/bar)
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 4
+	},
+/obj/machinery/cryopod/tele,
+/turf/open/floor/carpet{
+	icon_state = "carpetsymbol"
+	},
+/area/ruin/space/has_grav/bluemoon/hotel/dock)
 "kK" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -1732,7 +1849,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "kQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -1765,7 +1882,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "ld" = (
 /obj/structure/disposalpipe/segment,
@@ -1813,11 +1930,14 @@
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "lw" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
-	dir = 8
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 2
 	},
-/obj/structure/table/wood/fancy/royalblack,
-/turf/open/floor/carpet/royalblack,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 9
+	},
+/obj/structure/chair/sofa/corp/right,
+/turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "ly" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -1831,7 +1951,7 @@
 "lC" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/machinery/door/firedoor,
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "lD" = (
 /obj/structure/table/wood,
@@ -1854,7 +1974,6 @@
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "lE" = (
-/obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -1865,6 +1984,7 @@
 	id = "penthouse";
 	name = "Privacy Shutters"
 	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "lF" = (
@@ -1901,9 +2021,13 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/hotel)
 "lP" = (
-/obj/structure/chair/sofa/corp/corner,
-/turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/bluemoon/hotel/bar)
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "a4window";
+	name = "Privacy Shutters"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "lQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 9
@@ -1927,8 +2051,8 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "lV" = (
-/obj/structure/chair/sofa/corp/corner{
-	dir = 4
+/obj/structure/chair/comfy/black{
+	dir = 8
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
@@ -1979,13 +2103,20 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "mi" = (
-/turf/open/floor/plasteel/dark,
+/obj/structure/window/reinforced,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "mk" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/atmos_waste{
 	dir = 8
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/catwalk_floor/iron,
 /area/space/nearstation)
 "mn" = (
 /obj/effect/turf_decal/tile/blue{
@@ -1997,7 +2128,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/siding/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "mp" = (
 /turf/closed/wall/r_wall,
@@ -2033,7 +2165,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "mw" = (
 /turf/open/floor/plasteel/showroomfloor,
@@ -2068,7 +2200,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "mH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -2084,11 +2216,15 @@
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "mJ" = (
-/obj/machinery/light{
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/bluemoon/hotel/dock)
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/smooth/small,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "mK" = (
 /obj/machinery/chem_master/condimaster,
 /turf/open/floor/plasteel/showroomfloor,
@@ -2133,11 +2269,17 @@
 /turf/open/floor/carpet/purple,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "mY" = (
-/obj/structure/chair/stool/bar{
+/obj/structure/chair/comfy/black{
+	dir = 4
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
+"ni" = (
+/obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/glass,
-/area/ruin/space/has_grav/bluemoon/hotel/bar)
+/turf/open/floor/plasteel/dark/smooth/small,
+/area/ruin/space/has_grav/bluemoon/hotel/dock)
 "nm" = (
 /obj/machinery/conveyor_switch/oneway{
 	dir = 8;
@@ -2166,6 +2308,17 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/bluemoon/hotel)
+"nr" = (
+/obj/structure/chair/sofa/corp/left,
+/turf/open/floor/carpet/royalblack,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
+"ns" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
+/turf/open/floor/wood/wood_large,
+/area/ruin/space/has_grav/bluemoon/hotel/dock)
 "nz" = (
 /obj/structure/table,
 /turf/open/floor/plasteel/showroomfloor,
@@ -2179,7 +2332,8 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/siding/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "nF" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input{
@@ -2187,6 +2341,12 @@
 	},
 /turf/open/floor/engine/air,
 /area/ruin/space/has_grav/bluemoon/hotel/power)
+"nG" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark/smooth/small,
+/area/ruin/space/has_grav/bluemoon/hotel/dock)
 "nH" = (
 /obj/machinery/button/door{
 	id = "a7";
@@ -2264,7 +2424,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "od" = (
 /obj/machinery/door/poddoor{
@@ -2278,11 +2438,19 @@
 /obj/structure/toilet/secret/prison{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/line{
+/obj/effect/turf_decal/stripes/yellow/line{
 	dir = 6
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/security)
+"oh" = (
+/obj/item/kirbyplants/hedge{
+	pixel_y = 28;
+	layer = 3;
+	anchored = 1
+	},
+/turf/open/floor/plasteel/dark/smooth/small,
+/area/ruin/space/has_grav/bluemoon/hotel/dock)
 "oi" = (
 /obj/structure/table/plasmaglass,
 /obj/structure/cable{
@@ -2301,6 +2469,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/hotel/power)
+"on" = (
+/obj/structure/table/plasmaglass,
+/obj/machinery/button/door{
+	id = "a2window";
+	name = "Privacy Shutters";
+	pixel_y = 32;
+	pixel_x = 24
+	},
+/turf/open/floor/carpet/purple,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "or" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
@@ -2329,7 +2507,12 @@
 /turf/closed/wall,
 /area/ruin/space/has_grav/bluemoon/hotel/custodial)
 "oI" = (
-/turf/open/floor/wood,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "oK" = (
 /obj/structure/grille,
@@ -2410,13 +2593,13 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	dir = 1
 	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "oY" = (
 /obj/machinery/vending/barkbox{
 	onstation = 0
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "pc" = (
 /obj/effect/turf_decal/tile/yellow/anticorner{
@@ -2433,7 +2616,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "pe" = (
 /obj/machinery/door/airlock/external,
@@ -2444,7 +2627,10 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark{
+	dir = 9
+	},
+/turf/open/floor/plasteel/terracotta,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "pj" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -2519,11 +2705,22 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/hotel/custodial)
 "pE" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/tree/palm{
+	pixel_x = 0;
+	pixel_y = 4;
+	name = "derevo"
 	},
-/turf/closed/wall,
-/area/ruin/space/has_grav/bluemoon/hotel)
+/obj/machinery/light/floor,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 10
+	},
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/grass/grass0,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "pI" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/maintenance{
@@ -2543,7 +2740,7 @@
 /area/ruin/space/has_grav/bluemoon/hotel/power)
 "pN" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plating,
+/turf/open/floor/catwalk_floor/iron,
 /area/ruin/space/has_grav/bluemoon/hotel/power)
 "pP" = (
 /obj/structure/cable{
@@ -2567,7 +2764,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "pT" = (
 /obj/effect/turf_decal/siding/white,
@@ -2587,7 +2784,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "qb" = (
 /obj/machinery/door/airlock{
@@ -2653,12 +2850,11 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/hotel/security)
 "qr" = (
-/obj/machinery/jukebox{
-	queuecost = 0
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
 	},
-/obj/machinery/light/floor,
-/turf/open/floor/glass/reinforced,
-/area/ruin/space/has_grav/bluemoon/hotel/bar)
+/turf/open/floor/wood/wood_large,
+/area/ruin/space/has_grav/bluemoon/hotel/dock)
 "qs" = (
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 5
@@ -2672,7 +2868,8 @@
 "qu" = (
 /obj/structure/table,
 /obj/item/kitchen/rollingpin,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark,
+/turf/open/floor/plasteel/terracotta,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "qx" = (
 /obj/structure/cable{
@@ -2724,12 +2921,12 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "qO" = (
-/obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/structure/cable,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "penthouse";
 	name = "Privacy Shutters"
 	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "qP" = (
@@ -2759,8 +2956,9 @@
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "rd" = (
-/obj/item/beacon,
-/turf/open/floor/plasteel/dark,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "rg" = (
 /turf/open/floor/plasteel,
@@ -2818,7 +3016,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 1
 	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "rE" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -2896,7 +3094,7 @@
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "sd" = (
 /obj/machinery/light,
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "se" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -3101,10 +3299,14 @@
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "tu" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/bluemoon/hotel/dock)
+/obj/item/kirbyplants/hedge{
+	pixel_y = 0;
+	layer = 3;
+	anchored = 1;
+	pixel_x = -28
+	},
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "ty" = (
 /obj/structure/closet/athletic_mixed,
 /obj/item/clothing/under/misc/bathrobe,
@@ -3132,7 +3334,10 @@
 "tE" = (
 /obj/structure/table/glass,
 /obj/item/paper/pamphlet/ruin/spacehotel,
-/turf/open/floor/wood,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "tH" = (
 /obj/structure/cable{
@@ -3209,6 +3414,10 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/siding/white,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom{
 	valid_to_shower = 1;
@@ -3232,11 +3441,8 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/hotel/security)
 "uh" = (
-/obj/structure/chair/sofa/corp/right{
-	dir = 8
-	},
-/turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/bluemoon/hotel/bar)
+/turf/open/floor/plasteel/dark/smooth/diagonal,
+/area/ruin/space/has_grav/bluemoon/hotel/pool)
 "ui" = (
 /obj/structure/table,
 /obj/machinery/camera{
@@ -3274,7 +3480,7 @@
 /obj/machinery/vending/clothing{
 	onstation = 0
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "ut" = (
 /obj/structure/bed/double,
@@ -3399,7 +3605,7 @@
 /obj/structure/chair/sofa/corp/left{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "uR" = (
 /obj/effect/turf_decal/tile/green{
@@ -3409,7 +3615,7 @@
 	dir = 4
 	},
 /obj/machinery/hydroponics/constructable,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "uU" = (
 /turf/open/floor/engine/air,
@@ -3417,6 +3623,16 @@
 "uX" = (
 /obj/machinery/vending/barkbox,
 /turf/open/floor/plasteel/showroomfloor,
+/area/ruin/space/has_grav/bluemoon/hotel)
+"uY" = (
+/obj/machinery/door/airlock/maintenance{
+	name = "Staff Only";
+	req_access_txt = "200,201"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel)
 "va" = (
 /obj/machinery/airalarm/directional/east{
@@ -3464,6 +3680,9 @@
 /obj/structure/reagent_dispensers/keg/semen,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
+"vp" = (
+/turf/template_noop,
+/area/space/nearstation)
 "vt" = (
 /obj/machinery/light{
 	dir = 8
@@ -3508,7 +3727,7 @@
 "vI" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall,
-/area/ruin/space/has_grav/bluemoon/hotel/workroom)
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "vJ" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -3540,7 +3759,7 @@
 /obj/structure/chair/sofa/corp/left{
 	dir = 1
 	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "vP" = (
 /obj/machinery/smartfridge/drying_rack,
@@ -3548,7 +3767,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/green,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "vR" = (
 /obj/structure/cable{
@@ -3588,15 +3807,16 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/diagonal,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "vY" = (
 /obj/structure/table,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark,
+/turf/open/floor/plasteel/terracotta,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "vZ" = (
 /obj/machinery/teleport/hub,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "wh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -3608,6 +3828,12 @@
 	onstation = 0
 	},
 /turf/open/floor/carpet/purple,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+"wm" = (
+/obj/structure/bed/double,
+/obj/item/bedsheet/black/double,
+/obj/item/toy/plush/deer,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "ws" = (
 /obj/structure/chair/sofa/corp/right{
@@ -3651,7 +3877,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark/end{
+	dir = 8
+	},
+/turf/open/floor/plasteel/terracotta,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "wF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -3730,7 +3959,7 @@
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "wS" = (
 /obj/machinery/atmospherics/components/binary/pump,
-/turf/open/floor/plasteel,
+/turf/open/floor/catwalk_floor/iron,
 /area/ruin/space/has_grav/bluemoon/hotel/power)
 "wU" = (
 /obj/machinery/computer/security{
@@ -3741,27 +3970,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/hotel/security)
+"xb" = (
+/obj/structure/disposalpipe/segment{
+	dir = 2
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ruin/space/has_grav/bluemoon/hotel)
 "xc" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/hotel/workroom)
-"xf" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
@@ -3793,7 +4013,7 @@
 	pixel_y = 6
 	},
 /obj/item/circuitboard/machine/quantumpad,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "xj" = (
 /obj/machinery/photocopier,
@@ -3832,14 +4052,15 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
+/obj/effect/turf_decal/siding/dark,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "xt" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/effect/turf_decal/siding/dark{
 	dir = 6
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "xx" = (
 /obj/machinery/door/window/brigdoor{
@@ -3921,6 +4142,12 @@
 	},
 /turf/open/floor/carpet/cyan,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+"xI" = (
+/obj/structure/chair/comfy/black{
+	dir = 1
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ruin/space/has_grav/bluemoon/hotel/dock)
 "xT" = (
 /obj/machinery/door/airlock{
 	name = "Private Restroom"
@@ -3967,6 +4194,12 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+"yk" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/terracotta,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "yl" = (
 /obj/structure/table,
 /obj/item/instrument/guitar{
@@ -4013,6 +4246,10 @@
 /obj/machinery/light,
 /turf/open/floor/glass,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+"yw" = (
+/obj/structure/table/glass,
+/turf/open/floor/carpet/royalblack,
+/area/ruin/space/has_grav/bluemoon/hotel/dock)
 "yz" = (
 /obj/structure/chair{
 	dir = 1
@@ -4051,6 +4288,7 @@
 /obj/structure/toilet/secret/high_loot{
 	dir = 8
 	},
+/obj/structure/curtain,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom{
 	valid_to_shower = 1;
@@ -4074,8 +4312,30 @@
 "yY" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/condiment/soysauce,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark{
+	dir = 9
+	},
+/turf/open/floor/plasteel/terracotta,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
+"za" = (
+/obj/structure/table/wood,
+/obj/structure/bedsheetbin/towel,
+/obj/item/clothing/under/misc/bathrobe,
+/obj/item/clothing/under/misc/bathrobe,
+/obj/item/reagent_containers/rag/towel/random,
+/obj/item/reagent_containers/rag/towel/random,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "zc" = (
 /obj/machinery/chem_dispenser/drinks{
 	dir = 8
@@ -4084,7 +4344,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/diagonal,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "zd" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
@@ -4104,13 +4364,9 @@
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/bluemoon/hotel/power)
 "zr" = (
-/obj/machinery/power/apc/away{
-	name = "Staff Areas APC";
-	pixel_y = -23
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/hotel/workroom)
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/closed/wall,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "zs" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
@@ -4125,8 +4381,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel)
 "zw" = (
-/obj/machinery/quantumpad,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "zA" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
@@ -4138,13 +4393,10 @@
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "zG" = (
-/obj/structure/chair/stool/bar{
-	dir = 8
+/obj/structure/chair/comfy/black{
+	dir = 4
 	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/glass,
+/turf/open/floor/glass/reinforced,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "zI" = (
 /obj/structure/disposalpipe/segment{
@@ -4168,7 +4420,7 @@
 	pixel_y = 5;
 	pixel_x = -3
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "zN" = (
 /obj/structure/bed/double{
@@ -4223,7 +4475,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "zY" = (
 /obj/structure/chair/sofa/corp,
@@ -4281,7 +4533,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Aj" = (
 /obj/machinery/space_heater,
@@ -4381,7 +4633,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 10
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "AO" = (
 /obj/effect/turf_decal/tile/yellow/half{
@@ -4426,16 +4678,33 @@
 /obj/structure/closet/secure_closet/medical3{
 	req_access = list(200)
 	},
+/obj/item/clothing/neck/stethoscope,
+/obj/item/clothing/neck/stethoscope,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "Bm" = (
-/obj/machinery/light{
-	dir = 1
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/tree/palm{
+	pixel_x = 0;
+	pixel_y = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/wood,
+/obj/machinery/light/floor,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 5
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 10
+	},
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/grass/grass0,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
+"Bn" = (
+/obj/structure/table/plasmaglass,
+/obj/structure/pole{
+	pixel_y = 9
+	},
+/turf/open/floor/glass/reinforced,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Bo" = (
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
@@ -4450,17 +4719,25 @@
 	icon_state = "shower"
 	})
 "BB" = (
-/obj/structure/chair/sofa/corp/right{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
+	dir = 1
 	},
 /turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/bluemoon/hotel/bar)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "BF" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
 	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/hotel/workroom)
+/obj/effect/turf_decal/tile/green,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/machinery/hydroponics/constructable,
+/turf/open/floor/plasteel/dark/textured/large,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "BH" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -4471,9 +4748,7 @@
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "BP" = (
-/obj/structure/chair/sofa/corp/left{
-	dir = 8
-	},
+/obj/machinery/door/airlock/public/glass,
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "BQ" = (
@@ -4490,6 +4765,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom{
 	valid_to_shower = 1;
@@ -4498,7 +4776,10 @@
 	})
 "Cc" = (
 /obj/machinery/smartfridge,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Cg" = (
 /obj/structure/disposalpipe/segment{
@@ -4507,8 +4788,12 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "Ck" = (
-/obj/structure/sign/warning/vacuum/external,
-/turf/closed/wall,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "Cn" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -4612,11 +4897,14 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/hotel/power)
 "CJ" = (
-/obj/machinery/light/small{
-	dir = 8
+/obj/item/kirbyplants/hedge{
+	pixel_y = 0;
+	layer = 3;
+	anchored = 1;
+	pixel_x = 28
 	},
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/bluemoon/hotel/dock)
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "CL" = (
 /obj/effect/turf_decal/siding/white/end,
 /obj/machinery/light{
@@ -4637,11 +4925,13 @@
 /turf/open/floor/carpet/cyan,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "CU" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
-	dir = 8
+/obj/item/kirbyplants/hedge{
+	pixel_y = 0;
+	layer = 3;
+	anchored = 1;
+	pixel_x = -28
 	},
-/obj/machinery/cryopod/tele,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "CV" = (
 /obj/structure/table,
@@ -4687,8 +4977,9 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/machinery/hydroponics/constructable,
-/turf/open/floor/plasteel,
+/obj/structure/table,
+/obj/machinery/plantgenes,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Ds" = (
 /obj/machinery/power/apc/away{
@@ -4707,7 +4998,10 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Dv" = (
 /obj/structure/table,
@@ -4715,7 +5009,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 1
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark{
+	dir = 5
+	},
+/turf/open/floor/plasteel/terracotta,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Dx" = (
 /obj/structure/table/glass,
@@ -4781,11 +5078,10 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/hotel/power)
 "DR" = (
-/obj/structure/chair/sofa/corp/right{
-	dir = 1
-	},
-/turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/obj/machinery/space_heater,
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/bluemoon/hotel)
 "DS" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
@@ -4801,13 +5097,13 @@
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "DU" = (
 /obj/structure/reagent_dispensers/water_cooler,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "DX" = (
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_y = 32
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "DZ" = (
 /obj/machinery/button/door{
@@ -4817,6 +5113,11 @@
 	pixel_y = 0;
 	specialfunctions = 4;
 	pixel_x = -24
+	},
+/obj/item/kirbyplants/hedge{
+	pixel_y = 28;
+	layer = 3;
+	anchored = 1
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
@@ -4850,7 +5151,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Ep" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -4875,7 +5176,13 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 4
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "ED" = (
 /obj/structure/disposalpipe/segment{
@@ -4890,7 +5197,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	dir = 4
 	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "EH" = (
 /obj/structure/table/wood/fancy/red,
@@ -4965,7 +5272,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "Fh" = (
 /obj/machinery/gear_painter,
@@ -4985,12 +5292,13 @@
 /obj/item/toy/plush/carpplushie,
 /turf/open/floor/glass,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+"Fn" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/space/nearstation)
 "Fr" = (
-/obj/structure/chair/sofa/corp/left{
-	dir = 4
-	},
-/turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/bluemoon/hotel/bar)
+/turf/open/space/basic,
+/area/template_noop)
 "Ft" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
@@ -5017,6 +5325,12 @@
 	c_tag = "Disposals";
 	dir = 1;
 	network = list("hotel")
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/bluemoon/hotel)
+"Fv" = (
+/obj/structure/disposalpipe/segment{
+	dir = 2
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel)
@@ -5050,7 +5364,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "FO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -5063,7 +5377,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/disposalpipe/segment,
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "FP" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
@@ -5134,14 +5448,21 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "Gx" = (
-/obj/structure/table/wood/fancy/royalblack,
-/obj/item/flashlight/lamp/green{
-	on = 0;
-	pixel_x = -3;
-	pixel_y = 8
+/obj/structure/mirror{
+	pixel_y = 32
 	},
-/turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/obj/structure/sink{
+	pixel_y = 24
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 10
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "Gy" = (
 /obj/effect/turf_decal/tile/green{
 	dir = 1
@@ -5150,7 +5471,8 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/north,
-/turf/open/floor/plasteel,
+/obj/machinery/hydroponics/constructable,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "GC" = (
 /obj/structure/cable{
@@ -5200,27 +5522,31 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "GO" = (
-/obj/structure/chair/stool/bar{
+/obj/structure/disposaloutlet{
 	dir = 4
 	},
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/bluemoon/hotel)
+"GW" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/glass,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
-"GW" = (
-/obj/machinery/airalarm/directional/north,
-/obj/machinery/space_heater,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/hotel)
 "GX" = (
 /obj/machinery/door/window/eastright{
 	dir = 4;
 	name = "Staff Only";
 	req_access_txt = "200"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
+"GY" = (
+/turf/open/floor/carpet/royalblack,
+/area/ruin/space/has_grav/bluemoon/hotel/dock)
 "GZ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 9
@@ -5231,7 +5557,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Hb" = (
 /obj/effect/turf_decal/siding/white{
@@ -5338,7 +5664,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 5
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/diagonal,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "HF" = (
 /turf/open/floor/wood/wood_tiled,
@@ -5362,7 +5688,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "HK" = (
 /obj/structure/disposalpipe/segment,
@@ -5415,10 +5741,14 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/hotel/power)
 "Io" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/turf/open/floor/carpet/royalblack,
+/obj/structure/chair/sofa/corp,
+/turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "Iq" = (
 /obj/effect/turf_decal/tile/red/half,
@@ -5472,9 +5802,12 @@
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "IK" = (
 /obj/machinery/light{
-	dir = 8
+	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/item/kirbyplants{
+	icon_state = "plant-22"
+	},
+/turf/open/floor/carpet/green,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "IL" = (
 /obj/structure/bed/dogbed{
@@ -5503,14 +5836,16 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/hotel/security)
 "IU" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 6
+/obj/structure/toilet/secret/low_loot{
+	dir = 4
 	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/obj/structure/curtain,
+/turf/open/floor/plasteel/showroomfloor,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "IW" = (
 /obj/structure/table/wood,
 /obj/item/toy/plush/lampplushie,
@@ -5527,18 +5862,24 @@
 /turf/open/pool,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "Jf" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-22"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 10
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 6
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/bluemoon/hotel/dock)
+"Jg" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 8
+	},
+/obj/machinery/cryopod/tele,
 /turf/open/floor/carpet{
 	icon_state = "carpetsymbol"
 	},
-/area/ruin/space/has_grav/bluemoon/hotel/dock)
-"Jg" = (
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
-/turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "Jh" = (
 /obj/structure/bed/dogbed{
@@ -5575,7 +5916,11 @@
 	pixel_y = 6
 	},
 /obj/structure/table,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/terracotta,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "JB" = (
 /obj/structure/table/optable,
@@ -5619,7 +5964,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/green,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "JR" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
@@ -5628,6 +5973,15 @@
 /obj/machinery/light/small,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/hotel/custodial)
+"JS" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 10
+	},
+/turf/open/floor/wood/wood_large,
+/area/ruin/space/has_grav/bluemoon/hotel/dock)
 "JY" = (
 /turf/open/floor/carpet/blue,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
@@ -5692,11 +6046,13 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/hotel/custodial)
 "Kn" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/obj/machinery/pool/controller,
+/turf/open/floor/plasteel/showroomfloor,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "Kt" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 10
@@ -5711,7 +6067,7 @@
 	dir = 1;
 	layer = 2.9
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "Kx" = (
 /obj/structure/chair/comfy/brown{
@@ -5775,7 +6131,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "Lb" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
@@ -5796,10 +6152,14 @@
 	dir = 5
 	},
 /obj/machinery/light/small,
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Li" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/item/kirbyplants/hedge{
+	pixel_y = 28;
+	layer = 3;
+	anchored = 1
+	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "Lk" = (
@@ -5881,6 +6241,20 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+"LH" = (
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#c1caff"
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "LM" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
@@ -5897,12 +6271,12 @@
 /obj/machinery/vending/cola{
 	onstation = 0
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "LT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "LU" = (
 /obj/machinery/vending/wardrobe/medi_wardrobe{
@@ -5915,6 +6289,10 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
+"LW" = (
+/obj/structure/chair/sofa/corp/right,
+/turf/open/floor/carpet/royalblack,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Mb" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -5925,7 +6303,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Md" = (
 /obj/machinery/door/airlock{
@@ -5982,7 +6360,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Mm" = (
 /obj/structure/disposalpipe/segment,
@@ -6086,7 +6464,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "MS" = (
-/turf/open/floor/light/colour_cycle/dancefloor_a,
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "MZ" = (
 /obj/effect/spawner/lootdrop/maintenance,
@@ -6115,7 +6494,10 @@
 	contraband = list(/obj/item/kitchen/rollingpin=2,/obj/item/kitchen/knife/butcher=2,/obj/item/reagent_containers/food/condiment/flour=4);
 	onstation = 0
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark{
+	dir = 6
+	},
+/turf/open/floor/plasteel/terracotta,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Nc" = (
 /obj/machinery/light{
@@ -6169,7 +6551,7 @@
 	dir = 1;
 	layer = 2.9
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "Nw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -6233,6 +6615,13 @@
 /obj/item/stack/tile/carpet/blackred/fifty,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
+"NU" = (
+/obj/structure/table/wood/fancy/royalblack,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "NV" = (
 /obj/effect/turf_decal/tile/yellow/half{
 	dir = 8
@@ -6278,12 +6667,21 @@
 /turf/open/floor/carpet/green,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "On" = (
+/obj/effect/turf_decal/siding/dark/end{
+	dir = 8
+	},
 /obj/machinery/door/window/eastright{
 	dir = 2;
 	name = "Staff Only";
 	req_access_txt = "200"
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/item/kirbyplants/hedge{
+	pixel_y = 0;
+	layer = 3;
+	anchored = 1;
+	pixel_x = -28
+	},
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Oo" = (
 /obj/structure/cable{
@@ -6306,7 +6704,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Oy" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -6314,7 +6712,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "OA" = (
 /obj/structure/cable{
@@ -6347,14 +6745,16 @@
 	icon_state = "shower"
 	})
 "OE" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 6
 	},
-/obj/structure/bed/double,
-/obj/item/bedsheet/black/double,
-/obj/item/toy/plush/deer,
-/turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/turf/open/floor/plasteel/showroomfloor,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "OG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 6
@@ -6395,32 +6795,28 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
-"OO" = (
-/obj/structure/chair/sofa/corp/right{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "OQ" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	dir = 4
-	},
-/obj/machinery/cryopod/tele,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/carpet/black,
+/turf/open/water/safe,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "OR" = (
 /obj/structure/chair/sofa/corp/corner{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "OS" = (
 /obj/structure/table/reinforced,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "OU" = (
 /obj/structure/table/wood/fancy/cyan,
@@ -6428,21 +6824,26 @@
 /turf/open/floor/carpet/cyan,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "OY" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 9
-	},
-/turf/open/floor/carpet/royalblack,
+/obj/structure/chair/sofa/corp/left,
+/turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "Pc" = (
-/obj/machinery/washing_machine,
-/obj/structure/disposalpipe/segment{
-	dir = 5
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel)
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/kitchen,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Pd" = (
 /obj/structure/chair/pew{
 	dir = 1
@@ -6461,7 +6862,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Pg" = (
 /obj/structure/disposalpipe/segment{
@@ -6499,10 +6900,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/green,
-/obj/effect/turf_decal/tile/green{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Pr" = (
 /obj/structure/table,
@@ -6516,10 +6914,21 @@
 	pixel_x = -8;
 	pixel_y = 7
 	},
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/turf/open/floor/plasteel/terracotta,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Ps" = (
-/obj/structure/chair/sofa/corp/right,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/item/kirbyplants/hedge{
+	pixel_y = 28;
+	layer = 3;
+	anchored = 1
+	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "Pt" = (
@@ -6622,8 +7031,11 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "PS" = (
-/obj/structure/table/reinforced,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark/end{
+	dir = 1
+	},
+/obj/machinery/smartfridge/food,
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "PT" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
@@ -6740,7 +7152,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/diagonal,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "Qx" = (
 /obj/machinery/autolathe/toy,
@@ -6783,7 +7195,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "QE" = (
 /obj/structure/chair/stool/bar/brass,
@@ -6839,7 +7251,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "QV" = (
 /obj/structure/table/wood,
@@ -6911,12 +7323,14 @@
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Rg" = (
 /obj/effect/mob_spawn/human/hotel_staff/splurt/guest,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/carpet{
+	icon_state = "carpetsymbol"
+	},
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "Rh" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/effect/turf_decal/siding/dark,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "Rm" = (
 /obj/machinery/door/airlock/maintenance{
@@ -6940,18 +7354,34 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/hotel/custodial)
 "Rq" = (
-/turf/open/floor/carpet/black,
+/obj/structure/window/reinforced{
+	dir = 1;
+	layer = 2.9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "Rt" = (
 /obj/machinery/vending/wardrobe/chef_wardrobe,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark{
+	dir = 10
+	},
+/turf/open/floor/plasteel/terracotta,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Rv" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
 	},
 /obj/structure/table,
-/turf/open/floor/plasteel/cafeteria,
+/obj/effect/turf_decal/siding/dark{
+	dir = 5
+	},
+/turf/open/floor/plasteel/terracotta,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Rw" = (
 /obj/structure/disposalpipe/segment{
@@ -7011,7 +7441,8 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/transmitter,
+/turf/open/floor/plasteel/dark/smooth/herringbone,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "RL" = (
 /obj/structure/closet/secure_closet/labor_camp_security{
@@ -7033,14 +7464,7 @@
 /turf/open/floor/carpet/green,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "RO" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 6
-	},
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plasteel/dark,
+/turf/open/water/safe,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "RR" = (
 /obj/structure/disposalpipe/segment{
@@ -7065,6 +7489,18 @@
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
+"RV" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 8
+	},
+/obj/structure/table/wood/fancy/royalblack,
+/obj/item/flashlight/lamp/green{
+	on = 0;
+	pixel_x = -3;
+	pixel_y = 8
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "RX" = (
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 10
@@ -7094,11 +7530,19 @@
 /turf/open/floor/carpet/purple,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "Se" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/effect/turf_decal/trimline/brown/filled/line{
+	dir = 5
 	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel)
+/obj/machinery/shower{
+	pixel_x = -1;
+	pixel_y = 19
+	},
+/turf/open/pool,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "Sg" = (
 /turf/open/floor/carpet/cyan,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
@@ -7119,8 +7563,8 @@
 	icon_state = "shower"
 	})
 "Sl" = (
-/obj/structure/table/glass,
-/turf/open/floor/glass/reinforced,
+/obj/machinery/holopad,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "So" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
@@ -7257,8 +7701,10 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/hotel)
 "SV" = (
-/obj/structure/table/plasmaglass,
-/turf/open/floor/glass,
+/obj/structure/chair/comfy/black{
+	dir = 8
+	},
+/turf/open/floor/glass/reinforced,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "SW" = (
 /obj/structure/fireplace{
@@ -7309,6 +7755,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/effect/turf_decal/siding/white/corner,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom{
 	valid_to_shower = 1;
@@ -7372,7 +7819,7 @@
 /obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "TF" = (
 /obj/structure/table/glass,
@@ -7433,8 +7880,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/hydroponics/constructable,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Ui" = (
 /obj/machinery/light{
@@ -7475,7 +7921,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Uw" = (
 /obj/structure/chair/sofa/corp/left{
@@ -7488,7 +7934,6 @@
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/bluemoon/hotel/power)
 "Uy" = (
-/obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -7497,10 +7942,10 @@
 	id = "penthouse";
 	name = "Privacy Shutters"
 	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "UB" = (
-/obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -7508,6 +7953,7 @@
 	id = "penthouse";
 	name = "Privacy Shutters"
 	},
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "UE" = (
@@ -7526,6 +7972,10 @@
 /obj/structure/table/wood/poker,
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
+"UI" = (
+/obj/item/skub,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "UJ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 8
@@ -7554,6 +8004,9 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 4
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom{
@@ -7592,7 +8045,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/green,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Vg" = (
 /obj/machinery/button/door{
@@ -7657,6 +8110,17 @@
 /obj/machinery/chem_master,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
+"VD" = (
+/obj/structure/chair/comfy/black{
+	dir = 4
+	},
+/obj/item/kirbyplants/hedge{
+	pixel_y = 28;
+	layer = 3;
+	anchored = 1
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ruin/space/has_grav/bluemoon/hotel/dock)
 "VF" = (
 /obj/machinery/light{
 	dir = 1
@@ -7734,11 +8198,17 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "Wg" = (
-/obj/structure/chair/stool/bar{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
 	},
-/turf/open/floor/glass,
-/area/ruin/space/has_grav/bluemoon/hotel/bar)
+/obj/structure/dresser,
+/obj/machinery/button/door{
+	id = "a4window";
+	name = "Privacy Shutters";
+	pixel_y = 24
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "Wk" = (
 /obj/structure/chair/comfy/brown{
 	color = "#596479";
@@ -7773,7 +8243,7 @@
 	icon_state = "shower"
 	})
 "Wr" = (
-/obj/structure/chair/sofa/corp/corner{
+/obj/structure/chair/sofa/corp/left{
 	dir = 1
 	},
 /turf/open/floor/carpet/royalblack,
@@ -7819,7 +8289,6 @@
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "WF" = (
-/obj/item/skub,
 /obj/effect/spawner/bundle/costume/nyangirl,
 /obj/effect/spawner/lootdrop/maintenance{
 	lootcount = 3;
@@ -7837,7 +8306,10 @@
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "WJ" = (
 /obj/structure/table/glass,
-/turf/open/floor/wood,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 4
+	},
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "WM" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -7854,14 +8326,10 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "WP" = (
-/obj/structure/disposaloutlet{
-	dir = 4
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/hotel)
+/obj/structure/table/plasmaglass,
+/obj/machinery/light/floor,
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "WS" = (
 /obj/structure/table/glass,
 /obj/machinery/reagentgrinder,
@@ -7913,8 +8381,13 @@
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "Xh" = (
-/obj/structure/table/wood,
-/turf/open/floor/wood,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 6
+	},
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "Xo" = (
 /obj/effect/turf_decal/tile/red/half,
@@ -7927,7 +8400,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Xs" = (
 /obj/machinery/light,
@@ -7940,7 +8413,8 @@
 /turf/open/floor/plasteel/vaporwave,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "XA" = (
-/obj/structure/chair/sofa/corp/left,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "XE" = (
@@ -7963,7 +8437,7 @@
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "XM" = (
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/plasteel/kitchen,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "XR" = (
 /obj/structure/chair/stool/bar{
@@ -8034,7 +8508,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Yt" = (
 /obj/effect/turf_decal/tile/blue{
@@ -8047,7 +8521,7 @@
 	dir = 4
 	},
 /obj/machinery/hydroponics/constructable,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Yw" = (
 /obj/effect/turf_decal/tile/red/half{
@@ -8056,9 +8530,15 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/bluemoon/hotel/security)
 "Yx" = (
-/obj/structure/closet/secure_closet/personal/cabinet,
-/turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "YA" = (
 /obj/structure/table/wood/fancy/royalblack,
 /turf/open/floor/carpet/royalblack,
@@ -8080,13 +8560,13 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "YK" = (
-/obj/structure/chair/sofa/corp/corner{
-	dir = 8
+/obj/structure/chair/sofa/corp/right{
+	dir = 1
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "YL" = (
-/obj/structure/chair/stool/bar,
+/obj/structure/chair/comfy/black,
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "YN" = (
@@ -8162,7 +8642,7 @@
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "Zh" = (
 /obj/structure/table/reinforced,
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Zl" = (
 /obj/machinery/chem_heater,
@@ -8247,10 +8727,7 @@
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "ZJ" = (
 /obj/structure/table/plasmaglass,
-/obj/structure/pole{
-	pixel_y = 9
-	},
-/turf/open/floor/glass,
+/turf/open/floor/glass/reinforced,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "ZM" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
@@ -8275,7 +8752,7 @@
 /obj/item/stack/ore/bluespace_crystal/artificial{
 	amount = 5
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/dark/smooth/small,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "ZO" = (
 /obj/effect/turf_decal/tile/green{
@@ -8291,7 +8768,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark/textured/large,
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "ZP" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8975,13 +9452,13 @@ Qh
 Qh
 Qh
 BH
-xf
-BF
-zr
+dE
+De
+De
 vI
-if
-OO
-ZP
+vI
+vI
+zr
 VT
 Uw
 Rb
@@ -9045,12 +9522,12 @@ ec
 vV
 Qh
 dy
-dE
+dN
 De
-De
-De
-De
-De
+Yt
+Uf
+dX
+BF
 De
 Rm
 fv
@@ -9117,9 +9594,9 @@ Lp
 Gw
 ss
 fv
-Yt
-Uf
-dX
+uR
+JM
+Ai
 Pm
 De
 zI
@@ -9187,7 +9664,7 @@ Qh
 dy
 dE
 fv
-Ai
+uR
 JM
 Ai
 vP
@@ -9258,7 +9735,7 @@ BH
 dE
 fv
 uR
-eA
+JM
 Ai
 Dp
 De
@@ -9328,7 +9805,7 @@ qN
 ir
 fv
 Gy
-xs
+cu
 Ai
 fp
 De
@@ -9398,7 +9875,7 @@ dy
 dE
 fv
 uR
-dN
+JM
 Ai
 xs
 Dt
@@ -9471,7 +9948,7 @@ bQ
 QT
 ZO
 mn
-Oy
+Pc
 ED
 jC
 XM
@@ -9824,7 +10301,7 @@ fv
 Jz
 qa
 Ml
-XM
+yk
 qu
 XM
 ms
@@ -9876,7 +10353,7 @@ hS
 vh
 hS
 vh
-tZ
+BP
 De
 mG
 mp
@@ -9894,7 +10371,7 @@ fv
 Pr
 qa
 Ml
-XM
+yk
 vY
 XM
 ms
@@ -9932,8 +10409,8 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
+NL
+NL
 NL
 NL
 NL
@@ -10002,8 +10479,8 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
+NL
+NL
 NL
 NL
 NL
@@ -10072,8 +10549,8 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
+NL
+NL
 NL
 NL
 NL
@@ -10142,14 +10619,14 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
+NL
+NL
+NL
 rP
 eM
 eM
 eM
 rP
-eM
 eM
 eM
 eM
@@ -10174,9 +10651,9 @@ fv
 PS
 OS
 EB
-PS
+mJ
 dY
-PS
+mJ
 aE
 ao
 ao
@@ -10212,15 +10689,15 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
-eM
-ke
-oI
-oI
-cL
-oI
-oI
+NL
+NL
+NL
+rP
+yw
+xI
+al
+eq
+al
 fd
 gi
 eM
@@ -10229,14 +10706,14 @@ eM
 ao
 ao
 iB
-ao
+tu
 ao
 rT
 cH
 ao
-ao
+tu
 pR
-ao
+MS
 ao
 Ds
 pP
@@ -10282,15 +10759,15 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
-eM
-Xh
-oI
-oI
-oI
-oI
-oI
+NL
+NL
+rP
+rP
+cL
+GY
+zw
+zw
+zw
 WJ
 TD
 rP
@@ -10352,19 +10829,19 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
 eM
-Jg
-hd
-oI
-oI
-oI
-oI
-oI
-oI
+eM
+eM
+ni
+ke
+zw
+zw
+zw
+zw
+qr
+zw
 pS
-Rq
+CU
 lC
 ao
 ao
@@ -10422,41 +10899,41 @@ Dl
 Dl
 Dl
 Dl
-Dl
-rP
-rP
-rP
-rP
-rP
-Jf
-oI
-oI
-oI
-Rq
-Rq
-Rq
+cq
+Fd
+pe
+ke
+zw
+zw
+zw
+hd
+zw
+qr
+zw
+zw
+zw
 lC
 ao
-ao
+CJ
 Rw
 iG
 eu
 Zh
 hP
 iG
-iw
+eP
 Lz
-fO
 ao
 ao
 ao
 ao
 ao
-lV
-Fr
-FV
-BB
+ao
+nr
+pV
 Wr
+ao
+mY
 ao
 iw
 ao
@@ -10492,17 +10969,17 @@ Dl
 Dl
 Dl
 Dl
-Dl
 eM
-Jf
+eM
+eM
 Rg
-IK
 zw
-oI
-oI
-oI
-Rq
-Rq
+zw
+zw
+zw
+zw
+qr
+zw
 Ku
 LN
 rP
@@ -10517,16 +10994,16 @@ De
 Hg
 De
 De
-MS
-MS
-MS
-ao
+GW
+FV
+FV
+FV
 ao
 zY
-pV
-Zq
-pV
+WP
 Gu
+ao
+pV
 ao
 iw
 pu
@@ -10562,17 +11039,17 @@ Dl
 Dl
 Dl
 Dl
+NL
+NL
 rP
+oh
+zw
+Xh
 Ck
-mi
-mi
-mi
-mi
-mi
-oI
-oI
-Rq
-Rq
+Ck
+Ck
+fO
+zw
 Dx
 OM
 cG
@@ -10587,16 +11064,16 @@ tI
 YB
 Cz
 De
-GO
-Wg
-Wg
-MS
-ao
-lP
-uh
+zG
+zG
+zG
 FV
-BP
+ao
+LW
+pV
 YK
+ao
+lV
 ao
 iw
 YL
@@ -10630,19 +11107,19 @@ Dl
 Dl
 Dl
 Dl
+Dl
+Dl
+NL
+NL
 eM
-eM
-eM
-Rq
-Rq
-mi
-mi
+kH
+zw
 mi
 OQ
-oI
-oI
+OQ
+OQ
 Rq
-Rq
+zw
 mu
 WO
 dC
@@ -10657,24 +11134,24 @@ HI
 RA
 tJ
 De
-SV
-SV
-SV
-MS
+ZJ
+ZJ
+ZJ
+FV
 ao
-jX
-jX
-jX
-jX
-jX
+ao
+ao
+ao
+ao
+ao
 ao
 iw
 YL
 Fg
 ho
-ho
+uh
 zc
-ho
+uh
 ho
 Rh
 Mz
@@ -10700,19 +11177,19 @@ Dl
 Dl
 Dl
 Dl
-cq
-Fd
-pe
-Rq
-Rq
-mi
+Dl
+Dl
+NL
+NL
+eM
+Jf
 rd
 fU
 RO
 Bm
-tu
+OQ
 bV
-by
+rd
 wK
 ME
 qy
@@ -10727,16 +11204,16 @@ WD
 HU
 es
 Ns
-SV
 ZJ
-eq
-MS
+Bn
+ZJ
+FV
 ao
-jX
-cw
-qr
+ao
+Zq
 Sl
 jX
+ao
 ao
 PT
 jF
@@ -10770,19 +11247,19 @@ Dl
 Dl
 Dl
 Dl
+Dl
+Dl
+NL
+NL
 eM
-eM
-eM
-Rq
-Rq
+Jg
+zw
 mi
-mi
-mi
-CU
-oI
-oI
+RO
+OQ
+OQ
 Rq
-Rq
+zw
 Af
 dG
 YS
@@ -10797,24 +11274,24 @@ zd
 HU
 ud
 De
-eq
-SV
-SV
-MS
+ZJ
+aB
+aB
+FV
 ao
-jX
-jX
-jX
-jX
-jX
+ao
+ao
+ao
+ao
+ao
 ao
 iw
 YL
 Fg
 ho
-ho
+uh
 vW
-ho
+uh
 ho
 Rh
 dx
@@ -10842,17 +11319,17 @@ Dl
 Dl
 Dl
 Dl
+NL
+NL
 rP
-Ck
-mi
-mi
-mi
-mi
-mi
+oh
+zw
+JS
 oI
 oI
-Rq
-Rq
+oI
+ns
+zw
 ee
 TF
 Yc
@@ -10867,16 +11344,16 @@ vE
 HU
 aF
 De
-zG
-mY
-mY
-MS
-ao
-lV
-Fr
+SV
+SV
+SV
 FV
-BB
+ao
+nr
+pV
 Wr
+ao
+mY
 ao
 iw
 YL
@@ -10912,17 +11389,17 @@ Dl
 Dl
 Dl
 Dl
-Dl
 eM
-Jf
+eM
+eM
 Rg
-mJ
 zw
-oI
-oI
-oI
-Rq
-Rq
+zw
+zw
+zw
+zw
+by
+zw
 Nu
 un
 rP
@@ -10937,23 +11414,23 @@ De
 zj
 De
 De
-MS
-MS
-MS
-ao
+GW
+FV
+FV
+FV
 ao
 zY
-pV
-Zq
-pV
+WP
 Gu
+ao
+pV
 ao
 iw
 pu
 ZH
 RD
 GX
-RD
+jD
 af
 xt
 gj
@@ -10982,41 +11459,41 @@ Dl
 Dl
 Dl
 Dl
-Dl
-rP
-rP
-rP
-rP
-rP
-Jf
-oI
-oI
-oI
-Rq
-Rq
-Rq
+cq
+Fd
+pe
+ke
+zw
+zw
+zw
+hd
+zw
+by
+zw
+zw
+zw
 lC
 ao
-ao
+tu
 Rw
 iG
 dR
 Zh
 oY
 iG
-ao
-rT
-kH
-ao
-ao
-ao
-ao
-ao
-lP
-uh
 FV
-BP
+rT
+ao
+ao
+ao
+ao
+ao
+ao
+LW
+pV
 YK
+ao
+lV
 ao
 iw
 ao
@@ -11052,19 +11529,19 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
 eM
+eM
+eM
+nG
 ke
-CJ
-oI
-oI
-oI
-oI
-oI
-oI
+zw
+zw
+zw
+zw
+by
+zw
 La
-Rq
+cw
 lC
 ao
 ao
@@ -11122,15 +11599,15 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
-eM
-Xh
-oI
-oI
-oI
-oI
-oI
+NL
+NL
+rP
+rP
+VD
+GY
+zw
+zw
+zw
 tE
 vO
 rP
@@ -11192,15 +11669,15 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
-eM
-Jg
-oI
-oI
+NL
+NL
+NL
+rP
+yw
+xI
 al
-oI
-oI
+IK
+al
 uN
 OR
 eM
@@ -11209,18 +11686,18 @@ eM
 ao
 ao
 Rw
-ao
+CJ
 ao
 Lz
 ao
 ao
+CJ
 ao
 ao
 ao
 ao
 ao
 ao
-fO
 Lz
 ao
 NY
@@ -11262,14 +11739,14 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
+NL
+NL
+NL
 rP
 eM
 eM
 eM
 rP
-eM
 eM
 eM
 eM
@@ -11298,8 +11775,8 @@ Cp
 UF
 em
 ao
-ao
-ao
+hF
+hF
 ms
 jR
 FW
@@ -11332,8 +11809,8 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
+NL
+NL
 NL
 NL
 NL
@@ -11362,14 +11839,14 @@ ZW
 Cy
 zO
 De
-ao
+FV
 fv
 HM
 QE
 FV
-ao
-fv
-fv
+CJ
+hF
+pE
 ms
 ms
 Rn
@@ -11402,8 +11879,8 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
+NL
+NL
 NL
 NL
 NL
@@ -11439,8 +11916,8 @@ fv
 fv
 fv
 fv
-NL
-NL
+fv
+ms
 NL
 NL
 NL
@@ -11472,8 +11949,8 @@ Dl
 Dl
 Dl
 Dl
-Dl
-Dl
+NL
+NL
 NL
 NL
 NL
@@ -11556,7 +12033,7 @@ hS
 vh
 hS
 De
-tZ
+BP
 De
 Yl
 De
@@ -11923,14 +12400,14 @@ sj
 hA
 vh
 WF
+UI
 vh
-Pt
 DZ
 ID
 Pt
 Ji
+Ji
 GJ
-sA
 MK
 iX
 OA
@@ -11994,10 +12471,10 @@ Te
 vh
 vh
 vh
-Kn
-yW
-ID
-yW
+vh
+Li
+BB
+cl
 Ji
 ST
 sA
@@ -12064,10 +12541,10 @@ Ba
 vh
 df
 IU
-Li
+vh
 Li
 OY
-yW
+NU
 Ji
 la
 sA
@@ -12133,11 +12610,11 @@ So
 Gm
 vh
 Yx
-se
-yW
-yW
+MF
+vh
+Li
 Io
-gO
+YA
 Ji
 hn
 sA
@@ -12149,7 +12626,7 @@ Ji
 Vs
 Vs
 Vs
-eE
+Ji
 eE
 eE
 eE
@@ -12204,10 +12681,10 @@ LC
 vh
 Gx
 OE
-Pt
+xT
 XA
 lw
-cu
+YA
 Ji
 vK
 sA
@@ -12216,10 +12693,10 @@ Iu
 cp
 fP
 Ji
-Dl
-Dl
-Dl
-Dl
+DR
+nm
+GO
+Ji
 Dl
 Dl
 Dl
@@ -12272,24 +12749,24 @@ vh
 Mo
 vh
 vh
-vh
-vh
+LH
+za
 vh
 Ps
-YA
-DR
+se
+yW
 Ji
 sA
 sA
 sA
 sA
-Se
-Qp
+Dd
+xb
+uY
+Fv
+Fv
+bv
 Ji
-Dl
-Dl
-Dl
-Dl
 Dl
 Dl
 Dl
@@ -12341,25 +12818,25 @@ NL
 vh
 Qz
 Wq
+cW
+sW
+RX
 vh
-Dl
-Dl
 vh
-hS
-hS
-hS
+Wg
+yW
 Ji
 OL
 uX
 sA
 sA
-Dd
-Pc
+Qp
+Qp
 Ji
-Dl
-Dl
-Dl
-Dl
+pI
+sU
+Fu
+Ji
 Dl
 Dl
 Dl
@@ -12402,7 +12879,7 @@ vh
 vh
 vh
 fl
-Gp
+on
 Hc
 Gp
 fl
@@ -12412,24 +12889,24 @@ vh
 Iw
 Az
 vh
-Dl
-Dl
-Dl
-Dl
-Dl
-Dl
+Se
+TA
+Kn
+vh
+gO
+yW
 Ji
 zv
 zv
 Ji
+Ji
+zv
+zv
+Ji
+zv
 gy
+oL
 Ji
-pE
-Ji
-Dl
-Dl
-Dl
-Dl
 Dl
 Dl
 Dl
@@ -12482,25 +12959,25 @@ vh
 vh
 vh
 vh
+lP
+lP
+vh
+vh
+RV
+wm
+vh
 Dl
 Dl
-Dl
-Dl
-Dl
-Dl
+eE
 Dl
 Dl
 Dl
 Ji
-sU
-nm
-WP
+fI
+Qb
+RY
 Ji
-eE
-eE
-eE
-eE
-eE
+vp
 eE
 eE
 pY
@@ -12555,21 +13032,21 @@ Dl
 Dl
 Dl
 Dl
+vh
+lP
+lP
+vh
 Dl
 Dl
-Dl
+eE
 Dl
 Dl
 Dl
 Ji
-GW
+Ad
 sU
 sU
 Ji
-Dl
-Dl
-Dl
-Dl
 Dl
 Dl
 pY
@@ -12631,15 +13108,15 @@ Dl
 Dl
 Dl
 Dl
+eE
+Dl
+Dl
+Dl
 Ji
-pI
-sU
-Fu
+od
 Ji
-Dl
-Dl
-Dl
-Dl
+Ji
+Ji
 Dl
 Dl
 pY
@@ -12701,12 +13178,12 @@ Dl
 Dl
 Dl
 Dl
-Ji
-zv
-zv
-oL
-Ji
+eE
 Dl
+Dl
+Dl
+Dl
+Fr
 Dl
 Dl
 Dl
@@ -12771,12 +13248,12 @@ Dl
 Dl
 Dl
 Dl
-Ji
-fI
-Qb
-RY
-Ji
+eE
 Dl
+Dl
+Dl
+Dl
+Fr
 Dl
 Dl
 Dl
@@ -12838,15 +13315,15 @@ pY
 pY
 pY
 eE
-eE
-eE
-eE
-Ji
-Ad
-sU
-sU
-Ji
 Dl
+Dl
+Dl
+eE
+Dl
+Dl
+Dl
+Dl
+Fr
 Dl
 Dl
 eE
@@ -12910,13 +13387,13 @@ Dl
 pY
 pY
 pY
+pY
 eE
-Ji
-od
-Ji
-Ji
-Ji
-eE
+pY
+pY
+pY
+pY
+Fn
 pY
 pY
 pY
@@ -12981,12 +13458,12 @@ Dl
 Dl
 Dl
 Dl
-NL
-NL
-NL
-NL
 Dl
 Dl
+Dl
+Dl
+Dl
+Fr
 Dl
 Dl
 Dl
