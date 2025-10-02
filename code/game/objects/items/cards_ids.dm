@@ -195,12 +195,14 @@
 	var/rank = null			//actual job
 	var/access_txt // mapping aid
 	var/bank_support = ID_FREE_BANK_ACCOUNT
+	var/withdraw_allowed = TRUE // BLUEMOON ADD
 	var/datum/bank_account/registered_account
 	var/obj/machinery/paystand/my_store
 	var/uses_overlays = TRUE
 	var/icon/cached_flat_icon
 	var/card_sticker = FALSE //BLUEMOON ADD часть карт можно навешивать на другие карты
 	var/list/previous_icon_data[3] //BLUEMOON ADD лист для наклеек на карты, порядок icon, icon_state, assignment
+	var/special_assignment = null // BLUEMOOD ADD для особых карт и их HUD, техническое
 
 /obj/item/card/id/Initialize(mapload)
 	. = ..()
@@ -379,6 +381,16 @@
 		set_new_account(user)
 		return
 
+	// BLUEMOON ADD START
+	if(!withdraw_allowed)
+		var/message = span_warning("ERROR: This card is not allowed withdraw credits.")
+		if(registered_account)
+			registered_account.bank_card_talk(message)
+		else
+			to_chat(user, message)
+		return
+	// BLUEMOON ADD END
+
 	if (world.time < registered_account.withdrawDelay)
 		registered_account.bank_card_talk("<span class='warning'>ERROR: UNABLE TO LOGIN DUE TO SCHEDULED MAINTENANCE. MAINTENANCE IS SCHEDULED TO COMPLETE IN [(registered_account.withdrawDelay - world.time)/10] SECONDS.</span>", TRUE)
 		return
@@ -435,17 +447,19 @@
 	return src
 
 /obj/item/card/id/update_overlays()
-	. = ..()
-	if(!uses_overlays)
-		return
-	cached_flat_icon = null
-	var/job = assignment ? ckey(get_job_name()) : null
-	job = replacetext(job, " ", "")
-	job = lowertext(job)
-	if(registered_name && registered_name != "Captain")
-		. += mutable_appearance(icon, "assigned")
-	if(job)
-		. += mutable_appearance(icon, "id[job]")
+    . = ..()
+    if(!uses_overlays)
+        return
+    cached_flat_icon = null
+    var/job = assignment ? ckey(get_job_name()) : null
+    var/list/specialjobs = list(/obj/item/card/id/syndicate/advanced/ds) // Для спец. ролей с уникальными картами
+    job = replacetext(job, " ", "")
+    job = replacetext(job, "-", "") // Для учёта более сложных assigment'ов, как на DS-1/2
+    job = lowertext(job)
+    if(registered_name && registered_name != "Captain" && !is_type_in_list(src, specialjobs))
+        . += mutable_appearance(icon, "assigned")
+    if(job)
+        . += mutable_appearance(icon, "id[job]")
 
 /obj/item/card/id/proc/get_cached_flat_icon()
 	if(!cached_flat_icon)
@@ -870,6 +884,7 @@
 	name = "departmental card (FUCK)"
 	desc = "Provides access to the departmental budget."
 	icon_state = "budgetcard"
+	withdraw_allowed = FALSE // BLUEMOON ADD
 	var/department_ID = ACCOUNT_CIV
 	var/department_name = ACCOUNT_CIV_NAME
 
@@ -989,5 +1004,6 @@
 
 /obj/item/card/id/death
 	name = "\improper Death Commando ID"
-	icon_state = "centcom"
+	icon_state = "deathsquad"
 	assignment = "Death Commando"
+	special_assignment = "deathcommando"

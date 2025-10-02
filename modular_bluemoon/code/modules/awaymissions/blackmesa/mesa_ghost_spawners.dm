@@ -66,7 +66,7 @@
 	name = "Black mesa security id card"
 	assignment = "Black mesa security guard"
 	desc = "An access card designated for \"security members\". Everyone wants your guns, partner. Yee-haw."
-	access = list(ACCESS_AWAY_GENERAL, ACCESS_WEAPONS, ACCESS_SEC_DOORS, ACCESS_SECURITY)
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_BRIG, ACCESS_WEAPONS, ACCESS_SEC_DOORS, ACCESS_SECURITY)
 
 //одежда?
 
@@ -129,7 +129,7 @@
 	name = "Black mesa sector H director id card"
 	assignment = "Black mesa security guard"
 	desc = "An access card designated for \"the science team leaders\". You are forgotten basically immediately when it comes to the lab."
-	access = list(ACCESS_AWAY_GENERAL, ACCESS_WEAPONS, ACCESS_SEC_DOORS, ACCESS_SECURITY, ACCESS_ROBOTICS, ACCESS_AWAY_GENERAL, ACCESS_WEAPONS)
+	access = list(ACCESS_AWAY_GENERAL, ACCESS_SEC_DOORS, ACCESS_SECURITY, ACCESS_BRIG, ACCESS_ROBOTICS, ACCESS_AWAY_GENERAL, ACCESS_WEAPONS, ACCESS_RD)
 
 
 //ХЕКУ
@@ -267,7 +267,7 @@
 	head = /obj/item/clothing/head/beret/sec
 	suit = /obj/item/clothing/suit/armor/hecu
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	belt = /obj/item/storage/belt/military/assault/hecu
+	belt = /obj/item/storage/belt/military/russianweb
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/grenade/smokebomb
 	r_pocket = /obj/item/binoculars
