@@ -122,7 +122,7 @@
 	assignment = "Sol"
 	uses_overlays = FALSE
 	card_sticker = TRUE
-	special_assignment = "sol"
+	special_assignment = "sol" // BLUEMOON ADD
 
 /obj/item/card/id/nri_citizen
 	name = "NRI Citizen ID"
@@ -131,16 +131,7 @@
 	assignment = "NRI"
 	uses_overlays = FALSE
 	card_sticker = TRUE
-	special_assignment = "nri"
-
-/obj/item/card/id/blumenland_citizen
-	name = "Blumenland Citizen ID"
-	desc = "An ID made to recognize Blumenland Confederation habbitants and tourists."
-	icon_state = "blumland"
-	assignment = "Blumenland Citizen"
-	uses_overlays = FALSE
-	card_sticker = TRUE
-	special_assignment = "bmland"
+	special_assignment = "nri" // BLUEMOON ADD
 
 //// The default nun robe change to uniform slot
 
@@ -185,7 +176,7 @@
 
 /datum/uplink_item/stealthy_weapons/akimbo
 	name = "Akimbo Guide"
-	desc = "A book that provides the agent some abilities to shoot heavy two-handed weapons easily using just one arm."
+	desc = "A book that provides the agent some abilities to shoot heavy two-handed weapons easily using just one arm with a sacrifice to shoot in auto."
 	item = /obj/item/book/granter/trait/akimbo
 	cost = 6
 	purchasable_from = UPLINK_TRAITORS
@@ -193,7 +184,7 @@
 
 /obj/item/book/granter/trait/akimbo
 	name = "The Rules of Engagement"
-	desc = "Allows to shoot two-handed weapons more effectively after reading."
+	desc = "Allows to shoot two-handed weapons more effectively after reading. A red line says: \"disallows you to shoot weapons in automatic mode\"."
 	oneuse = TRUE
 	granted_trait = TRAIT_AKIMBO
 	traitname = "akimbo"

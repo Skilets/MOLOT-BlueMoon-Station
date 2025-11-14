@@ -133,7 +133,7 @@
 	} while(FALSE)
 
 //Returns a list in plain english as a string
-/proc/english_list(list/input, nothing_text = "nothing", and_text = " and ", comma_text = ", ", final_comma_text = "" )
+/proc/english_list(list/input, nothing_text = "ничего", and_text = " и ", comma_text = ", ", final_comma_text = "" )
 	var/total = length(input)
 	switch(total)
 		if (0)
@@ -158,7 +158,7 @@
  * English_list but associative supporting. Higher overhead.
  * @depricated
  */
-/proc/english_list_assoc(list/input, nothing_text = "nothing", and_text = " and ", comma_text = ", ", final_comma_text = "")
+/proc/english_list_assoc(list/input, nothing_text = "ничего", and_text = " и ", comma_text = ", ", final_comma_text = "")
 	var/total = length(input)
 	switch(total)
 		if (0)
@@ -871,6 +871,18 @@
 		if(checked_atom.flags_1 & ignore_flag_1)
 			continue
 		. += checked_atom.contents
+
+/// Ищет объект и его дочерние объекты среди указанного листа.
+/proc/is_typeof_list(typepath, list/type_list)
+	if (!ispath(typepath))
+		if (istext(typepath)) // Для работы с датумами прок учитывает то, что у нас выводится при return (Например, текстово - путь предмета /datum/gear)
+			typepath = text2path(typepath)
+		else
+			return FALSE
+	for (var/T in type_list)
+		if (ispath(typepath, T))
+			return TRUE
+	return FALSE
 
 /// Returns whether a numerical index is within a given list's bounds. Faster than isnull(LAZYACCESS(L, I)).
 #define ISINDEXSAFE(L, I) (I >= 1 && I <= length(L))
