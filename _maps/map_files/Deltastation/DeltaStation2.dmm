@@ -60378,21 +60378,6 @@
 	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
 	name = "emergency lifejacket"
 	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
 /obj/item/clothing/mask/breath{
 	pixel_x = -3;
 	pixel_y = -3
@@ -60444,6 +60429,11 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
 /turf/open/floor/plasteel/dark,
 /area/maintenance/port/aft)
 "edh" = (
@@ -60491,21 +60481,6 @@
 	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
 	name = "emergency lifejacket"
 	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
 /obj/item/clothing/mask/breath{
 	pixel_x = -3;
 	pixel_y = -3
@@ -60547,6 +60522,11 @@
 	pixel_y = 9
 	},
 /obj/structure/closet/crate/internals,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
 "edl" = (
@@ -66256,7 +66236,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/port)
 "fzp" = (
-/obj/structure/sign/poster/official/no_erp{
+/obj/structure/sign/poster/contraband/yes_erp{
 	pixel_y = -1
 	},
 /obj/structure/cable/white{
@@ -71526,9 +71506,7 @@
 /obj/machinery/door/window{
 	name = "Secure Art Exhibition"
 	},
-/obj/structure/sign/painting/library_secure{
-	pixel_y = 32
-	},
+/obj/structure/sign/painting/large/library_private/directional/north,
 /turf/open/floor/carpet,
 /area/service/library)
 "haL" = (
@@ -74026,21 +74004,6 @@
 	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
 	name = "emergency lifejacket"
 	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
 /obj/item/clothing/mask/breath{
 	pixel_x = -3;
 	pixel_y = -3
@@ -74086,6 +74049,11 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/bot/yellow,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
 /turf/open/floor/plasteel,
 /area/commons/storage/primary)
 "hIq" = (
@@ -78361,21 +78329,6 @@
 	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
 	name = "emergency lifejacket"
 	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
 /obj/item/clothing/mask/breath{
 	pixel_x = -3;
 	pixel_y = -3
@@ -78418,6 +78371,11 @@
 	},
 /obj/structure/closet/crate/internals,
 /obj/effect/turf_decal/bot/yellow,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
 /turf/open/floor/plasteel,
 /area/cargo/storage)
 "iOd" = (
@@ -84023,6 +83981,14 @@
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
+"kpT" = (
+/obj/structure/window/reinforced,
+/obj/structure/table/wood/fancy,
+/obj/structure/sign/painting/library_secure{
+	pixel_y = 32
+	},
+/turf/open/floor/carpet,
+/area/service/library)
 "kpU" = (
 /obj/structure/table/wood,
 /obj/structure/cable/white{
@@ -84120,12 +84086,8 @@
 /area/engineering/break_room)
 "krd" = (
 /obj/structure/table/wood/fancy,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced,
-/obj/structure/sign/painting/library_secure{
-	pixel_y = 32
+/obj/machinery/door/window{
+	name = "Secure Art Exhibition"
 	},
 /turf/open/floor/carpet,
 /area/service/library)
@@ -93601,6 +93563,9 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/structure/sign/painting/library_private{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/dark,
 /area/service/library)
 "nfq" = (
@@ -97831,6 +97796,9 @@
 /area/service/chapel/office)
 "oor" = (
 /obj/item/kirbyplants/random,
+/obj/machinery/status_display/evac{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/grimy,
 /area/service/library)
 "ooL" = (
@@ -116210,6 +116178,8 @@
 	name = "Station Intercom";
 	pixel_y = -26
 	},
+/obj/item/taperecorder,
+/obj/item/storage/bag/books,
 /turf/open/floor/plasteel/grimy,
 /area/service/library)
 "tzz" = (
@@ -120497,7 +120467,6 @@
 /turf/closed/wall/r_wall,
 /area/security/brig_cells)
 "uJd" = (
-/obj/item/kirbyplants/random,
 /obj/item/radio/intercom{
 	name = "Station Intercom";
 	pixel_y = -26
@@ -120515,6 +120484,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/machinery/bookbinder,
 /turf/open/floor/plasteel/dark,
 /area/service/library)
 "uJu" = (
@@ -121913,12 +121883,12 @@
 /turf/open/floor/plasteel/dark/textured,
 /area/security/brig_cells)
 "vem" = (
-/obj/structure/table/wood,
-/obj/item/storage/bag/books,
-/obj/item/taperecorder,
 /obj/structure/noticeboard{
 	dir = 8;
 	pixel_x = 32
+	},
+/obj/machinery/modular_computer/console/preset/curator{
+	dir = 8
 	},
 /turf/open/floor/plasteel/grimy,
 /area/service/library)
@@ -125552,9 +125522,7 @@
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
 "wjj" = (
-/obj/structure/sign/painting/library{
-	pixel_y = -32
-	},
+/obj/structure/sign/painting/large/library/directional/south,
 /turf/open/floor/wood,
 /area/service/library)
 "wjm" = (
@@ -128029,9 +127997,7 @@
 	name = "Station Intercom";
 	pixel_x = -26
 	},
-/obj/structure/sign/painting/library{
-	pixel_y = -32
-	},
+/obj/structure/sign/painting/large/library/directional/south,
 /turf/open/floor/wood,
 /area/service/library)
 "wRU" = (
@@ -129000,21 +128966,6 @@
 	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
 	name = "emergency lifejacket"
 	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
-/obj/item/tank/internals/emergency_oxygen/double{
-	pixel_x = 3
-	},
 /obj/item/clothing/mask/breath{
 	pixel_x = -3;
 	pixel_y = -3
@@ -129057,6 +129008,11 @@
 	},
 /obj/structure/closet/crate/internals,
 /obj/effect/turf_decal/bot/yellow,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
 /turf/open/floor/plasteel,
 /area/command/gateway)
 "xip" = (
@@ -164472,7 +164428,7 @@ bYR
 uhj
 gXc
 ojB
-wjj
+mfn
 uhj
 sVU
 jEh
@@ -164986,7 +164942,7 @@ bYM
 uhj
 gXc
 ojB
-wjj
+mfn
 uhj
 uub
 jEh
@@ -166024,7 +165980,7 @@ iFc
 sQF
 iFc
 oor
-tHr
+uhj
 nfc
 eJH
 lhi
@@ -166269,7 +166225,7 @@ bUr
 bWD
 sRE
 uhj
-hrK
+kpT
 qVe
 lMF
 hkG
