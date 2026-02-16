@@ -320,7 +320,7 @@
 	short_desc = "Вы застряли в этом Безбожном Месте."
 	flavour_text = "Каждый день вы еле-еле сводите концы с концами, \
 	враждебными существами и Пепельными Дрейками, слетающими с безоблачного неба. Все, что вы можете пожелать, это почувствовать мягкую траву между пальцами ног и \
-	свежий воздух Земли. Эти мысли развеиваются очередным воспоминанием о том, как вы сюда попали..."
+	свежий воздух Земли. Эти мысли развеиваются очередным воспоминанием о том, как вы сюда попали... Также в вашем распоряжении есть пергамент что поможет вам создавать и метала и стекла различные детали и платы что могут вам помочь."
 	assignedrole = "Hermit"
 	can_load_appearance = TRUE
 	loadout_enabled = TRUE
@@ -333,31 +333,40 @@
 	switch(arrpee)
 		if(1)
 			flavour_text += "вы были помощником [pick("Оружейника", "Корабельщика", "Финансового Менеджера")] на небольшой торговой станции в нескольких секторах отсюда. Рейдеры напали на ваше судно и в спасательном отсеке оставалась \
-			всего только одна капсула. Вы отбросили или отвлекли, или вас пропустили и в итоге благодаря спасательной капсуле вы... спаслись? Так или иначе, вы не забудете ту кучу испуганных лиц в момент вашего отлёта."
+			всего только одна капсула. Вы отбросили или отвлекли, или вас пропустили и в итоге благодаря спасательной капсуле вы... спаслись? Так или иначе, вы не забудете ту кучу испуганных лиц в момент вашего отлёта. Вы смогли с собой взять ваш чертеж с наработками, где вы создали собственную технику создания важной машинерии и деталей, вы еще в этом деле аматор, но со временем явно сможете делать лучше."
 			outfit.uniform = /obj/item/clothing/under/misc/assistantformal
 			outfit.shoes = /obj/item/clothing/shoes/sneakers/black
 			outfit.back = /obj/item/storage/backpack
+			backpack_contents = list(
+				/obj/item/research_paper = 1,)
 		if(2)
 			flavour_text += "вы изгнанник из кооператива 'Тигр'. Их технологический фанатизм заставил вас усомниться в силе и убеждениях Экзолитиков и они сочли вас \
 			еретиком, и подвергли вас многочасовым ужасным пыткам. Вы были в нескольких часах от казни, когда ваш высокопоставленный друг в Кооперативе сумел достать для вас капсулу, \
-			зашифровал координаты места назначения и запустил ее. Вы очнулись от стазиса, когда приземлились... и с тех пор выживаете - с трудом, но выживаете."
+			зашифровал координаты места назначения и запустил ее. Вы очнулись от стазиса, когда приземлились... и с тех пор выживаете - с трудом, но выживаете. Вы смогли с собой взять ваш чертеж с наработками, где вы создали собственную технику создания важной машинерии и деталей, вы еще в этом деле аматор, но со временем явно сможете делать лучше."
 			outfit.uniform = /obj/item/clothing/under/rank/prisoner
 			outfit.shoes = /obj/item/clothing/shoes/sneakers/orange
 			outfit.back = /obj/item/storage/backpack
+			backpack_contents = list(
+				/obj/item/research_paper = 1,)
 		if(3)
 			flavour_text += "Вы были врачом на одной из космических станций Nanotrasen, но вы оставили позади тиранию этой проклятой корпорации и все то, за что она стояла. Из метафорического ада \
-			в буквальный - вы обнаружили, что вам все же не хватает чистого воздуха и теплых полов из сего того, что вы оставили... но вы все равно предпочтете быть здесь, а не там."
+			в буквальный - вы обнаружили, что вам все же не хватает чистого воздуха и теплых полов из сего того, что вы оставили... но вы все равно предпочтете быть здесь, а не там. Вы смогли с собой взять ваш чертеж с наработками, где вы создали собственную технику создания важной машинерии и деталей, вы еще в этом деле аматор, но со временем явно сможете делать лучше."
 			outfit.uniform = /obj/item/clothing/under/rank/medical/doctor
 			outfit.suit = /obj/item/clothing/suit/toggle/labcoat
 			outfit.back = /obj/item/storage/backpack/medic
 			outfit.shoes = /obj/item/clothing/shoes/sneakers/black
+			backpack_contents = list(
+				/obj/item/research_paper = 1,)
 		if(4)
 			flavour_text += "Ваши друзья всегда подшучивали над вами за то, что вы 'Не Играете с Полной Колодой', как они так доброжелательно выражались. Похоже, они были правы, когда вы, находясь на экскурсии \
 			по одному из самых современных исследовательских комплексов Nanotrasen, оказались в одной из спасательных капсул в одиночестве и увидели красную кнопку. Она была большой и блестящей, и это привлекло ваше внимание. Вы нажали на неё \
-			и после ужасающего, и быстрого путешествия в течение нескольких дней вы оказались здесь. С тех пор у вас было время поумнеть и вы думаете, что ваши старые друзья сейчас бы не смеялись."
+			и после ужасающего, и быстрого путешествия в течение нескольких дней вы оказались здесь. С тех пор у вас было время поумнеть и вы думаете, что ваши старые друзья сейчас бы не смеялись. За время вы научились выживать, и создали собственную технику что может вам помочь в создании различной машинерии и деталей к ним."
 			outfit.uniform = /obj/item/clothing/under/color/grey/glorf
 			outfit.shoes = /obj/item/clothing/shoes/sneakers/black
 			outfit.back = /obj/item/storage/backpack
+			backpack_contents = list(
+				/obj/item/research_paper = 1,)
+
 
 /obj/effect/mob_spawn/human/hermit/Destroy()
 	new/obj/structure/fluff/empty_cryostasis_sleeper(get_turf(src))
@@ -366,6 +375,7 @@
 /obj/effect/mob_spawn/human/hermit/special(mob/living/carbon/human/new_spawn)
 	. = ..()
 	ADD_TRAIT(new_spawn,TRAIT_EXEMPT_HEALTH_EVENTS,GHOSTROLE_TRAIT)
+	ADD_TRAIT(new_spawn,TRAIT_KNOWS_RESEARCH,GHOSTROLE_TRAIT)
 
 //Broken rejuvenation pod: Spawns in animal hospitals in lavaland. Ghosts become disoriented interns and are advised to search for help.
 /obj/effect/mob_spawn/human/doctor/alive/lavaland
@@ -875,7 +885,7 @@
 
 /datum/action/toggle_dead_chat_mob
 	icon_icon = 'icons/mob/mob.dmi'
-	button_icon_state = "ghost"
+	button_icon_state = "ghost1"
 	name = "Toggle deadchat"
 	desc = "Turn off or on your ability to hear ghosts."
 
@@ -1453,7 +1463,7 @@
 	uniform = /obj/item/clothing/under/syndicate
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/ds2
-	back = /obj/item/storage/backpack/duffelbag/syndie
+	back = /obj/item/storage/backpack/duffelbag/syndie/backpack
 	backpack_contents = list(
 		/obj/item/storage/box/survival = 1,
 		/obj/item/crowbar/red = 1,
@@ -1465,7 +1475,7 @@
 /datum/outfit/ds2/syndicate/service
 	name = "DS-2 General Staff"
 	uniform = /obj/item/clothing/under/syndicate
-	back = /obj/item/storage/backpack/duffelbag/syndie
+	back = /obj/item/storage/backpack/duffelbag/syndie/backpack/cargo
 	suit = /obj/item/clothing/suit/apron/chef
 	head = /obj/item/clothing/head/soft/mime
 	id = /obj/item/card/id/syndicate/advanced/ds/general
@@ -1475,7 +1485,7 @@
 	name = "DS-2 Engine Technician"
 	uniform = /obj/item/clothing/under/syndicate/overalls
 	head = /obj/item/clothing/head/soft/sec/syndicate
-	back = /obj/item/storage/backpack/duffelbag/syndie
+	back = /obj/item/storage/backpack/duffelbag/syndie/backpack/eng
 	backpack_contents = list(
 		/obj/item/storage/box/survival = 1,
 		)
@@ -1493,7 +1503,7 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
 	glasses = /obj/item/clothing/glasses/science
 	gloves = /obj/item/clothing/gloves/color/black
-	back = /obj/item/storage/backpack/duffelbag/syndie
+	back = /obj/item/storage/backpack/duffelbag/syndie/backpack/sci
 	id = /obj/item/card/id/syndicate/advanced/ds/researcher
 	id_trim = /datum/id_trim/syndicom/ds2/researcher
 
@@ -1503,7 +1513,7 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/syndicate
 	belt = /obj/item/storage/belt/medolier/full
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/hsc
-	back = /obj/item/storage/backpack/duffelbag/syndie
+	back = /obj/item/storage/backpack/duffelbag/syndie/backpack/med
 	id = /obj/item/card/id/syndicate/advanced/ds/stationmed
 	id_trim = /datum/id_trim/syndicom/ds2/medicalofficer
 	backpack_contents = list(
@@ -1517,7 +1527,7 @@
 	uniform = /obj/item/clothing/under/syndicate/combat
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	suit = /obj/item/clothing/suit/armor/bulletproof/old
-	back = /obj/item/storage/backpack/duffelbag/syndie
+	back = /obj/item/storage/backpack/duffelbag/syndie/backpack
 	head = /obj/item/clothing/head/helmet/swat/ds
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	r_pocket = /obj/item/flashlight/seclite
@@ -1536,7 +1546,7 @@
 	uniform = /obj/item/clothing/under/syndicate
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/ds2/command
-	back = /obj/item/storage/backpack/duffelbag/syndie
+	back = /obj/item/storage/backpack/duffelbag/syndie/backpack/com
 	backpack_contents = list(
 		/obj/item/storage/box/survival = 1,
 		/obj/item/crowbar/red = 1,
@@ -1551,7 +1561,7 @@
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	suit = /obj/item/clothing/suit/armor/vest/warden/syndicate
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	back = /obj/item/storage/backpack/duffelbag/syndie
+	back = /obj/item/storage/backpack/duffelbag/syndie/backpack/com
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	r_pocket = /obj/item/flashlight/seclite
 	implants = list(
@@ -1567,7 +1577,7 @@
 	uniform = /obj/item/clothing/under/syndicate/sniper
 	head = /obj/item/clothing/head/fedora
 	shoes = /obj/item/clothing/shoes/laceup
-	back = /obj/item/storage/backpack/duffelbag/syndie
+	back = /obj/item/storage/backpack/duffelbag/syndie/backpack/com
 	id_trim = /datum/id_trim/syndicom/ds2/corporateliasion
 	id = /obj/item/card/id/syndicate/advanced/ds/gold/command/corporateliaison
 
@@ -1578,7 +1588,7 @@
 	mask = /obj/item/clothing/mask/chameleon
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	back = /obj/item/storage/backpack/duffelbag/syndie
+	back = /obj/item/storage/backpack/duffelbag/syndie/backpack
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
 	r_pocket = /obj/item/gun/ballistic/automatic/pistol
 	implants = list(/obj/item/implant/weapons_auth)
@@ -1590,7 +1600,7 @@
 	uniform = /obj/item/clothing/under/rank/captain/utility/syndicate
 	neck = /obj/item/clothing/neck/cloak/syndieadm
 	suit = /obj/item/clothing/suit/toggle/captains_parade/syndicate
-	back = /obj/item/storage/backpack/duffelbag/syndie
+	back = /obj/item/storage/backpack/duffelbag/syndie/backpack/com
 	belt = /obj/item/gun/ballistic/automatic/pistol/APS
 	head = /obj/item/clothing/head/HoS/syndicate
 	id = /obj/item/card/id/syndicate/advanced/ds/gold/admiral

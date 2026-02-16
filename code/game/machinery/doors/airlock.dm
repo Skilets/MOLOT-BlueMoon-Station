@@ -1197,6 +1197,7 @@
 			else
 				addtimer(CALLBACK(cyclelinkedairlock, PROC_REF(close)), 2 DECISECONDS)
 	operating = TRUE
+	play_fov_effect(src, 5, "forcefield")
 	update_icon(ALL, AIRLOCK_OPENING, 1)
 	sleep(1)
 	set_opacity(0)
@@ -1253,6 +1254,7 @@
 		killthis.ex_act(EXPLODE_HEAVY)//Smashin windows
 
 	operating = TRUE
+	play_fov_effect(src, 5, "forcefield")
 	update_icon(ALL, AIRLOCK_CLOSING, 1)
 	layer = CLOSED_DOOR_LAYER
 	if(air_tight)
@@ -1632,7 +1634,7 @@
 		set_electrified(ELECTRIFIED_PERMANENT)
 
 /obj/machinery/door/airlock/proc/toggle_bolt(mob/user)
-	if(!user_allowed(user))
+	if(user && !user_allowed(user))
 		return
 	if(wires.is_cut(WIRE_BOLTS))
 		to_chat(user, "<span class='warning'>The door bolt drop wire is cut - you can't toggle the door bolts.</span>")
@@ -1646,13 +1648,13 @@
 		bolt()
 
 /obj/machinery/door/airlock/proc/toggle_emergency(mob/user)
-	if(!user_allowed(user))
+	if(user && !user_allowed(user))
 		return
 	emergency = !emergency
 	update_icon()
 
 /obj/machinery/door/airlock/proc/user_toggle_open(mob/user)
-	if(!user_allowed(user))
+	if(user && !user_allowed(user))
 		return
 	if(welded)
 		to_chat(user, text("The airlock has been welded shut!"))

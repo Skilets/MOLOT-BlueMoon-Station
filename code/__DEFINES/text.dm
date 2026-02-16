@@ -260,6 +260,7 @@ GLOBAL_LIST_INIT(mat_ru_nominative, list(
 	"plastic" = "пластик",
 	"biomass" = "биомасса",
 	"wood" = "дерево",
+	"cloth" = "ткань",
 	"adamantine" = "адамантин",
 	"mythril" = "мифрил",
 	"sand" = "песк",
@@ -293,6 +294,7 @@ GLOBAL_LIST_INIT(mat_ru_genitive, list(
 	"plastic" = "пластика",
 	"biomass" = "биомассы",
 	"wood" = "дерева",
+	"cloth" = "ткани",
 	"adamantine" = "адамантина",
 	"mythril" = "мифрила",
 	"sand" = "песка",
@@ -306,4 +308,26 @@ GLOBAL_LIST_INIT(mat_ru_genitive, list(
 	"bone" = "кости",
 	"bamboo" = "бамбука",
 	"rigid material" = "твёрдого материала",
+))
+
+/// Лист-словарь для examine string'а бюджетов
+
+GLOBAL_LIST_INIT(budget_ru_nominative, list(
+	"civil budget" = "Гражданский бюджет",
+	"engineering budget" = "Бюджет инженерного отдела",
+	"scientific budget" = "Бюджет научного отдела",
+	"medical budget" = "Бюджет медицинского отдела",
+	"service budget" = "Бюджет отдела сервиса",
+	"cargo budget" = "Бюджет отдела карго",
+	"defense budget" = "Бюджет службы безопасности",
+))
+
+GLOBAL_LIST_INIT(budget_ru_genitive, list(
+	"civil budget" = "гражданского отдела",
+	"engineering budget" = "инженерного отдела",
+	"scientific budget" = "научного отдела",
+	"medical budget" = "медицинского отдела",
+	"service budget" = "отдела сервиса",
+	"cargo budget" = "отдела карго",
+	"defense budget" = "отдела службы безопасности",
 ))

@@ -174,7 +174,7 @@
 				return
 
 			log_admin("[key_name(holder)] reset the thunderdome to default with delete_mobs==[delete_mobs].", 1)
-			message_admins("<span class='adminnotice'>[key_name_admin(holder)] reset the thunderdome to default with delete_mobs==[delete_mobs].</span>")
+			message_admins("[key_name_admin(holder)] reset the thunderdome to default with delete_mobs==[delete_mobs].")
 
 			var/area/thunderdome = GLOB.areas_by_type[/area/tdome/arena]
 			if(delete_mobs == "Да")
@@ -416,7 +416,7 @@
 				var/obj/item/card/id/W = H.wear_id?.GetID()
 				if(W)
 					W.registered_name = H.real_name
-					W.update_label(W.registered_name, W.assignment)
+					W.update_label()
 					if(worn)
 						if(istype(worn, /obj/item/pda))
 							worn.owner = W.registered_name

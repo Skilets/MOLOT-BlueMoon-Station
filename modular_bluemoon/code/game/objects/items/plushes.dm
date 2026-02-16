@@ -101,16 +101,16 @@
 	icon_state = "allta"
 	item_state = "aiko"
 	squeak_override = list(
-		'modular_bluemoon/SmiLeY/sounds/allta_mew1.ogg' = 1,
-		'modular_bluemoon/SmiLeY/sounds/allta_mew2.ogg' = 1,
-		'modular_bluemoon/SmiLeY/sounds/allta_mew3.ogg' = 1
+		'modular_bluemoon/sound/plush/allta_mew1.ogg' = 1,
+		'modular_bluemoon/sound/plush/allta_mew2.ogg' = 1,
+		'modular_bluemoon/sound/plush/allta_mew3.ogg' = 1
 	)
 
 /obj/item/toy/plush/bm/emma/zlatchek
 	name = "Zlat plushie"
 	desc = "Прапорщик - Ебучий койот. Примечание: Не доверяйте ему огнестрельное оружие."
 	icon_state = "zlat"
-	squeak_override = list('modular_bluemoon/SmiLeY/sounds/zlatchek.ogg' = 1)
+	squeak_override = list('modular_bluemoon/sound/plush/zlatchek.ogg' = 1)
 
 /obj/item/toy/plush/bm/tiamat
 	name = "Tiamat plushie"
@@ -120,11 +120,11 @@
 	squeak_override = list(
 		'modular_splurt/sound/voice/mrowl.ogg' = 1,
 		'modular_splurt/sound/voice/meow_meme.ogg' = 1,
-		'modular_bluemoon/SmiLeY/sounds/tiamat_mrrp1.ogg' = 1,
-		'modular_bluemoon/SmiLeY/sounds/tiamat_mrrp2.ogg' = 1,
-		'modular_bluemoon/SmiLeY/sounds/tiamat_meow1.ogg' = 1,
-		'modular_bluemoon/SmiLeY/sounds/tiamat_meow2.ogg' = 1,
-		'modular_bluemoon/SmiLeY/sounds/tiamat_meow3.ogg' = 1
+		'modular_bluemoon/sound/plush/tiamat_mrrp1.ogg' = 1,
+		'modular_bluemoon/sound/plush/tiamat_mrrp2.ogg' = 1,
+		'modular_bluemoon/sound/plush/tiamat_meow1.ogg' = 1,
+		'modular_bluemoon/sound/plush/tiamat_meow2.ogg' = 1,
+		'modular_bluemoon/sound/plush/tiamat_meow3.ogg' = 1
 	)
 
 /obj/item/toy/plush/bm/manul
@@ -136,8 +136,8 @@
 	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
 	squeak_override = list(
-		'modular_bluemoon/SmiLeY/sounds/manul1.ogg' = 1,
-		'modular_bluemoon/SmiLeY/sounds/manul2.ogg' = 1
+		'modular_bluemoon/sound/plush/manul1.ogg' = 1,
+		'modular_bluemoon/sound/plush/manul2.ogg' = 1
 	)
 
 /obj/item/toy/plush/bm/stasik
@@ -151,7 +151,7 @@
 	desc = "Нанотехнологическая игрушка, созданная в стенах научных комплексов НТ. Видимо яркие переливающиеся цвета их рук дело."
 	icon_state = "rainbow"
 	item_state = "rainbow"
-	squeak_override = list('modular_bluemoon/SmiLeY/sounds/allta_mew1.ogg' = 1)
+	squeak_override = list('modular_bluemoon/sound/plush/allta_mew1.ogg' = 1)
 
 /obj/item/toy/plush/bm/atmosian
 	name = "Atmosian Plushie"
@@ -165,9 +165,9 @@
 	desc = " Мягкая игрушка в форме кошки легко утолит вашу жажду объятий и ласки, от неё вы можете почувствовать легкий аромат пепла и сладковато ягодного вкуса."
 	icon_state = "laska"
 	squeak_override = list(
-		'modular_bluemoon/SmiLeY/sounds/tiamat_mrrp1.ogg' = 1,
-		'modular_bluemoon/SmiLeY/sounds/tiamat_mrrp2.ogg' = 1,
-		'modular_bluemoon/SmiLeY/sounds/tiamat_meow1.ogg' = 1
+		'modular_bluemoon/sound/plush/tiamat_mrrp1.ogg' = 1,
+		'modular_bluemoon/sound/plush/tiamat_mrrp2.ogg' = 1,
+		'modular_bluemoon/sound/plush/tiamat_meow1.ogg' = 1
 	)
 
 /obj/item/toy/plush/bm/plushy_savannah
@@ -422,6 +422,9 @@
 		qdel(src)
 		P.clashing = FALSE
 
+///////////////////////////////////////////////
+#define LOVE_INTERACTION_COOLDOWN 10 SECONDS
+
 /obj/item/toy/plush/bm/lissara
 	name = "Lissara plush"
 	desc = "Очаровательная мягкая игрушка в форме миниатюрной ламии. Её гладкое тело приятно тянется под пальцами, а хвост — гибкий, словно зовёт обвиться вокруг запястья. При лёгком нажатии на животик игрушка тихо шипит, а её тонкий язычок чуть высовывается наружу."
@@ -437,9 +440,9 @@
 	. = ..()
 
 	// Ограничение по процессу и времени на срабатывания
-	if(!love_target && istype(src.loc, /turf/open) && world.time - last_love_interaction >= 100)
+	if(!love_target && istype(src.loc, /turf/open) && world.time - last_love_interaction >= LOVE_INTERACTION_COOLDOWN)
 		var/obj/item/toy/plush/bm/araminta/P = locate() in range(1, src)
-		if(P && istype(P.loc, /turf/open) && !P.love_target && world.time - P.last_love_interaction >= 100)
+		if(P && istype(P.loc, /turf/open) && !P.love_target && world.time - P.last_love_interaction >= LOVE_INTERACTION_COOLDOWN)
 			spawn(1) // Что-то меняет пиксельную позицую после и так решаем приколы с бросками
 				if(istype(src.loc, /turf/open) && istype(P.loc, /turf/open)) // Изъятие из контейнера изначально считается как на открытом турфе, поэтому перепроверяем еще раз
 					loving_interaction(P)
@@ -483,8 +486,8 @@
 	var/distance = sqrt(dx * dx + dy * dy)
 
 	// Целевое расстояние между игрушками
-	var/target_distance = 16
-	var/tolerance = 5
+	var/const/target_distance = 16
+	var/const/tolerance = 5
 
 	// Нужно ли анимировать
 	var/need_animate = abs(distance - target_distance) > tolerance
@@ -549,26 +552,25 @@
 			src.say(pick(heart_broken_say))
 			partner.say(pick(heart_broken_say))
 			heart_broken = TRUE
-			goto cleanup
+			break
 		new /obj/effect/temp_visual/heart(get_turf(src))
 		new /obj/effect/temp_visual/heart(get_turf(partner))
 		if(i % 2 == 0)
-			playlewdinteractionsound(partner.loc, pick(GLOB.lewd_kiss_sounds), 90, 1, -1)
+			playsound(partner.loc, pick(GLOB.lewd_kiss_sounds), 90, TRUE, -1)
 		else
-			playlewdinteractionsound(src.loc, pick(GLOB.lewd_kiss_sounds), 90, 1, -1)
+			playsound(src.loc, pick(GLOB.lewd_kiss_sounds), 90, TRUE, -1)
 		sleep(8)
 
-	cleanup:
-		if(need_animate)
-			for(var/obj/item/toy/plush/plushe in list(src, partner))
-				var/list/offsets = original_pixel_offsets[plushe]
-				if(heart_broken)
-					plushe.pixel_x = offsets["pixel_x"]
-					plushe.pixel_y = offsets["pixel_y"]
-				else
-					animate(plushe, pixel_x = offsets["pixel_x"], pixel_y = offsets["pixel_y"], time = 6)
-		love_target = null
-		partner.love_target = null
+	if(need_animate)
+		for(var/obj/item/toy/plush/plushe in list(src, partner))
+			var/list/offsets = original_pixel_offsets[plushe]
+			if(heart_broken)
+				plushe.pixel_x = offsets["pixel_x"]
+				plushe.pixel_y = offsets["pixel_y"]
+			else
+				animate(plushe, pixel_x = offsets["pixel_x"], pixel_y = offsets["pixel_y"], time = 6)
+	love_target = null
+	partner.love_target = null
 
 
 /obj/item/toy/plush/bm/araminta
@@ -576,7 +578,7 @@
 	desc = "Плюшевая игрушка, вооруженная белыми лапками, готова совершить величайшее ограбление — украсть ваше свободное время."
 	icon_state = "araminta"
 	attack_verb = list("meow", "nya", "purrs")
-	squeak_override = list('modular_bluemoon/SmiLeY/sounds/allta_mew1.ogg' = 1,
+	squeak_override = list('modular_bluemoon/sound/plush/allta_mew1.ogg' = 1,
 	'modular_bluemoon/sound/voice/short_purr_silent.ogg' = 1
 	)
 	var/obj/item/toy/plush/bm/lissara/love_target
@@ -586,12 +588,15 @@
 	. = ..()
 
 	// Ограничение по процессу и времени на срабатывания
-	if(!love_target && istype(src.loc, /turf/open) && world.time - last_love_interaction >= 100)
+	if(!love_target && istype(src.loc, /turf/open) && world.time - last_love_interaction >= LOVE_INTERACTION_COOLDOWN)
 		var/obj/item/toy/plush/bm/lissara/P = locate() in range(1, src)
-		if(P && istype(P.loc, /turf/open) && !P.love_target && world.time - P.last_love_interaction >= 100)
+		if(P && istype(P.loc, /turf/open) && !P.love_target && world.time - P.last_love_interaction >= LOVE_INTERACTION_COOLDOWN)
 			spawn(1) // Что-то меняет пиксельную позицую после и так решаем приколы с бросками
 				if(istype(src.loc, /turf/open) && istype(P.loc, /turf/open)) // Изъятие из контейнера изначально считается как на открытом турфе, поэтому перепроверяем еще раз
 					P.loving_interaction(src)
+
+#undef LOVE_INTERACTION_COOLDOWN
+///////////////////////////////////////////////
 
 /obj/item/toy/plush/bm/stasik/artemq
 	name = "Artems toy plush"
@@ -677,5 +682,22 @@
 	name = "Vella plushie"
 	desc = "Почти плюшевая игрушка, наполнение которой по каким-то неведомым законам физики стало прозрачным. На ощупь очень сильно напоминает слизьку, а запах выдаёт гамму разнообразных ягодных ноток."
 	icon_state = "vella"
-	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
 	squeak_override = list('modular_splurt/sound/voice/catpeople/cat_mrrp1.ogg' = 1)
+
+/obj/item/toy/plush/bm/belfor
+	name = "Belfor plushie"
+	desc = "Белая как сахарная вата игрушка кота-учёного Синдиката. Его пушистый хвост в форме запятой лишь добавляет контраста. От него пахнет бридингом. Стоп.. что такое бридинг?"
+	icon_state = "belfor"
+	squeak_override = list('modular_splurt/sound/voice/meow_meme.ogg' = 1, 'modular_splurt/sound/voice/woof.ogg' = 1)
+
+/obj/item/toy/plush/bm/koteykomya
+	name = "Silly kitty plushie"
+	desc = "У неё осуждающий взгляд, как будто она в курсе всего, что вы когда-либо делали не так."
+	icon_state = "koteykomya"
+	squeak_override = list('modular_bluemoon/sound/plush/Koteyko_bad_smell.ogg' = 1, 'modular_bluemoon/sound/plush/Koteyko_rotting.ogg' = 1, 'modular_bluemoon/sound/plush/Koteyko_dicks_and_butts.ogg' = 1)
+
+/obj/item/toy/plush/bm/leia
+	name = "Mini Leia"
+	desc = "Плюшевая игрушка изготовленная из дешевых но приятных на ощюпь материалов. Сшита на темных мануфактурах ручками бедных кеткринских детей."
+	icon_state = "leia"
+	squeak_override = list('modular_bluemoon/sound/plush/leia_giggle.ogg' = 8, 'modular_bluemoon/sound/plush/leia_nyah.ogg' = 9, 'modular_bluemoon/sound/plush/leia_plan.ogg' = 1)

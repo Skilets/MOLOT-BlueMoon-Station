@@ -197,6 +197,18 @@
 			. += "<span class='warning'>[t_on] нервно дёргается.</span>\n"
 		if(100 to 200)
 			. += "<span class='warning'>[t_on] дрожит.</span>\n"
+
+	//belly riding
+	if(ishuman(buckled))
+		var/mob/living/carbon/human/H = buckled
+		var/datum/component/riding/human/riding_comp = H.GetComponent(/datum/component/riding/human)
+		if(RIDING_IS_BELLY(riding_comp?.buckle_type))
+			. += span_lewd("[t_on] удерживается ремнями, на животе [H].")
+
+	var/datum/component/riding/human/riding_comp = GetComponent(/datum/component/riding/human)
+	if(RIDING_IS_BELLY(riding_comp?.buckle_type) && has_buckled_mobs())
+		. += span_lewd("На [t_ego] животе, ремнями удерживаeтся [english_list(buckled_mobs)].")
+
 	var/appears_dead = FALSE
 	var/just_sleeping = FALSE
 	if(stat == DEAD || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
@@ -488,6 +500,10 @@ BLUEMOON - mechanical_erp_verbs_examine - REMOVAL END*/
 		// BLUEMOON ADD START - отображение надписей на теле, если они видимы и есть
 		if(show_written_on_bodypart_text != "")
 			msg += show_written_on_bodypart_text
+		// BLUEMOON ADD - отображение татуировок
+		var/tattoo_examine_text = get_tattoo_examine_text()
+		if(tattoo_examine_text)
+			msg += tattoo_examine_text
 		if(user.client?.prefs.cit_toggles & GENITAL_EXAMINE)
 		// BLUEMOON ADD END
 			for(var/obj/item/organ/genital/G in internal_organs)
@@ -564,7 +580,10 @@ BLUEMOON - mechanical_erp_verbs_examine - REMOVAL END*/
 			if(perpname)
 				var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.general)
 				if(R)
-					. += "<span class='deptradio'>Профессия:</span> [R.fields["rank"]]\n<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a><a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a>"
+					var/rank_tooltip = ""
+					if(R.fields["real_rank"] && R.fields["rank"] != R.fields["real_rank"])
+						rank_tooltip = " <span class='chat-tooltip chat-tooltip--warning'>\[?\]<span class='chat-tooltip__content'>[html_encode(R.fields["real_rank"])]</span></span>"
+					. += "<span class='deptradio'>Профессия:</span> [R.fields["rank"]][rank_tooltip]\n<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a><a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a>"
 				if(istype(H.glasses, /obj/item/clothing/glasses/hud/health) || istype(CIH, /obj/item/organ/cyberimp/eyes/hud/medical))
 					var/cyberimp_detect
 					for(var/obj/item/organ/cyberimp/CI in internal_organs)

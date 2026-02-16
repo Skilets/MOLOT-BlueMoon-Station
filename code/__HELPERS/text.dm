@@ -34,6 +34,21 @@
 			index = findtext(t, char)
 	return t
 
+/// Удаляет HTML-теги целиком, оставляя только текст между ними.
+/proc/strip_html_tags(t, trim_tab = FALSE, limit = 0)
+	if(!t)
+		return ""
+	if(limit > 0)
+		t = copytext(t, 1, limit)
+
+	// Удаляем теги вида <...>
+	t = replacetext(t, regex("<\[^>\]*>", "g"), "")
+
+	if(trim_tab)
+		t = sanitize_simple(t, list("\n"=" ", "\t"=" "))
+
+	return t
+
 //Removes a few problematic characters
 /proc/sanitize_simple(t,list/repl_chars = list("\n"="#","\t"="#"))
 	for(var/char in repl_chars)
@@ -512,9 +527,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 			tlist[i] = line
 		// end for
 
-		t = tlist[1]
-		for(var/i = 2, i <= tlistlen, i++)
-			t += "\n" + tlist[i]
+		t = jointext(tlist, "\n")
 
 		while(listlevel >= 0)
 			t += "</ul>"

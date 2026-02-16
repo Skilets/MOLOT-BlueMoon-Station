@@ -8,6 +8,7 @@
 	icon_state = "plasma"
 	item_state = ""	//no inhands
 	slot_flags = ITEM_SLOT_ACCESSORY
+	var/accessory_slot = ITEM_SLOT_ICLOTHING
 	slot_equipment_priority = list(ITEM_SLOT_ACCESSORY)
 	w_class = WEIGHT_CLASS_SMALL
 	var/above_suit = FALSE
@@ -550,8 +551,8 @@
 	desc = "Armpatch one of superior forces of Federal Agencies on territory of SolGov. This one belongs to Agent."
 	icon_state = "sfp_patch"
 	item_state = "sfp_patch"
-	icon = 'modular_bluemoon/SmiLeY/icons/sfp_armpatch_obj.dmi'
-	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/sfp_armpatch.dmi'
+	icon = 'modular_bluemoon/icons/obj/sfp_armpatch_obj.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/sfp_armpatch.dmi'
 	strip_delay = 60
 	dog_fashion = null
 

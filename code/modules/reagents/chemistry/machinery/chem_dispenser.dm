@@ -206,7 +206,7 @@
 				if(!istype(src, /obj/machinery/chem_dispenser/drinks) && !istype(src, /obj/machinery/chem_dispenser/mutagen) && !istype(src, /obj/machinery/chem_dispenser/mutagensaltpeter) && !istype(src, /obj/machinery/chem_dispenser/abductor)) // These types aren't used for grief
 					var/turf/T = get_turf(src)
 					client.next_chem_grief_warning = world.time + 15 MINUTES // Wait 15 minutes before alerting admins again
-					message_admins("<span class='adminhelp'>ANTI-GRIEF:</span> New player [ADMIN_LOOKUPFLW(user)] used \a [src] at [ADMIN_VERBOSEJMP(T)].")
+					message_antigrif("New player [ADMIN_LOOKUPFLW(user)] used \a [src] at [ADMIN_VERBOSEJMP(T)].")
 					client.used_chem_dispenser = TRUE
 
 /obj/machinery/chem_dispenser/ui_data(mob/user)
@@ -435,7 +435,7 @@
 		return
 	if(default_deconstruction_crowbar(I))
 		return
-	if(istype(I, /obj/item/reagent_containers) && !(I.item_flags & ABSTRACT) && I.is_open_container())
+	if(istype(I, /obj/item/reagent_containers) && !(I.item_flags & ABSTRACT) && I.is_open_container() || is_type_in_list(I, CLOSED_CONTAINERS_OPERABLE))
 		var/obj/item/reagent_containers/B = I
 		. = TRUE //no afterattack
 		if(!user.transferItemToLoc(B, src))
