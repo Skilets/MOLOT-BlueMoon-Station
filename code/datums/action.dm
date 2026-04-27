@@ -113,7 +113,7 @@
 	))
 
 	if(target == owner)
-		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(clear_ref))
+		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(clear_ref), override = TRUE)
 	UnregisterSignal(remove_from, COMSIG_MOB_KEYDOWN)
 	if(owner == remove_from)
 		owner = null
@@ -993,8 +993,8 @@
 	var/small_icon_state
 
 /datum/action/small_sprite/queen
-	small_icon = 'icons/mob/alienqueen.dmi'
-	small_icon_state = "queen_s"
+	small_icon = 'icons/Xeno/castes/queen.dmi'
+	small_icon_state = "Queen Walking"
 
 /datum/action/small_sprite/drake
 	small_icon = 'icons/mob/lavaland/lavaland_monsters.dmi'

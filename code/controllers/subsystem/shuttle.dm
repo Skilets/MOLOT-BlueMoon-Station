@@ -130,6 +130,7 @@ SUBSYSTEM_DEF(shuttle)
 		var/obj/docking_port/stationary/transit/T = thing
 		if(!T.owner)
 			qdel(T, force=TRUE)
+			continue
 		// This next one removes transit docks/zones that aren't
 		// immediately being used. This will mean that the zone creation
 		// code will be running a lot.
@@ -402,12 +403,29 @@ SUBSYSTEM_DEF(shuttle)
 		supply.mode = SHUTTLE_DOCKED
 		//Make all cargo consoles speak up
 
+/// Returns TRUE if this registered hostile environment should block the emergency shuttle from leaving right now.
+/proc/hostile_environment_blocks_shuttle_escape(datum/hostile)
+	if(!hostile || QDELETED(hostile))
+		return FALSE
+	if(istype(hostile, /datum/team/revolution))
+		var/datum/team/revolution/R = hostile
+		return R.living_revolutionary_on_emergency_shuttle()
+	if(istype(hostile, /datum/game_mode/revolution))
+		var/datum/game_mode/revolution/M = hostile
+		return M.living_revolutionary_on_emergency_shuttle()
+	return TRUE
+
 /datum/controller/subsystem/shuttle/proc/checkHostileEnvironment()
 	for(var/datum/d in hostileEnvironments)
 		if(!istype(d) || QDELETED(d))
 			hostileEnvironments -= d
-	emergencyNoEscape = hostileEnvironments.len
+	emergencyNoEscape = FALSE
+	for(var/datum/d in hostileEnvironments)
+		if(hostile_environment_blocks_shuttle_escape(d))
+			emergencyNoEscape = TRUE
+			break
 
+#ifndef ABSOLUTE_MINIMUM_MODE // Nah we didn't need it anyway
 	if(emergencyNoEscape && (emergency.mode == SHUTTLE_IGNITING))
 		emergency.mode = SHUTTLE_STRANDED
 		emergency.timer = null
@@ -419,6 +437,7 @@ SUBSYSTEM_DEF(shuttle)
 		priority_announce("Враждебное присутствие искоренено. \
 			У вас есть три минуты, чтобы взойти на борт шаттла.",
 			null, "shuttledock", "Priority")
+#endif
 
 //try to move/request to dockHome if possible, otherwise dockAway. Mainly used for admin buttons
 /datum/controller/subsystem/shuttle/proc/toggleShuttle(shuttleId, dockHome, dockAway, timed)
@@ -506,9 +525,16 @@ SUBSYSTEM_DEF(shuttle)
 			transit_path = /turf/open/space/transit/west
 			border_path = /turf/open/space/transit/border/west
 
+	// Defer lighting during bulk ChangeTurf (~1600 turfs in Reserve())
+	// SSlighting.fire() will skip its cycle while this flag is active.
+	GLOB.lighting_defer_active = TRUE
+	GLOB.lighting_deferred_starlight.Cut()
+
 	var/datum/turf_reservation/proposal = SSmapping.RequestBlockReservation(transit_width, transit_height, null, /datum/turf_reservation/transit, transit_path, border_path)
 
 	if(!istype(proposal))
+		GLOB.lighting_defer_active = FALSE
+		GLOB.lighting_deferred_starlight.Cut()
 		return FALSE
 
 	var/turf/bottomleft = locate(proposal.bottom_left_coords[1], proposal.bottom_left_coords[2], proposal.bottom_left_coords[3])
@@ -535,6 +561,9 @@ SUBSYSTEM_DEF(shuttle)
 
 	var/turf/midpoint = locate(transit_x, transit_y, bottomleft.z)
 	if(!midpoint)
+		GLOB.lighting_defer_active = FALSE
+		GLOB.lighting_deferred_starlight.Cut()
+		QDEL_NULL(proposal)
 		return FALSE
 	var/area/shuttle/transit/A = new()
 	A.parallax_moving = TRUE
@@ -549,6 +578,20 @@ SUBSYSTEM_DEF(shuttle)
 
 	// Add 180, because ports point inwards, rather than outwards
 	new_transit_dock.setDir(angle2dir(dock_angle))
+
+	GLOB.lighting_defer_active = FALSE
+
+	// Expand deferred starlight into space turfs, queue for SSlighting Phase -1
+	var/list/starlight_batch = list()
+	for(var/turf/deferred_turf as anything in GLOB.lighting_deferred_starlight)
+		for(var/turf/open/space/space_tile in RANGE_TURFS(1, deferred_turf))
+			starlight_batch |= space_tile
+	GLOB.lighting_deferred_starlight.Cut()
+	if(starlight_batch.len)
+		GLOB.lighting_starlight_queue |= starlight_batch
+
+	// Boost SSlighting processing cap to drain post-transit queues faster
+	SSlighting.temp_cap_boost = 50
 
 	M.assigned_transit = new_transit_dock
 	return new_transit_dock

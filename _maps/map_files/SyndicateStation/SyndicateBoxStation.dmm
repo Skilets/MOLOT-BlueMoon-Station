@@ -1080,7 +1080,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/command/heads_quarters/hos)
 "adQ" = (
-/obj/machinery/computer/card/minor/hos,
+/obj/machinery/modular_computer/console/preset/id,
 /obj/effect/turf_decal/bot/yellow,
 /turf/open/floor/mineral/plastitanium,
 /area/command/heads_quarters/hos)
@@ -14931,6 +14931,10 @@
 	c_tag = "Bridge East";
 	dir = 8
 	},
+/obj/structure/safe/spare_id{
+	pixel_x = 0;
+	pixel_y = 33
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/command/bridge)
 "aVs" = (
@@ -20834,7 +20838,6 @@
 	dir = 1
 	},
 /obj/structure/dresser,
-/obj/item/card/id/captains_spare,
 /turf/open/floor/carpet,
 /area/command/heads_quarters/captain)
 "bmA" = (
@@ -25134,7 +25137,7 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
-/obj/machinery/computer/card/minor/qm{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -26851,7 +26854,7 @@
 	pixel_y = -24
 	},
 /obj/machinery/light,
-/obj/machinery/computer/card/minor/rd{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -29063,7 +29066,7 @@
 	},
 /obj/machinery/door/window/northleft{
 	name = "First-Aid Supplies";
-	red_alert_access = 1;
+
 	req_access_txt = "5"
 	},
 /obj/effect/turf_decal/tile/blue/fourcorners,
@@ -38796,7 +38799,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/engineering/main)
 "cjg" = (
-/obj/machinery/computer/card/minor/ce{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 4
 	},
 /obj/machinery/requests_console{
@@ -46849,7 +46852,7 @@
 /obj/effect/turf_decal/tile/blue/opposingcorners{
 	dir = 8
 	},
-/obj/machinery/computer/card/minor/cmo{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 4;
 	layer = 3;
 	pixel_y = 14
@@ -51866,12 +51869,9 @@
 	spawnwithmagazine = 0;
 	pin = /obj/item/firing_pin/implant/mindshield
 	},
-/obj/item/gun/energy/laser/carbine{
-	pin = /obj/item/firing_pin/implant/mindshield
-	},
-/obj/item/gun/energy/laser/carbine{
-	pin = /obj/item/firing_pin/implant/mindshield
-	},
+/obj/item/gun/energy/modular_laser_rifle/carbine,
+/obj/item/gun/energy/modular_laser_rifle/carbine,
+/obj/item/gun/energy/modular_laser_rifle/carbine,
 /obj/item/storage/firstaid,
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/toxin,
@@ -55910,6 +55910,20 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/mineral/plastitanium,
 /area/commons/storage/tools)
+"kwd" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/machinery/computer/brig_assistant_console,
+/turf/open/floor/mineral/plastitanium,
+/area/hallway/primary/fore)
 "kwz" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
@@ -65228,7 +65242,7 @@
 	},
 /obj/machinery/door/window/northright{
 	name = "First-Aid Supplies";
-	red_alert_access = 1;
+
 	req_access_txt = "5"
 	},
 /obj/effect/turf_decal/tile/blue/fourcorners,
@@ -103748,7 +103762,7 @@ vyK
 amI
 amS
 alv
-aqE
+kwd
 anS
 aoy
 apj

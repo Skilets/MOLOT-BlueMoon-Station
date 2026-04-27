@@ -252,6 +252,13 @@
 		card_sticker.wrap(src, user)
 		return
 	//BLUEMOON ADD END
+	//BLUEMOON ADD метадоллары → лобби-счёт (не станционный банк)
+	if(istype(W, /obj/item/stack/metadollar))
+		var/obj/item/stack/metadollar/M = W
+		if(M.deposit_to_lobby_prefs(user, src))
+			playsound(src, 'sound/machines/terminal_success.ogg', 15, 1)
+		return
+	//BLUEMOON ADD END
 
 	if(!bank_support)
 		return ..()
@@ -336,7 +343,7 @@
 	. = FALSE
 	var/datum/bank_account/old_account = registered_account
 
-	var/new_bank_id = input(user, "Введите номер вашего банковского счета.", "Восстановление аккаунта", 111111) as num | null
+	var/new_bank_id = tgui_input_number(user, "Введите номер вашего банковского счета.", "Восстановление аккаунта", 111111, 999999, 111111, round_value = TRUE)
 
 	if (isnull(new_bank_id))
 		return
@@ -405,7 +412,7 @@
 		registered_account.bank_card_talk("<span class='warning'>ОШИБКА: НЕВОЗМОЖНО ВОЙТИ ВВИДУ ЗАПЛАНИРОВАННОГО ТЕХОБСЛУЖИВАНИЯ. РАБОТЫ ЗАПЛАНИРОВАНЫ К ЗАВЕРШЕНИЮ В ТЕЧЕНИЕ [(registered_account.withdrawDelay - world.time)/10] СЕКУНД.</span>", TRUE)
 		return
 
-	var/amount_to_remove =  input(user, "Как много кредитов вы хотите снять? Текущий баланс: [registered_account.account_balance]", "Снятие средств", 5) as num|null
+	var/amount_to_remove =  tgui_input_number(user, "Как много кредитов вы хотите снять? Текущий баланс: [registered_account.account_balance]", "Снятие средств", 1, min_value = 1, round_value = TRUE)
 
 	if(!amount_to_remove || amount_to_remove < 0)
 		return
@@ -763,6 +770,40 @@
 /obj/item/card/id/ert/chaplain/Initialize(mapload)
 	access = get_all_accesses()+get_ert_access("sec")-ACCESS_CHANGE_IDS
 	. = ..()
+
+/obj/item/card/id/ert/hsc
+	name = "\improper HSC Security ID"
+	desc = "Health Safety Control ID card."
+	icon = 'modular_bluemoon/phenyamomota/icon/obj/card.dmi'
+	icon_state = "hsc"
+	registered_name = "Health Safety Control Security"
+	assignment = "Health Safety Control Security"
+	special_assignment = "centcom"
+	var/overlay_state = "idsec"
+
+/obj/item/card/id/ert/hsc/Initialize(mapload)
+	. = ..()
+	update_icon()
+
+/obj/item/card/id/ert/hsc/update_overlays()
+	. = ..()
+	. += mutable_appearance(icon, overlay_state)
+
+/obj/item/card/id/ert/hsc/medic
+	name = "\improper HSC Medical ID"
+	desc = "Health Safety Control ID card."
+	icon_state = "hsc"
+	registered_name = "Health Safety Control Medic"
+	assignment = "Health Safety Control Medic"
+	overlay_state = "idmed"
+
+/obj/item/card/id/ert/hsc/assistant
+	name = "\improper HSC Assistant ID"
+	desc = "Health Safety Control ID card."
+	icon_state = "hsc"
+	registered_name = "Health Safety Control Assistant"
+	assignment = "Health Safety Control Assistant"
+	overlay_state = "idas"
 
 /obj/item/card/id/prisoner
 	name = "prisoner ID card"

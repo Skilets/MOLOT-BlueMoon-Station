@@ -308,12 +308,14 @@
 	add_overlays = null
 
 	LAZYCLEARLIST(overlays)
+	clear_filters()
 
 	for(var/i in targeted_by)
 		var/mob/M = i
 		LAZYREMOVE(M.do_afters, src)
 	targeted_by = null
 
+	GLOB.lighting_deferred_atoms -= src
 	QDEL_NULL(light)
 
 	return ..()
@@ -473,8 +475,20 @@
 /atom/proc/remove_air(amount)
 	return null
 
+/atom/proc/remove_air_into(datum/gas_mixture/into, amount)
+	if(into)
+		into.clear()
+		into.set_temperature(0)
+	return FALSE
+
 /atom/proc/remove_air_ratio(ratio)
 	return null
+
+/atom/proc/remove_air_ratio_into(datum/gas_mixture/into, ratio)
+	if(into)
+		into.clear()
+		into.set_temperature(0)
+	return FALSE
 
 /atom/proc/transfer_air(datum/gas_mixture/taker, amount)
 	return null
@@ -584,7 +598,6 @@
 	if(desc)
 		. += desc
 
-	. += "<hr>"
 	if(custom_materials)
 		var/list/materials_list = list()
 		for(var/i in custom_materials)
@@ -592,8 +605,8 @@
 			materials_list += material_to_ru_genitive(M.name)
 		. += "<u>Сделано из [english_list(materials_list)]</u>."
 	if(reagents)
-		. += "<hr>"
 		if(reagents.reagents_holder_flags & TRANSPARENT)
+			. += "<hr>"
 			. += "<b>Внутри находится:</b>"
 			if(length(reagents.reagent_list))
 				if(user.can_see_reagents()) //Show each individual reagent
@@ -620,7 +633,7 @@
 				. += "[R.volume] u [R.name]"
 			. += span_engradio("Температура: [round(reagents.chem_temp, 1)] K ([round(reagents.chem_temp-T0C, 1)] &deg;C)")
 			. += span_radio("pH: [round(reagents.pH, 0.01)]")
-			. += "<hr>"
+		. += "<hr>"
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 
@@ -840,6 +853,8 @@
 
 //to add blood dna info to the object's blood_DNA list
 /atom/proc/transfer_blood_dna(list/blood_dna, list/datum/disease/diseases)
+	if(!blood_dna || !islist(blood_dna))
+		return
 	LAZYINITLIST(blood_DNA)
 
 	var/old_length = blood_DNA.len
