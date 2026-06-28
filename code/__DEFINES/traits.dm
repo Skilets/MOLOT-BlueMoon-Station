@@ -164,6 +164,8 @@
 #define TRAIT_NOHARDCRIT		"nohardcrit"
 #define TRAIT_NOSOFTCRIT		"nosoftcrit"
 #define TRAIT_MINDSHIELD		"mindshield"
+/// Носитель проецирует фальшивую сигнатуру импланта защиты разума на секхуды. Не даёт никакой реальной защиты.
+#define TRAIT_FAKE_MINDSHIELD	"fake_mindshield"
 #define TRAIT_ANCHOR			"anchor"
 #define TRAIT_HIJACKER			"hijacker"
 #define TRAIT_SIXTHSENSE		"sixthsense"
@@ -196,6 +198,8 @@
 #define TRAIT_MESON_VISION "meson_vision"
 /// Gives us Night vision
 #define TRAIT_TRUE_NIGHT_VISION "true_night_vision"
+/// Небольшой найт вижн
+#define TRAIT_MINOR_NIGHT_VISION "minor_night_vision"
 /// Lets us scan reagents
 #define TRAIT_REAGENT_SCANNER "reagent_scanner"
 #define TRAIT_ABDUCTOR_TRAINING "abductor-training"
@@ -278,6 +282,20 @@
 #define LIPSTICK_TRAIT		"lipstick_trait"
 /// Blowing kisses that actually do damage to the victim
 #define TRAIT_KISS_OF_DEATH		"kiss_of_death"
+/// Crocin lipstick
+#define TRAIT_KISS_CROCIN		"kiss_crocin"
+/// Space drugs lipstick
+#define TRAIT_KISS_SPACE_DRUGS	"kiss_space_drugs"
+/// Honk lipstick
+#define TRAIT_KISS_HONK			"kiss_honk"
+/// Bloodsucker lipstick
+#define TRAIT_KISS_BLOODSUCKER	"kiss_bloodsucker"
+/// Mime lipstick
+#define TRAIT_KISS_MIME			"kiss_mime"
+/// Drag queen lipstick
+#define TRAIT_KISS_DRAGQUEEN	"kiss_dragqueen"
+/// Heartboom lipstick
+#define TRAIT_KISS_HEARTBOOM	"kiss_heartboom"
 /// forces update_density to make us not dense
 #define TRAIT_LIVING_NO_DENSITY			"living_no_density"
 /// forces us to not render our overlays
@@ -386,6 +404,7 @@
 #define EYES_COVERED "eyes_covered"
 #define CLOWN_NUKE_TRAIT "clown-nuke"
 #define STICKY_MOUSTACHE_TRAIT "sticky-moustache"
+#define OVERDOSE_TRAIT "overdose"
 #define CHAINSAW_FRENZY_TRAIT "chainsaw-frenzy"
 #define CHRONO_GUN_TRAIT "chrono-gun"
 #define REVERSE_BEAR_TRAP_TRAIT "reverse-bear-trap"
@@ -444,6 +463,8 @@
 #define STATION_TRAIT_LATE_ARRIVALS "station_trait_late_arrivals"
 #define STATION_TRAIT_RANDOM_ARRIVALS "station_trait_random_arrivals"
 #define STATION_TRAIT_HANGOVER "station_trait_hangover"
+#define STATION_TRAIT_RADIATION_CONTAMINATION "station_trait_radiation_contamination"
+#define STATION_TRAIT_APERTURE_SCIENCE "station_trait_aperture_science"
 #define STATION_TRAIT_FILLED_MAINT "station_trait_filled_maint"
 #define STATION_TRAIT_EMPTY_MAINT "station_trait_empty_maint"
 #define STATION_TRAIT_PDA_GLITCHED "station_trait_pda_glitched"
@@ -570,6 +591,10 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_HOPELESSLY_ADDICTED "hopelessly_addicted"
 /// Special examine if eyes are visible
 #define TRAIT_BLOODSHOT_EYES "bloodshot_eyes"
+/// Трейт на описание
+#define TRAIT_UNNATURAL_RED_GLOWY_EYES "unnatural_red_glowy_eyes"
+/// Свечение от глаз трейт химии
+#define TRAIT_LUMINESCENT_EYES "luminescent_eyes"
 /// This mob should never close UI even if it doesn't have a client
 #define TRAIT_PRESERVE_UI_WITHOUT_CLIENT "preserve_ui_without_client"
 #define HOSTAGE_REVIVED_TRAIT "hostage_revived_trait"
@@ -925,6 +950,12 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 ///Deletes the object upon being dumped into space, usually from exiting hyperspace. Useful if you're spawning in a lot of stuff for hyperspace events that dont need to flood the entire game
 #define TRAIT_DEL_ON_SPACE_DUMP "del_on_hyperspace_leave"
+/// Lets movables cross transit cordon turfs without being thrown to random space (shuttle in-flight spawns)
+#define TRAIT_FREE_HYPERSPACE_SOFTCORDON_MOVEMENT "free_hyperspace_softcordon_movement"
+/// Full freedom in hyperspace (no [/datum/component/shuttle_cling]) — e.g. carp spawns
+#define TRAIT_FREE_HYPERSPACE_MOVEMENT "free_hyperspace_movement"
+/// Currently affected by hyperspace drift; suppresses conflicting [/atom/movable/proc/newtonian_move] from normal space inertia
+#define TRAIT_HYPERSPACED "hyperspaced"
 
 // determines whether or not objects are haunted and teleport/attack randomly
 #define TRAIT_HAUNTED "haunted"

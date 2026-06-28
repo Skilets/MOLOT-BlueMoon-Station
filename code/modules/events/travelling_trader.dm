@@ -59,7 +59,7 @@
 	mob_size = MOB_SIZE_LARGE
 	alpha = 200
 
-/mob/living/carbon/human/dummy/travelling_trader/examine(mob/user)
+/mob/living/carbon/human/dummy/travelling_trader/examine(mob/user, silent = FALSE)
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, examine_text)
 	return examine_text
 
@@ -310,7 +310,7 @@
 		/obj/item/organ/brain = 1,
 		/obj/item/bodypart/head = 1)
 	possible_rewards = list(/obj/item/organ/cyberimp/mouth/breathing_tube = 1,
-		/obj/item/organ/eyes/robotic/thermals = 1,
+		/obj/item/organ/eyes/robotic/toggled/thermals = 1,
 		/obj/item/organ/cyberimp/arm/toolset = 1,
 		/obj/item/organ/cyberimp/arm/surgery = 1,
 		/obj/item/organ/cyberimp/arm/janitor = 1,

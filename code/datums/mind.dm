@@ -255,7 +255,7 @@
 /datum/mind/proc/do_add_antag_datum(instanced_datum)
 	. = LAZYLEN(antag_datums)
 	LAZYADD(antag_datums, instanced_datum)
-	if(!.)
+	if(!. && current)
 		add_verb(current, /mob/proc/edit_objectives_and_ambitions)
 //ambition end
 
@@ -292,6 +292,16 @@
 			return A
 		else if(A.type == datum_type)
 			return A
+
+///Is this character an offstation ghost role (hotel, ghost cafe, CentCom intern, ERT etc.)? Such characters must not be picked as antag objective targets.
+/datum/mind/proc/is_ghost_role()
+	if(has_antag_datum(/datum/antagonist/ghost_role))
+		return TRUE
+	if(assigned_role in GLOB.exp_specialmap[EXP_TYPE_SPECIAL])
+		return TRUE
+	if(current && HAS_TRAIT(current, TRAIT_NO_MIDROUND_ANTAG))
+		return TRUE
+	return FALSE
 
 /*
 	Removes antag type's references from a mind.
@@ -390,7 +400,7 @@
 		return
 
 	var/list/all_contents = traitor_mob.GetAllContents()
-	var/obj/item/pda/PDA = locate() in all_contents
+	var/obj/item/modular_computer/pda/PDA = locate() in all_contents
 	var/obj/item/radio/R = locate() in all_contents
 	var/obj/item/pen/P
 
@@ -921,7 +931,8 @@ GLOBAL_LIST(objective_choices)
 		for(var/a in GLOB.admins)
 			var/client/admin_client = a
 			if(admin_client.prefs.toggles & SOUND_ADMINHELP)
-				SEND_SOUND(admin_client, sound('sound/effects/adminhelp.ogg'))
+				var/ah_vol = admin_client.prefs?.get_sound_volume("adminhelp") || 100
+				SEND_SOUND(admin_client, sound('sound/effects/adminhelp.ogg', volume = ah_vol))
 			window_flash(admin_client)
 		message_admins("<span class='adminhelp'>[ADMIN_TPMONTY(usr)] has requested a review of their objective changes. (<a href='?_src_=holder;[HrefToken(TRUE)];ObjectiveRequest=[REF(src)]'>RPLY</a>)</span>")
 		do_edit_objectives_ambitions()
@@ -1891,17 +1902,13 @@ GLOBAL_LIST(objective_choices)
 		mind.ooc_notes = client?.prefs.features["ooc_notes"]
 		mind.flavor_text = client?.prefs.features["flavor_text"]
 		mind.silicon_flavor_text = client?.prefs.features["silicon_flavor_text"]
-		mind.headshot_links = list(
-			client?.prefs.features["headshot_link"],
-			client?.prefs.features["headshot_link1"],
-			client?.prefs.features["headshot_link2"]
-		)
+
+		var/list/temp = client?.prefs.features["headshot_links"]
+		mind.headshot_links = LAZYCOPY(temp)
 		listclearnulls(mind.headshot_links)
-		mind.headshot_naked_links = list(
-			client?.prefs.features["headshot_naked_link"],
-			client?.prefs.features["headshot_naked_link1"],
-			client?.prefs.features["headshot_naked_link2"]
-		)
+
+		temp = client?.prefs.features["headshot_naked_links"]
+		mind.headshot_naked_links = LAZYCOPY(temp)
 		listclearnulls(mind.headshot_naked_links)
 
 //HUMAN

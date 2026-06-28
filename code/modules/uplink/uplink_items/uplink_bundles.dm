@@ -117,7 +117,7 @@
 			Закажите СЕЙЧАС - и товарищ Борис подкинет дополнительный спортивный костюм."
 	item = /obj/item/storage/backpack/duffelbag/syndie/firestarter
 	cost = 30
-	purchasable_from = (UPLINK_NUKE_OPS | UPLINK_SYNDICATE)
+	purchasable_from = (UPLINK_SYNDICATE)
 
 /datum/uplink_item/bundles_tc/bundle
 	name = "Operative Bundle"
@@ -182,12 +182,12 @@
 
 /datum/uplink_item/bundles_tc/reroll
 	name = "Renegotiate Contract"
-	desc = "Сообщите работодателям, что хотите новые задания. Можно сделать только дважды."
+	desc = "Сообщите работодателям, что хотите новые задания. Первый рерол бесплатный, каждый следующий — 1 ТК."
 	item = /obj/effect/gibspawner/generic
 	cost = 0
 	cant_discount = TRUE
 	restricted = TRUE
-	limited_stock = 2
+	limited_stock = -1
 
 /datum/uplink_item/bundles_tc/reroll/purchase(mob/user, datum/component/uplink/U)
 	var/datum/antagonist/traitor/T = user?.mind?.has_antag_datum(/datum/antagonist/traitor)

@@ -273,12 +273,9 @@
 				LH.sac_targetter.sac_targetted.Remove(H.real_name)
 			LH.sac_targetter = null
 			EC.total_sacrifices++
-			for(var/X in carbon_user.get_all_gear())
-				if(!istype(X,/obj/item/forbidden_book))
-					continue
-				var/obj/item/forbidden_book/FB = X
-				FB.charge++
-				FB.charge++
+			//deep contents search: get_all_gear() can't see inside MOD storage modules and the like, eating the sacrifice reward
+			for(var/obj/item/forbidden_book/FB in carbon_user.GetAllContents(/obj/item/forbidden_book))
+				FB.charge += 2
 				break
 
 		if(!LH.target)
@@ -322,6 +319,24 @@
 
 /datum/eldritch_knowledge/spell/basic/cleanup_atoms(list/atoms)
 	return
+
+/datum/eldritch_knowledge/spell/summon
+	next_knowledge = list()
+	cost = 0
+	required_atoms = list()
+	route = "Start"
+
+/datum/eldritch_knowledge/spell/summon/heart
+	name = "Зов к сердцу"
+	desc = "Позволяет призывать и прятать живое сердце в пучине безумия. Остальные услышат очень тихий звук призыва, только вплотную к вам."
+	gain_text = "Что-то живое и теплое откликается на мой зов."
+	spell_to_add = /obj/effect/proc_holder/spell/self/heretic_summon/heart
+
+/datum/eldritch_knowledge/spell/summon/book
+	name = "Зов к кодексу"
+	desc = "Позволяет призывать и прятать кодекс в тайных глубинах. Остальные услышат очень тихий звук призыва, только вплотную к вам."
+	gain_text = "Я могу дотянуться до своего кодекса сквозь пространство."
+	spell_to_add = /obj/effect/proc_holder/spell/self/heretic_summon/book
 
 /datum/eldritch_knowledge/living_heart
 	name = "Живое сердце"

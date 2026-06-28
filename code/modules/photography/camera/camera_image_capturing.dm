@@ -30,6 +30,12 @@
 				atoms += new /obj/effect/appearance_clone(newT, T.loc)
 			for(var/i in T.contents)
 				var/atom/A = i
+				// Lighting objects live in turf.contents (new /atom/movable/lighting_object(turf)
+				// assigns loc=turf) and carry the per-turf darkness color matrix. Cloning one
+				// renders it as a solid black tile on LIGHTING_LAYER, painting the floor black in
+				// any shaded area. Skip it - the photo is intentionally unlit.
+				if(istype(A, /atom/movable/lighting_object))
+					continue
 				if(!A.invisibility || (see_ghosts && isobserver(A)))
 					atoms += new /obj/effect/appearance_clone(newT, A)
 		skip_normal = TRUE
@@ -41,6 +47,8 @@
 			var/turf/T = i
 			atoms += T
 			for(var/atom/movable/A in T)
+				if(istype(A, /atom/movable/lighting_object))
+					continue // see clone path above - lighting objects paint the floor black
 				if(A.invisibility)
 					if(!(see_ghosts && isobserver(A)))
 						continue
@@ -64,6 +72,12 @@
 	var/xcomp = FLOOR(psize_x / 2, 1) - 15
 	var/ycomp = FLOOR(psize_y / 2, 1) - 15
 
+	// Per-capture flat-icon dedup. A photo with N atoms often has only K<<N unique
+	// appearances (walls, floors, identical items), so cache by appearance ref to
+	// skip the recursive getFlatIcon for repeats. Local list — no cross-call state,
+	// no GC concerns.
+	var/list/flat_icon_cache = list()
+
 	for(var/atom/A in sorted)
 		var/xo = (A.x - center.x) * world.icon_size + A.pixel_x + xcomp
 		var/yo = (A.y - center.y) * world.icon_size + A.pixel_y + ycomp
@@ -71,7 +85,12 @@
 			var/atom/movable/AM = A
 			xo += AM.step_x
 			yo += AM.step_y
-		var/icon/img = getFlatIcon(A)
+		var/appearance_key = "\ref[A.appearance]"
+		var/icon/img = flat_icon_cache[appearance_key]
+		if(!img)
+			img = getFlatIcon(A)
+			if(img)
+				flat_icon_cache[appearance_key] = img
 		if(img)
 			res.Blend(img, blendMode2iconMode(A.blend_mode), xo, yo)
 		CHECK_TICK

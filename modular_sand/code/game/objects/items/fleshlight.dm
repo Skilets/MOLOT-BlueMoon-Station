@@ -69,7 +69,7 @@
 		user.visible_message(span_lewd("<b>[user]</b> [message]."))
 		M.handle_post_sex(lust_amt, null, user, ORGAN_SLOT_PENIS) //SPLURT edit
 		user.client?.plug13.send_emote(PLUG13_EMOTE_GROIN, min(lust_amt * 3, 100), PLUG13_DURATION_NORMAL)
-		playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
+		playlewdinteractionsound(get_turf(src), pick('modular_sand/sound/interactions/bang4.ogg',
 							'modular_sand/sound/interactions/bang5.ogg',
 							'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
 		if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
@@ -180,6 +180,10 @@
 
 	if(plush_icon != NONE)
 		playsound(user, 'sound/items/squeaktoy.ogg', 30, 1)
+
+	if(!portal_target)
+		to_chat(user, span_warning("[src] is not linked to anyone wearing the paired underwear."))
+		return
 
 	// BLUEMOON EDIT START
 	var/genital_data = list(
@@ -569,11 +573,11 @@
 					// if(CUM_TARGET_FEET)
 			switch(user.zone_selected)
 				if(BODY_ZONE_PRECISE_GROIN)
-					playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
+					playlewdinteractionsound(get_turf(src), pick('modular_sand/sound/interactions/bang4.ogg',
 														'modular_sand/sound/interactions/bang5.ogg',
 														'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
 				if(BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
-					playlewdinteractionsound(loc, 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
+					playlewdinteractionsound(get_turf(src), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
 
 			to_chat(portal_target, "<span class='lewd'>Кто-то использует сопряжённый <b>'[name]'</b>, этот кто-то [target_message].</span>")
 

@@ -288,6 +288,8 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 		msg = "[msg]"
 	for(var/i in GLOB.mob_list)
 		var/mob/M = i
+		if(!M)
+			continue
 		if(M.real_name == msg)
 			return M
 	return FALSE
@@ -520,6 +522,8 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 
 // Logs a message in a mob's individual log, and in the global logs as well if log_globally is true
 /mob/log_message(message, message_type, color=null, log_globally = TRUE)
+	if(QDELETED(src))
+		return
 	if(!LAZYLEN(message))
 		stack_trace("Empty message")
 		return
@@ -635,6 +639,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 	var/old_name = real_name
 	SEND_SOUND(src, 'sound/misc/server-ready.ogg')
 	client.prefs.copy_to(src)
+	client.prefs.apply_prefs_modified_limbs(src)
 	// BLUEMOON ADD START - загрузка татуировок для ghost roles (после copy_to, чтобы set_species() не уничтожил данные)
 	client.prefs.apply_tattoos_to_human(src)
 	// BLUEMOON ADD END

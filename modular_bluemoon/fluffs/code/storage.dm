@@ -47,6 +47,14 @@
 	for(var/i in 1 to 4)
 		new /obj/item/modkit/twilight_spike(src)
 
+/obj/item/storage/backpack/krieg
+	name = "Рюкзак Крига"
+	desc = "Подоходный рюкзак Корпуса Смерти \"КРИГ\". Выглядит потёртым, на нём зияет золотая эмблема."
+	icon_state = "krieg_backpack"
+	item_state = "krieg_backpack"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
+
 /obj/item/storage/backpack/martian
 	name = "Martian Backpack"
 	desc = "Некий Марсианский Артефакт, использующийся в качестве рюкзака. Ткань ощущается довольно прочной. Это точно можно использовать в качестве оружия!"
@@ -249,3 +257,33 @@
 		/obj/item/modkit/m3predator,
 	)
 	generate_items_inside(items_inside, src)
+
+/obj/item/storage/box/lapkee_kit
+	name = "Nebula Box"
+	desc = "Прочный кейс для всякой всячины, включает в себя снаряжение всё снаряжение расы Касари, которое только можно добыть окольными путями - через чёрный рынок и непотребства в высоких кабинетах."
+	icon = 'modular_bluemoon/fluffs/icons/obj/storage.dmi'
+	icon_state = "nebula_box"
+
+/obj/item/storage/box/lapkee_kit/PopulateContents()
+	new /obj/item/modkit/star_dust_kit(src)
+	new /obj/item/modkit/nebular_kit(src)
+	new /obj/item/modkit/katana_kit(src)
+	new /obj/item/modkit/nebular_t_kit(src)
+	new /obj/item/modkit/supernova_kit(src)
+	new /obj/item/modkit/pulsar_knife_kit(src)
+	new /obj/item/clothing/under/donator/bm/concord(src)
+	new /obj/item/modkit/quasar_kit(src)
+	new /obj/item/modkit/comet_kit(src)
+	new /obj/item/modkit/neutron_kit(src)
+	new /obj/item/modkit/spectral_kit(src)
+	new /obj/item/modkit/pulsar_kit(src)
+
+//////////////////////////////////////////////////
+
+/obj/item/storage/backpack/satchel/sport_abibas_bag
+	name = "Sport 'ABIBAS' satchel"
+	desc = "Спортивная сумка, выглядит удобно."
+	icon = 'modular_bluemoon/fluffs/icons/obj/storage.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/storage.dmi'
+	icon_state = "abibas_back"
+	item_state = "abibas_back"

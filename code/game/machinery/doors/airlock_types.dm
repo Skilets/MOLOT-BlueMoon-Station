@@ -497,7 +497,7 @@
 
 /obj/machinery/door/airlock/cult/obj_break(damage_flag)
 	if(!(flags_1 & BROKEN) && !(flags_1 & NODECONSTRUCT_1))
-		machine_stat |= BROKEN
+		set_machine_stat(machine_stat | BROKEN)
 		if(!panel_open)
 			panel_open = TRUE
 		update_icon()
@@ -516,7 +516,7 @@
 			new openingoverlaytype(loc)
 		return TRUE
 	else
-		if(!stealthy)
+		if(L && !stealthy)
 			new /obj/effect/temp_visual/cult/sac(loc)
 			var/atom/throwtarget
 			throwtarget = get_edge_target_turf(src, get_dir(src, get_step_away(L, src)))

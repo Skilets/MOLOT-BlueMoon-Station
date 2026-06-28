@@ -298,7 +298,7 @@
 			var/datum/preferences/prefs = L?.client?.prefs
 			if(!prefs)
 				return
-			var/current_playlist_name = params["playlist"]
+			var/current_playlist_name = strip_control_chars(params["playlist"])
 			var/track = params["track"]
 			switch(action)
 				if("new_playlist")
@@ -582,7 +582,7 @@
 				S.pixel_y = 7
 				S.forceMove(get_turf(parent))
 		sleep(7)
-	if(playing.song_name == "Engineering's Ultimate High-Energy Hustle")
+	if(playing?.song_name == "Engineering's Ultimate High-Energy Hustle")
 		sleep(280)
 	for(var/obj/reveal in sparkles)
 		reveal.alpha = 255

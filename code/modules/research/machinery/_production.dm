@@ -23,6 +23,7 @@
 	/// What color is this machine's stripe? Leave null to not have a stripe.
 	var/stripe_color = null
 	COOLDOWN_DECLARE(cooldown_say) // Отвечает за КД SAY машины и за КД update_research()
+	var/deferred_sync_timer	// Отвечает за кд перед автосинхронизацией, и не даёт упёршимся в него же сигналам изучений потеряться *temp*
 	var/const/cooldown_say_time = 1.5 SECONDS
 	var/const/max_build_amount = 60 // Отвечает за максимум в кнопке [Max: XXX] TGUI и максимум пердметов на печать в 1 пачке
 
@@ -44,6 +45,9 @@
 	RegisterSignal(SSdcs, COMSIG_GLOB_RESEARCH_BATCH_COMPLETE, PROC_REF(on_research_batch_complete))
 
 /obj/machinery/rnd/production/Destroy()
+	if(deferred_sync_timer)
+		deltimer(deferred_sync_timer)
+		deferred_sync_timer = null
 	UnregisterSignal(SSdcs, list(COMSIG_GLOB_RESEARCH_NODE_UNLOCKED, COMSIG_GLOB_RESEARCH_BATCH_COMPLETE))
 	materials = null
 	cached_designs = null
@@ -139,6 +143,17 @@
 		for(var/datum/design/D in all_categories[category])
 			if(!D.build_path)
 				continue
+
+			// Скрытые дизайны
+			if(D.hacked_only && !(obj_flags & EMAGGED))
+				continue
+
+			// Проверка дизайна на ограничение по коду + его описание в одном проке
+			var/sec_desc = design_sec_level_desc(D)
+			// Если продакшн вне станции и не имеет доступов, разрешаем только предметы без требований к коду
+			if(sec_desc && hide_sec_designs)
+				continue
+
 			var/obj/item_path = D.build_path // ispath
 
 			// Формируем стоимость в материалах
@@ -161,12 +176,6 @@
 				desc = strip_html_tags(initial(circuit_build_path.desc))
 			if(!desc)
 				desc = strip_html_tags(initial(item_path.desc))
-
-			// Проверка дизайна на ограничение по коду + его описание в одном проке
-			var/sec_desc = design_sec_level_desc(D)
-			// Если продакшн вне станции и не имеет доступов, разрешаем только предметы без требований к коду
-			if(sec_desc && hide_sec_designs)
-				continue
 
 			cat["items"] += list(list(
 				"id" = D.id,
@@ -430,7 +439,15 @@
 
 /obj/machinery/rnd/production/proc/on_node_unlocked(datum/source, node_id)	// Дизайны обновляются после изучения ноды на консоли
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(src, PROC_REF(update_research))
+	if(deferred_sync_timer)	// Если мы всё ещё в кулдауне, не делаем ничего - нет необходимости
+		return
+	deferred_sync_timer = addtimer(CALLBACK(src, PROC_REF(perform_deferred_sync)), 1.5 SECONDS, TIMER_STOPPABLE)	// Синхронизация проводится после таймера, по совместительству очищая его и открывая гейт новым сигналам
+
+/obj/machinery/rnd/production/proc/perform_deferred_sync()	// Временный фикс нагрузки сервера update_research() проками. Потом сделаю нормальный, минималистичный on_auto_sync для работы с единичными нодами
+	if(QDELETED(src))
+		return
+	deferred_sync_timer = null	// Проведение синхронизации происходит вместе с очисткой таймера
+	INVOKE_ASYNC(src, PROC_REF(update_research))	// Асинк в качестве второй защиты от обсёра, надеюсь даже после 100+ нод этого будет достаточно
 
 /obj/machinery/rnd/production/proc/on_research_batch_complete(datum/source, list/node_ids)	// Регистрация сигнала завершения упаковки пакета нод
 	SIGNAL_HANDLER

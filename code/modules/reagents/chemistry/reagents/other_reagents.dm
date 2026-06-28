@@ -414,10 +414,17 @@
 	ADD_TRAIT(L, TRAIT_HOLY, type)
 
 	if(is_servant_of_ratvar(L))
-		to_chat(L, "<span class='userdanger'>Священный Туман распространяется по вашему сознанию, ослабляя связь с Жёлтым Измерением и очищая вас от влияния Юстициара Ратвара!</span>")
+		to_chat(L, span_userdanger("Священный Туман распространяется по вашему сознанию, ослабляя связь с Жёлтым Измерением и очищая вас от влияния Юстициара Ратвара!"))
 		return
 	if(iscultist(L))
-		to_chat(L, "<span class='userdanger'>Священный Туман распространяется по вашему сознанию, ослабляя связь с Красным Измерением и очищая вас от влияния Нар-Си</span>")
+		to_chat(L, span_userdanger("Священный Туман распространяется по вашему сознанию, ослабляя связь с Красным Измерением и очищая вас от влияния Нар-Си!"))
+		return
+	var/datum/antagonist/heretic/heretic = IS_HERETIC(L)
+	if(heretic)
+		if(LAZYLEN(heretic.summon_items))
+			to_chat(L, span_userdanger("Священный Туман распространяется по вашему сознанию, проникая в самые глубины, скрытые от глаз вещи скоро вырвуться из вас!"))
+		else
+			to_chat(L, span_warning("Священный Туман распространяется по вашему сознанию, проникая в самые глубины, но у вас нет скрытых вещей и ничего не происходит."))
 		return
 	if(HAS_TRAIT(L,TRAIT_RUSSIAN))
 		// Alert user of holy water effect.
@@ -453,7 +460,8 @@
 	if(!data)
 		data = list("misc" = 1)
 	data["misc"]++
-	if(!iscultist(M, FALSE, TRUE) && !is_servant_of_ratvar(M) && (HAS_TRAIT(M, TRAIT_HALLOWED) || M.mind?.isholy))
+	var/datum/antagonist/heretic/heretic = IS_HERETIC(M)
+	if(!iscultist(M, FALSE, TRUE) && !is_servant_of_ratvar(M) && !heretic && (HAS_TRAIT(M, TRAIT_HALLOWED) || M.mind?.isholy))
 		return ..()
 	if(iscultist(M, FALSE, TRUE))
 		for(var/datum/action/innate/cult/blood_magic/BM in M.actions)
@@ -483,11 +491,26 @@
 					"You can't save him. Nothing can save him now", "It seems that Nar'Sie will triumph after all")].</span>")
 				if("emote")
 					M.visible_message("<span class='warning'>[M] [pick("whimpers quietly", "shivers as though cold", "glances around in paranoia")].</span>")
+		else if(LAZYLEN(heretic?.summon_items) && prob(6))
+			to_chat(M, span_boldwarning("Вас начинает мутить, вы чувствуете, что скрытые вещи [pick("желают вырваться из вас", "бьются внутри вас", "скоро исторгнуться из вас")]."))
 	if(data["misc"] >= 60)	// 30 units, 135 seconds
 		if(iscultist(M))
 			SSticker.mode.remove_cultist(M.mind, FALSE, TRUE)
 		if(is_servant_of_ratvar(M))
 			remove_servant_of_ratvar(M)
+		if(LAZYLEN(heretic?.summon_items))
+			to_chat(M, span_userdanger("Скрытые вещи вырываются из вас, вытесненные святой водой!"))
+			playsound(M, 'sound/magic/Mutate.ogg', 75, FALSE)
+			M.vomit(5, FALSE, TRUE, force = TRUE)
+			M.blur_eyes(5)
+			M.Dizzy(5)
+			var/turf/turf_target = get_turf(M)
+			for(var/obj/item/I in heretic.summon_items)
+				I.forceMove(turf_target)
+				if(!(I.item_flags & NO_PIXEL_RANDOM_DROP))
+					I.pixel_x = I.base_pixel_x + rand(-6, 6)
+					I.pixel_y = I.base_pixel_y + rand(-6, 6)
+			heretic.summon_items.Cut()
 		M.jitteriness = 0
 		M.stuttering = 0
 		holder.del_reagent(type)	// maybe this is a little too perfect and a max() cap on the statuses would be better??
@@ -2942,3 +2965,103 @@
 	name = "Black Crayon Powder"
 	rarity = "Exodia"
 	color = "#1C1C1C" // not quite black
+
+/datum/reagent/luminescent_fluid
+	name = "Green Luminiscent Fluid"
+	description = "A colored fluid that produces light as a result of a chemical reaction with oxygen."
+	taste_description = "buttery acid"
+	color = LIGHT_COLOR_GREEN
+	metabolization_rate = 0.3 * REAGENTS_METABOLISM
+	overdose_threshold = 50
+	metabolized_traits = list(TRAIT_MINOR_NIGHT_VISION)
+	self_consuming = TRUE
+	var/obj/item/flashlight/eyelight/glow/glowing
+	var/added_light = FALSE
+	var/stored_left_color
+	var/stored_right_color
+
+/datum/reagent/luminescent_fluid/on_mob_metabolize(mob/living/affected_mob)
+	. = ..()
+	if(volume > 20)
+		glowing = new(affected_mob)
+		glowing.light_color = color
+		glowing.update_brightness()
+		added_light = TRUE
+
+	if(!ishuman(affected_mob))
+		return
+
+	var/mob/living/carbon/human/affected_human = affected_mob
+	stored_left_color = affected_human.left_eye_color
+	stored_right_color = affected_human.right_eye_color
+	affected_human.left_eye_color = sanitize_hexcolor(color, 6)
+	affected_human.right_eye_color = sanitize_hexcolor(color, 6)
+	affected_human.update_body()
+
+/datum/reagent/luminescent_fluid/on_mob_end_metabolize(mob/living/affected_mob)
+	. = ..()
+	QDEL_NULL(glowing)
+	added_light = FALSE
+	if(!ishuman(affected_mob))
+		return
+
+	var/mob/living/carbon/human/affected_human = affected_mob
+	if(stored_left_color)
+		affected_human.left_eye_color = stored_left_color
+	if(stored_right_color)
+		affected_human.right_eye_color = stored_right_color
+	affected_human.update_body()
+
+/datum/reagent/luminescent_fluid/on_mob_life(mob/living/carbon/affected_mob)
+	. = ..()
+
+	if(isnull(glowing) && !added_light && volume > 20)
+		glowing = new(affected_mob)
+		glowing.light_color = color
+		glowing.update_brightness()
+		added_light = TRUE
+
+	if(prob(8))
+		affected_mob.adjustToxLoss(3.34, updating_health = FALSE)
+
+/datum/reagent/luminescent_fluid/overdose_start(mob/living/affected_mob)
+	. = ..()
+	if(!ishuman(affected_mob))
+		return
+	var/mob/living/carbon/human/affected_human = affected_mob
+	var/obj/item/organ/eyes/eyes = affected_human.getorganslot(ORGAN_SLOT_EYES)
+	if(eyes && !IS_ROBOTIC_ORGAN(eyes))
+		eyes.left_eye_color = color
+		eyes.right_eye_color = color
+		affected_human.update_body()
+
+/datum/reagent/luminescent_fluid/red
+	name = "Red Luminiscent Fluid"
+	color = COLOR_SOFT_RED
+	metabolized_traits = list(TRAIT_MINOR_NIGHT_VISION, TRAIT_UNNATURAL_RED_GLOWY_EYES)
+
+/datum/reagent/luminescent_fluid/red/overdose_start(mob/living/affected_mob)
+	. = ..()
+	if(!ishuman(affected_mob))
+		return
+	ADD_TRAIT(affected_mob, TRAIT_UNNATURAL_RED_GLOWY_EYES, OVERDOSE_TRAIT)
+
+/datum/reagent/luminescent_fluid/blue
+	name = "Blue Luminiscent Fluid"
+	color = LIGHT_COLOR_BLUE
+
+/datum/reagent/luminescent_fluid/cyan
+	name = "Cyan Luminiscent Fluid"
+	color = LIGHT_COLOR_CYAN
+
+/datum/reagent/luminescent_fluid/yellow
+	name = "Yellow Luminiscent Fluid"
+	color = LIGHT_COLOR_YELLOW
+
+/datum/reagent/luminescent_fluid/orange
+	name = "Orange Luminiscent Fluid"
+	color = LIGHT_COLOR_ORANGE
+
+/datum/reagent/luminescent_fluid/pink
+	name = "Pink Luminiscent Fluid"
+	color = LIGHT_COLOR_PINK

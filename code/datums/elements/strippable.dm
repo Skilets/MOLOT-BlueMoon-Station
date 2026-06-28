@@ -48,6 +48,11 @@
 		if (cyborg_user.a_intent == INTENT_HARM)
 			return
 
+	// No hands - no stripping: keeps carp/swarmers/roaches and other handless fauna from undressing people.
+	// TRAIT_CAN_STRIP covers mobs with manipulators instead of hands (cyborgs, adult xenomorphs).
+	if (!user.can_hold_items() && !HAS_TRAIT(user, TRAIT_CAN_STRIP) && !IsAdminGhost(user))
+		return
+
 	if (!isnull(should_strip_proc_path) && !call(source, should_strip_proc_path)(user))
 		return
 
@@ -373,7 +378,27 @@
 
 		LAZYINITLIST(result)
 
-		result["icon"] = icon2base64(icon(item.icon, item.icon_state, SOUTH, 1))
+		// Strip-menu UI re-runs ui_data() on every refresh while the menu is open,
+		// so without a cache each open menu burns ~10 icon2base64 calls per tick.
+		// Stringifying a runtime /icon datum gives "/icon" — same for every dynamic
+		// icon — so for those we key by REF instead. File-path icons stringify to
+		// their dmi path and are stable across runs/items.
+		var/static/list/strip_icon_cache = list()
+		var/cache_key
+		if(isnull(item.icon))
+			cache_key = "NULL:[item.icon_state]"
+		else if(istype(item.icon, /icon))
+			cache_key = "[REF(item.icon)]:[item.icon_state]"
+		else
+			cache_key = "[item.icon]:[item.icon_state]"
+
+		if(!(cache_key in strip_icon_cache))
+			strip_icon_cache[cache_key] = icon2base64(icon(item.icon, item.icon_state, SOUTH, 1))
+			if(length(strip_icon_cache) > 1024)
+				strip_icon_cache.Cut(1, 257) // Evict oldest 25%
+
+		var/cached_b64 = strip_icon_cache[cache_key]
+		result["icon"] = cached_b64
 		result["name"] = item.name
 		result["alternate"] = item_data.get_alternate_action(owner, user)
 		result["interactable"] = item.interactable_in_strip_menu

@@ -4,7 +4,7 @@
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "robot"
 	bubble_icon = "robot"
-	var/obj/item/pda/ai/aiPDA
+	var/obj/item/modular_computer/pda/silicon/aiPDA
 	var/flash_protect = FALSE
 
 /mob/living/silicon/robot/get_cell()
@@ -16,6 +16,7 @@
 	spark_system.attach(src)
 
 	set_wires(new /datum/wires/robot(src))
+	ADD_TRAIT(src, TRAIT_CAN_STRIP, INNATE_TRAIT) // manipulators are good enough to strip and search
 	AddElement(/datum/element/empprotection, EMP_PROTECT_WIRES)
 	// AddElement(/datum/element/ridable, /datum/component/riding/creature/cyborg)
 	RegisterSignal(src, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, PROC_REF(charge))
@@ -32,10 +33,8 @@
 	ident = rand(1, 999)
 
 	if(!shell)
-		aiPDA = new/obj/item/pda/ai(src)
-		aiPDA.owner = real_name
-		aiPDA.ownjob = "Cyborg"
-		aiPDA.name = real_name + " ([aiPDA.ownjob])"
+		aiPDA = new/obj/item/modular_computer/pda/silicon(src)
+		aiPDA.imprint_id(real_name, "Cyborg")
 
 	previous_health = health
 
@@ -102,6 +101,8 @@
 /mob/living/silicon/robot/proc/create_modularInterface()
 	if(!modularInterface)
 		modularInterface = new /obj/item/modular_computer/tablet/integrated(src)
+		modularInterface.saved_identification = real_name
+		modularInterface.saved_job = designation || "Cyborg"
 	modularInterface.layer = ABOVE_HUD_PLANE
 	modularInterface.plane = ABOVE_HUD_PLANE
 
@@ -192,6 +193,11 @@
 	name = real_name
 	if(!QDELETED(builtInCamera))
 		builtInCamera.c_tag = real_name	//update the camera name too
+	if(aiPDA && !shell)
+		aiPDA.imprint_id(real_name, aiPDA.saved_job)
+	if(modularInterface)
+		modularInterface.saved_identification = real_name
+		modularInterface.saved_job = designation || "Cyborg"
 
 /mob/living/silicon/robot/proc/get_standard_name()
 	return "[(designation ? "[designation] " : "")][mmi.braintype]-[ident]"
@@ -425,7 +431,7 @@
 /mob/living/silicon/robot/verb/unlock_own_cover()
 	set category = "Robot Commands"
 	set name = "Unlock Cover"
-	set desc = "Unlocks your own cover if it is locked. You can not lock it again. A human will have to lock it for you."
+	set desc = "Разблокирует вашу крышку, если она заблокирована. Вы не сможете заблокировать её снова. Человек должен будет заблокировать её за вас."
 	if(stat == DEAD)
 		return //won't work if dead
 	if(locked)
@@ -554,7 +560,7 @@
 
 /mob/living/silicon/robot/verb/set_automatic_say_channel() //Borg version of setting the radio for autosay messages.
 	set name = "Set Auto Announce Mode"
-	set desc = "Modify the default radio setting for stating your laws."
+	set desc = "Изменить настройки радио по умолчанию для оглашения ваших законов."
 	set category = "Robot Commands"
 
 	if(usr.stat == DEAD)
@@ -952,8 +958,7 @@
 	if(!QDELETED(builtInCamera))
 		builtInCamera.c_tag = real_name
 	if(aiPDA && !shell)
-		aiPDA.owner = newname
-		aiPDA.name = newname + " (" + aiPDA.ownjob + ")"
+		aiPDA.imprint_id(newname, aiPDA.saved_job)
 	custom_name = newname
 
 
@@ -1151,7 +1156,7 @@
 
 /datum/action/innate/undeployment
 	name = "Disconnect from shell"
-	desc = "Stop controlling your shell and resume normal core operations."
+	desc = "Прекратить управление оболочкой и возобновить нормальные операции ядра."
 	icon_icon = 'icons/mob/actions/actions_AI.dmi'
 	button_icon_state = "ai_core"
 	required_mobility_flags = NONE
@@ -1165,8 +1170,8 @@
 	return TRUE
 
 /datum/action/innate/custom_holoform
-	name = "Select Custom Holoform"
-	desc = "Select one of your existing avatars to use as a holoform."
+	name = "Выбор облика"
+	desc = "Выбрать один из существующих аватаров для использования в качестве голоформы."
 	icon_icon = 'icons/mob/actions/actions_silicon.dmi'
 	button_icon_state = "custom_holoform"
 	required_mobility_flags = NONE
@@ -1181,6 +1186,7 @@
 		if(istype(S, /mob/living/silicon/pai))
 			var/mob/living/silicon/pai/P = S
 			P.chassis = "custom"
+			P.update_icon()
 		else if(istype(S, /mob/living/silicon/ai))
 			var/mob/living/silicon/ai/A = S
 			if(A.client?.prefs?.custom_holoform_icon)
@@ -1273,6 +1279,28 @@
 		var/mob/unbuckle_me_now = i
 		unbuckle_mob(unbuckle_me_now, FALSE)
 
+/mob/living/silicon/robot/proc/camera_remove(drop_assembly = FALSE)
+	if(QDELETED(builtInCamera))
+		return
+
+	if(drop_assembly)
+		var/cyborg_turf_loc = get_turf(src)
+		new /obj/item/wallframe/camera (cyborg_turf_loc)
+		new /obj/item/stack/cable_coil(cyborg_turf_loc, 2)
+	QDEL_NULL(builtInCamera)
+
+/mob/living/silicon/robot/proc/camera_restore()
+	if(!QDELETED(builtInCamera) || scrambledcodes)
+		return
+
+	builtInCamera = new (src)
+	builtInCamera.c_tag = real_name
+	builtInCamera.network = list("ss13")
+	builtInCamera.internal_light = FALSE
+
+	if(wires?.is_cut(WIRE_CAMERA))
+		builtInCamera.toggle_cam(src, 0)
+
 /mob/living/silicon/robot/proc/TryConnectToAI(mob/living/silicon/ai/connect_to)
 	set_connected_ai(connect_to || select_active_ai_with_fewest_borgs(z))
 	if(connected_ai)
@@ -1300,7 +1328,7 @@
 /mob/living/silicon/robot/proc/rest_style()
 	set name = "Switch Rest Style"
 	set category = "Robot Commands"
-	set desc = "Select your resting pose."
+	set desc = "Выбрать позу отдыха."
 
 	var/list/poses = list("Resting", "Sitting", "Belly up")
 	if(module.drakerest)
@@ -1395,7 +1423,7 @@
 	if(chameleon_module())
 		borg_type = "инженерный"
 
-	. += "Это [module_to_ru_adjective(borg_type)] киборг[check_allegiance()]"
+	. += "Это [vocabulary_to_ru(GLOB.borgmodule_ru_adjective, borg_type)] киборг[check_allegiance()]"
 	if(activity)
 		. += activity
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, usr, .)

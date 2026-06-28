@@ -274,7 +274,7 @@
 		if(!(lube&SLIP_WHEN_CRAWLING) && (C.lying || !(C.status_flags & CANKNOCKDOWN))) // can't slip unbuckled mob if they're lying or can't fall.
 			return FALSE
 		if(lube & NO_SLIP_WHEN_WALKING)
-			if(C.m_intent == MOVE_INTENT_WALK)
+			if(C.m_intent == MOVE_INTENT_WALK || HAS_TRAIT(C, TRAIT_SPEEDY_STEP))
 				return FALSE
 			if(ishuman(C) && !(lube & SLIP_WHEN_JOGGING) && CONFIG_GET(flag/sprint_enabled))
 				var/mob/living/carbon/human/H = C
@@ -335,10 +335,12 @@
 		air.adjust_moles(GAS_PLUOXIUM, pulse_strength/4000)
 
 /turf/open/IgniteTurf(power, fire_color="red")
-	if(air.get_moles(GAS_O2) < 1)
-		return
+	if(power <= 0 || isgroundlessturf(src))
+		return FALSE
 	if(turf_fire)
 		turf_fire.AddPower(power)
-		return
-	if(!isgroundlessturf(src))
-		new /obj/effect/abstract/turf_fire(src, power, fire_color)
+		return TRUE
+	if(!air || (!planetary_atmos && air.get_moles(GAS_O2) < 1))
+		return FALSE
+	new /obj/effect/abstract/turf_fire(src, power, fire_color)
+	return TRUE

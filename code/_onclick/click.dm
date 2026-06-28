@@ -356,6 +356,8 @@
 
 /mob/living/carbon/human/CtrlClick(mob/user)
 	if(ishuman(user) && Adjacent(user) && !user.incapacitated())
+		if(buckled && (istype(buckled, /obj/structure/table/optable) || istype(buckled, /obj/machinery/stasis)))
+			buckled.user_unbuckle_mob(src, user)
 		if(!user.CheckActionCooldown())
 			return FALSE
 		var/mob/living/carbon/human/H = user
@@ -395,15 +397,19 @@
 	SEND_SIGNAL(src, COMSIG_CLICK_ALT, user)
 	var/turf/T = get_turf(src)
 	if(T && (isturf(loc) || isturf(src)) && user.TurfAdjacent(T))
-		user.listed_turf = T
-		user.client << output("[url_encode(json_encode(T.name))];", "statbrowser:create_listedturf")
+		if(user.client)
+			user.client.open_listed_turf(T)
+		else
+			user.listed_turf = T
 
 /// Use this instead of [/mob/proc/AltClickOn] where you only want turf content listing without additional atom alt-click interaction
 /atom/proc/AltClickNoInteract(mob/user, atom/A)
 	var/turf/T = get_turf(A)
 	if(T && user.TurfAdjacent(T))
-		user.listed_turf = T
-		user.client << output("[url_encode(json_encode(T.name))];", "statbrowser:create_listedturf")
+		if(user.client)
+			user.client.open_listed_turf(T)
+		else
+			user.listed_turf = T
 
 /mob/proc/TurfAdjacent(turf/T)
 	return T.Adjacent(src)
@@ -440,9 +446,7 @@
 		return
 	DelayNextAction()
 
-	var/obj/item/projectile/beam/LE = new /obj/item/projectile/beam(loc)
-	LE.icon = 'icons/effects/genetics.dmi'
-	LE.icon_state = "eyelasers"
+	var/obj/item/projectile/beam/laser/mutation/LE = new /obj/item/projectile/beam/laser/mutation(loc)
 	playsound(usr.loc, 'sound/weapons/taser2.ogg', 75, 1)
 
 	LE.firer = src
@@ -555,7 +559,7 @@
 	var/obj/item/organ/cyberimp/arm/implant = getorganslot((active_hand_index % 2 == 0) ? ORGAN_SLOT_RIGHT_ARM_AUG : ORGAN_SLOT_LEFT_ARM_AUG)
 	// Смена инструментов импланта
 	if(I && implant && length(implant.items_list) > 1 && implant.items_list.Find(I))
-		if(!implant.is_operational(FALSE))
+		if(!implant.activate_allowed(silent = FALSE))
 			return
 		var/list/implants_list = implant.items_list
 		var/to_index = delta_y < 0 ? implants_list.Find(next_list_item(I, implants_list)) : implants_list.Find(previous_list_item(I, implants_list))

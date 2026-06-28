@@ -115,6 +115,7 @@
 
 	if(cult_team?.blood_target && cult_team.blood_target_image && current.client)
 		current.client.images += cult_team.blood_target_image
+		cult_team.blood_target_image_recipients |= current.client // BLUEMOON FIX: track recipient
 
 
 /datum/antagonist/cult/proc/equip_cultist(metal=TRUE)
@@ -199,6 +200,7 @@
 		owner.current.log_message("has renounced the cult of Nar'Sie!", LOG_ATTACK, color="#960000")
 	if(cult_team?.blood_target && cult_team.blood_target_image && owner.current.client)
 		owner.current.client.images -= cult_team.blood_target_image
+		cult_team.blood_target_image_recipients -= owner.current.client // BLUEMOON FIX: drop from recipients
 	owner.special_role = null // BLUEMOON ADD
 	. = ..()
 
@@ -291,6 +293,10 @@
 
 	var/atom/blood_target
 	var/image/blood_target_image
+	/// BLUEMOON FIX: list of clients that currently hold blood_target_image in their
+	/// client.images. Without this, reset_blood_target only sweeps team.members and
+	/// leaves the image stuck on disconnected / deconverted cultists' old clients.
+	var/list/client/blood_target_image_recipients = list()
 	var/blood_target_reset_timer
 
 	var/cult_vote_called = FALSE
@@ -399,13 +405,13 @@
 		sac_objective.team = src
 
 	for(var/mob/living/carbon/human/player in GLOB.player_list)
-		if(player.mind && !player.mind.has_antag_datum(/datum/antagonist/cult) && !is_convertable_to_cult(player) && player.stat != DEAD)
+		if(player.mind && !player.mind.has_antag_datum(/datum/antagonist/cult) && !is_convertable_to_cult(player) && player.stat != DEAD && !player.mind.is_ghost_role())
 			target_candidates += player.mind
 
 	if(!length(target_candidates))
 		message_admins("Cult Sacrifice: Could not find unconvertible target, checking for convertible target.")
 		for(var/mob/living/carbon/human/player in GLOB.player_list)
-			if(player.mind && !player.mind.has_antag_datum(/datum/antagonist/cult) && player.stat != DEAD)
+			if(player.mind && !player.mind.has_antag_datum(/datum/antagonist/cult) && player.stat != DEAD && !player.mind.is_ghost_role())
 				target_candidates += player.mind
 
 	listclearnulls(target_candidates)

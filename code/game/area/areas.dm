@@ -202,6 +202,9 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	// rather than waiting for atoms to initialize.
 	if (area_flags & UNIQUE_AREA)
 		GLOB.areas_by_type[type] = src
+	GLOB.all_areas += src
+	if(istype(src, /area/maintenance))
+		GLOB.maintenance_areas += src
 
 	alarm_manager = new(src) // just in case
 
@@ -341,6 +344,9 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /area/Destroy()
 	if(GLOB.areas_by_type[type] == src)
 		GLOB.areas_by_type[type] = null
+	GLOB.all_areas -= src
+	if(istype(src, /area/maintenance))
+		GLOB.maintenance_areas -= src
 	power_apc = null
 	if(base_area)
 		LAZYREMOVE(base_area, src)
@@ -596,7 +602,8 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		L.client.ambience_playing = 0
 		if(L.client && !L.client.ambience_playing)
 			L.client.ambience_playing = 1
-			SEND_SOUND(L, sound(my_area.shipambience, repeat = 1, wait = 0, volume = 35, channel = CHANNEL_BUZZ))
+			var/buzz_vol = L.client?.prefs?.get_sound_volume("ship_ambience") || 35
+			SEND_SOUND(L, sound(my_area.shipambience, repeat = 1, wait = 0, volume = buzz_vol, channel = CHANNEL_BUZZ))
 
 	if(!(L.client && (L.client.prefs.toggles & SOUND_AMBIENCE)))
 		return //General ambience check is below the ship ambience so one can play without the other

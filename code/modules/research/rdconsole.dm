@@ -34,7 +34,7 @@ Nothing else in the console has ID requirements.
 	req_access = list(ACCESS_TOX)	//lA AND SETTING MANIPULATION REQUIRES SCIENTIST ACCESS.
 
 	var/locked = FALSE
-	var/id_cache = list()
+	var/list/id_cache = list()
 	var/id_cache_seq = 1
 	var/compact = TRUE
 
@@ -44,26 +44,29 @@ Nothing else in the console has ID requirements.
 	if (istype(ID, /datum/material))
 		var/datum/material/material = ID
 		return material.name
-	else if(GLOB.chemical_reagents_list[ID])
-		var/datum/reagent/reagent = GLOB.chemical_reagents_list[ID]
+	var/reagent_from_list = GLOB.chemical_reagents_list[ID]
+	if(reagent_from_list)
+		var/datum/reagent/reagent = reagent_from_list
 		return reagent.name
 	return ID
 
 /proc/CallMaterialName_RuNominative(ID)
 	if (istype(ID, /datum/material))
 		var/datum/material/material = ID
-		return material_to_ru_nominative(material.name)
-	else if(GLOB.chemical_reagents_list[ID])
-		var/datum/reagent/reagent = GLOB.chemical_reagents_list[ID]
+		return vocabulary_to_ru(GLOB.mat_ru_nominative, material.name)
+	var/chemical_from_list = GLOB.chemical_reagents_list[ID]
+	if(chemical_from_list)
+		var/datum/reagent/reagent = chemical_from_list
 		return reagent.name
 	return ID
 
 /proc/CallMaterialName_RuGenitive(ID)
 	if (istype(ID, /datum/material))
 		var/datum/material/material = ID
-		return material_to_ru_genitive(material.name)
-	else if(GLOB.chemical_reagents_list[ID])
-		var/datum/reagent/reagent = GLOB.chemical_reagents_list[ID]
+		return vocabulary_to_ru(GLOB.mat_ru_genitive, material.name)
+	var/chemical_from_list = GLOB.chemical_reagents_list[ID]
+	if(chemical_from_list)
+		var/datum/reagent/reagent = chemical_from_list
 		return reagent.name
 	return ID
 
@@ -359,6 +362,7 @@ Nothing else in the console has ID requirements.
 		var/size = spritesheet.icon_size_id(design.id)
 		design_cache[compressed_id] = list(
 			design.name,
+			design.hacked_only,
 			"[size == size32x32 ? "" : "[size] "][design.id]"
 		)
 

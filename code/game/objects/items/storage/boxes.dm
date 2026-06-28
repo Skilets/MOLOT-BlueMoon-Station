@@ -275,7 +275,7 @@
 	new /obj/item/pinpointer/crew/centcom(src)
 	new /obj/item/stamp/chameleon(src)
 	new /obj/item/detective_scanner(src)
-	new /obj/item/pda/heads(src)
+	new /obj/item/modular_computer/pda/heads(src)
 	new /obj/item/megaphone/command(src)
 
 //blueshield suit box
@@ -321,6 +321,10 @@
 /obj/item/storage/box/ammo/wt
 	name = "box of WT ammo"
 	ammo = /obj/item/ammo_box/magazine/wt550m9
+
+/obj/item/storage/box/ammo/m10mm
+	name = "box of M10mm ammo"
+	ammo = /obj/item/ammo_box/magazine/m10mm
 
 /obj/item/storage/box/ammo/holy
 	name = "box of holy water"
@@ -670,10 +674,10 @@
 	illustration = "pda"
 
 /obj/item/storage/box/PDAs/PopulateContents()
-	new /obj/item/pda(src)
-	new /obj/item/pda(src)
-	new /obj/item/pda(src)
-	new /obj/item/pda(src)
+	new /obj/item/modular_computer/pda(src)
+	new /obj/item/modular_computer/pda(src)
+	new /obj/item/modular_computer/pda(src)
+	new /obj/item/modular_computer/pda(src)
 	new /obj/item/cartridge/head(src)
 
 	var/newcart = pick(	/obj/item/cartridge/engineering,
@@ -1702,8 +1706,8 @@
 /obj/item/storage/box/debugtools/PopulateContents()
 	var/static/list/items_inside = list(
 		/obj/item/flashlight/emp/debug=1,\
-		/obj/item/pda=1,\
-		/obj/item/modular_computer/tablet/preset/advanced/command=1,\
+		/obj/item/modular_computer/pda=1,\
+		/obj/item/modular_computer/tablet/preset/advanced=1,\
 		/obj/item/geiger_counter=1,\
 		/obj/item/construction/rcd/combat/admin=1,\
 		/obj/item/pipe_dispenser/bluespace =1,\
