@@ -12,18 +12,18 @@
 		C.prefs.menuoptions[type] = !checked
 		winset(C, "[verbpath]", "is-checked = [!checked]")
 
-/datum/verbs/menu/Settings/verb/setup_character()
-	set name = "Game Preferences"
-	set category = "Preferences.Game"
-	set desc = "Open Game Preferences Window"
-	usr.client.prefs.ui_interact(usr)
-
 /datum/verbs/menu/Settings/verb/setup_character_appearance()
 	set name = "Character Preferences"
 	set category = "Preferences.Game"
 	set desc = "Open Character Preferences Window"
 	usr.client.prefs.current_tab = 0
 	usr.client.prefs.ShowChoices(usr)
+
+/datum/verbs/menu/Settings/verb/setup_character()
+	set name = "Game Preferences"
+	set category = "Preferences.Game"
+	set desc = "Open Game Preferences Window"
+	usr.client.prefs.ui_interact(usr)
 
 //toggles
 /datum/verbs/menu/Settings/Ghost/chatterbox
@@ -436,18 +436,6 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 	to_chat(src, "[(prefs.toggles & INTENT_STYLE) ? "Clicking directly on intents selects them." : "Clicking on intents rotates selection clockwise."]")
 	prefs.save_preferences()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Intent Selection", "[prefs.toggles & INTENT_STYLE ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
-/client/verb/toggle_ghost_hud_pref()
-	set name = "Toggle Ghost HUD"
-	set category = "Preferences.Ghost"
-	set desc = "Hide/Show Ghost HUD"
-
-	prefs.ghost_hud = !prefs.ghost_hud
-	to_chat(src, "Ghost HUD will now be [prefs.ghost_hud ? "visible" : "hidden"].")
-	prefs.save_preferences()
-	if(isobserver(mob))
-		mob.hud_used.show_hud()
-	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ghost HUD", "[prefs.ghost_hud ? "Enabled" : "Disabled"]"))
 
 /client/verb/toggle_inquisition() // warning: unexpected inquisition
 	set name = "Toggle Inquisitiveness"
